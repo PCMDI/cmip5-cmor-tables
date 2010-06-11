@@ -9,9 +9,9 @@ day,plev8,plev,,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,,,10000
 "cfMon, cfDay",plev7,plev,7 pressure layers defined by ISCCP simulator,air_pressure,pressure,Z,Pa,,,yes,decreasing,,,double,down,,,,100000. 80000. 80000. 68000. 68000. 56000. 56000. 44000. 44000. 31000. 31000. 18000. 18000.  0.,0.001
 cfDay,p500,plev,500 hPa,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,50000.,,,,
 cfDay,p700,plev,700 hPa,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,70000.,,,,
-"cfMon, cfOff, cf3hr",p220,plev,pressure layer of high-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,22000.,0. 44000.,,,
-"cfMon, cfOff, cf3hr",p560,plev,pressure layer of mid-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,56000.,44000. 68000.,,,
-"cfMon, cfOff, cf3hr",p840,plev,pressure layer of low-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,84000.,680. 100000.,,,
+"cfMon, cfOff, cf3hr",p220,plev,pressure layer of high-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,22000.,44000. 0.0,,,
+"cfMon, cfOff, cf3hr",p560,plev,pressure layer of mid-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,56000.,68000. 44000.,,,
+"cfMon, cfOff, cf3hr",p840,plev,pressure layer of low-level cloud in ISCCP simulator,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,84000.,100000. 68000.,,,
 "Amon, aero, 6hrLev, cfMon, cfDay, cf3hr, cfSites",alevel,lev,generic atmospheric model vertical coordinate (nondimensional or dimensional),,atmospheric model level,Z,,ok,,yes,,,,double,up,,,,,
 "Amon, cfMon, cfDay, cf3hr, cfSites",alevhalf,lev,"atmospheric model ""half"" level",,atmospheric model half-level,Z,,ok,,no,,,,double,up,,,,,
 aero,alev1,lev,atmospheric model's lowest level,,lowest atmospheric model level,Z,,ok,,yes,increasing,,,double,,,,,,
@@ -26,7 +26,7 @@ Lmon,sdepth1 ,depth,coordinate value for topmost 0.1 meter layer of soil,depth,d
 "cfMon, cfDay",tau,tau,isccp optical depth categories,atmosphere_optical_thickness_due_to_cloud,cloud optical thickness,,1.0,,,yes,increasing,,,double,,,,0.15 0.8 2.45 6.5 16.2 41.5 100.,0.0  0.3  0.3  1.3  1.3  3.6  3.6  9.4 9.4 23.0 23.0 60.0 60.0 100000.,0.001
 "cfOff, cf3hr",scatratio,scatratio,15 bins of scattering ratio for the CALIPSO simulator CFAD,backscattering_ratio,lidar backscattering ratio,,1.0,,,yes,increasing,,,double,,,,,0.01 1.2 3 5 7 10 15 20 25 30 40 50 60 80 999 1009,0.001
 "cfOff, cf3hr",dbze,dbze,15 bins of radar reflectivity for CloudSat simulator CFAD,equivalent_reflectivity_factor,CloudSat simulator equivalent radar reflectivity factor,,dBZ,,,yes,increasing,,,double,,,,-47.5 -42.5 -37.5 -32.5 -27.5 -22.5 -17.5 -12.5 -7.5 -2.5 2.5 7.5 12.5 17.5 22.5,-50 -45 -40 -35 -30 -25 -20 -15 -10 -5 0 5 10 15 20 25,0.001
-"cfMon, cfOff, cfDay cf3hr",sza5,sza,5 solar zenith angles for PARASOL reflectances,solar_zenith_angle,solar zenith angle,,degree,,,no,increasing,,,double,,,,0. 20. 40. 60. 80.,,0.001
+"cfMon, cfOff, cfDay, cf3hr",sza5,sza,5 solar zenith angles for PARASOL reflectances,solar_zenith_angle,solar zenith angle,,degree,,,no,increasing,,,double,,,,0. 20. 40. 60. 80.,,0.001
 cfSites,site,site,an integer assigned to each of 119 stations (standard) and 73 stations (aquaplanet),,site index,,1.0,ok,,no,,,,integer,,,,,,
 Omon,basin,basin,,region,ocean basin,,1.0,,region,no,,,,character,,,,atlantic_arctic_ocean indian_pacific_ocean global_ocean,,
 Omon,rho,rho,density?  Potential density++++? ,,density++++?,Z,?,,,yes,decreasing,,,double,down,,, ,,

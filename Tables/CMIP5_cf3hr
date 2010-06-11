@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   09 June 2010 ! date this table was constructed
+table_date:   10 June 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -140,7 +140,7 @@ out_name:         plev
 stored_direction: decreasing
 type:             double
 value:            22000.            ! of scalar (singleton) dimension 
-bounds_values:    0. 44000.    ! of scalar (singleton) dimension bounds
+bounds_values:    44000. 0.0    ! of scalar (singleton) dimension bounds
 must_have_bounds: no
 !----------------------------------
 !
@@ -164,7 +164,7 @@ out_name:         plev
 stored_direction: decreasing
 type:             double
 value:            56000.            ! of scalar (singleton) dimension 
-bounds_values:    44000. 68000.    ! of scalar (singleton) dimension bounds
+bounds_values:    68000. 44000.    ! of scalar (singleton) dimension bounds
 must_have_bounds: no
 !----------------------------------
 !
@@ -188,7 +188,7 @@ out_name:         plev
 stored_direction: decreasing
 type:             double
 value:            84000.            ! of scalar (singleton) dimension 
-bounds_values:    680. 100000.    ! of scalar (singleton) dimension bounds
+bounds_values:    100000. 68000.    ! of scalar (singleton) dimension bounds
 must_have_bounds: no
 !----------------------------------
 !
@@ -375,6 +375,29 @@ type:             double
 requested:        -47.5 -42.5 -37.5 -32.5 -27.5 -22.5 -17.5 -12.5 -7.5 -2.5 2.5 7.5 12.5 17.5 22.5        ! space-separated list of requested coordinates 
 requested_bounds: -50 -45 -40 -35 -30 -25 -20 -15 -10 -5 0 5 10 15 20 25 ! space-separated list of requested coordinate bounds
 must_have_bounds: yes
+!----------------------------------
+!
+
+
+!============
+axis_entry: sza5
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+standard_name:    solar_zenith_angle
+units:            degree
+long_name:        solar zenith angle
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         sza
+stored_direction: increasing
+tolerance:        0.001
+
+type:             double
+requested:        0. 20. 40. 60. 80.        ! space-separated list of requested coordinates 
+must_have_bounds: no
 !----------------------------------
 !
 
