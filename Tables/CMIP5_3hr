@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   10 June 2010 ! date this table was constructed
+table_date:   01 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -20,10 +20,10 @@ required_global_attributes: creation_date tracking_id forcing model_id parent_ex
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
 expt_id_ok: '10- or 30-year run initialized in year XXXX' 'decadalXXXX'
-expt_id_ok: 'volcano-free hindcasts XXXX' 'noVolcXXXX'
+expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
-expt_id_ok: 'Historical' 'historical'
+expt_id_ok: 'historical' 'historical'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -514,14 +514,14 @@ modeling_realm:    land
 !----------------------------------
 standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
-cell_methods:      time: point
+cell_methods:      time: point area: mean where land
 cell_measures:      area: areacella
 long_name:         Moisture in Upper 0.1 m of Soil Column
 comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        longitude latitude time1 sdepth1
 out_name:          mrsos
 type:              real
 valid_min:         -2.008

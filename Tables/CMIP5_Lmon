@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   10 June 2010 ! date this table was constructed
+table_date:   01 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -20,10 +20,10 @@ required_global_attributes: creation_date tracking_id forcing model_id parent_ex
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
 expt_id_ok: '10- or 30-year run initialized in year XXXX' 'decadalXXXX'
-expt_id_ok: 'volcano-free hindcasts XXXX' 'noVolcXXXX'
+expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
-expt_id_ok: 'Historical' 'historical'
+expt_id_ok: 'historical' 'historical'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -162,32 +162,6 @@ valid_min:        0.0
 valid_max:        200.0 
 stored_direction: increasing
 type:             double
-must_have_bounds: yes
-!----------------------------------
-!
-
-
-!============
-axis_entry: sdepth1 
-!============
-!----------------------------------
-! Axis attributes:
-!----------------------------------
-standard_name:    depth
-units:            m
-axis:             Z             ! X, Y, Z, T (default: undeclared)
-positive:         down         ! up or down (default: undeclared)
-long_name:        depth
-!----------------------------------
-! Additional axis information:
-!----------------------------------
-out_name:         depth
-valid_min:        0.0         
-valid_max:        0.2 
-stored_direction: increasing
-type:             double
-value:            0.05            ! of scalar (singleton) dimension 
-bounds_values:    0.0 0.1    ! of scalar (singleton) dimension bounds
 must_have_bounds: yes
 !----------------------------------
 !
@@ -1233,7 +1207,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:      area: areacella
 long_name:         Plant Functional Type Grid Fraction
-comment:           using each individual ESM PFT definition.   This includes natural PFTs, anthropogenic PFTs, bare soil, lakes, urban areas, etc.   Sum of all should equal the fraction of the grid-cell that is land.  Note that the ""types"" will be model dependent and for each type there should be a full description of the PFT (plant functional type).   To facilitate model comparison, it is also requested that the aggregated land cover types called for in lines 25 to 32 be archived (but not in this variable).
+comment:           using each individual ESM PFT definition.   This includes natural PFTs, anthropogenic PFTs, bare soil, lakes, urban areas, etc.   Sum of all should equal the fraction of the grid-cell that is land.  Note that the ""types"" will be model dependent and for each type there should be a full description of the PFT (plant functional type).   To facilitate model comparison, it is also requested that the aggregated land cover types called for in lines 28 to 35 be archived (but not in this variable).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

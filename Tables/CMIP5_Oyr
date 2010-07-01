@@ -6,7 +6,7 @@ frequency: yr
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   10 June 2010 ! date this table was constructed
+table_date:   01 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -20,10 +20,10 @@ required_global_attributes: creation_date tracking_id forcing model_id parent_ex
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
 expt_id_ok: '10- or 30-year run initialized in year XXXX' 'decadalXXXX'
-expt_id_ok: 'volcano-free hindcasts XXXX' 'noVolcXXXX'
+expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
-expt_id_ok: 'Historical' 'historical'
+expt_id_ok: 'historical' 'historical'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -1480,7 +1480,7 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     tendency_of_mole_concentration_of_particulate_organic_carbon_expressed_as_carbon_in_sea_water_due_to_nitrate_utilization
+standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_nitrate_utilization
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
@@ -1815,11 +1815,11 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazatrophs
+standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Diazatrophs
+long_name:         Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Diazotrophs
 comment:           Primary (organic carbon) production by the diazotrophic phytoplankton component alone
 !----------------------------------
 ! Additional variable information:

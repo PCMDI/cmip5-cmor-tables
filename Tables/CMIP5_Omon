@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   10 June 2010 ! date this table was constructed
+table_date:   01 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -20,10 +20,10 @@ required_global_attributes: creation_date tracking_id forcing model_id parent_ex
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
 expt_id_ok: '10- or 30-year run initialized in year XXXX' 'decadalXXXX'
-expt_id_ok: 'volcano-free hindcasts XXXX' 'noVolcXXXX'
+expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
-expt_id_ok: 'Historical' 'historical'
+expt_id_ok: 'historical' 'historical'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -1596,7 +1596,7 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     net_primary_mole_productivity_of_carbon
+standard_name:     net_primary_mole_productivity_of_carbon_by_phytoplankton
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:      area: areacello
@@ -1662,11 +1662,11 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     net_primary_mole_productivity_of_carbon_by_diazatrophs
+standard_name:     net_primary_mole_productivity_of_carbon_by_diazotrophs
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:      area: areacello
-long_name:         Net Primary Mole Productivity of Carbon by Diazatrophs
+long_name:         Net Primary Mole Productivity of Carbon by Diazotrophs
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2016,7 +2016,7 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     surface_oxygen_partial_pressure_difference_between_sea_water_and_air
+standard_name:     surface_molecular_oxygen_partial_pressure_difference_between_sea_water_and_air
 units:             Pa
 cell_methods:      time: mean area: mean where sea
 cell_measures:      area: areacello
@@ -2264,7 +2264,7 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     mole_concentration_of_molecular_oxygen_in_sea_water_at_shallowest_local_minimum_in_vertical_profile
+standard_name:     mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_shallowest_local_minimum_in_vertical_profile
 units:             mol m-3
 cell_methods:      time: mean area: where sea depth: minimum
 cell_measures:      area: areacello
@@ -2286,7 +2286,7 @@ modeling_realm:    ocnBgchem
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     depth_at_shallowest_local_minimum_in_vertical_profile_of_mole_concentration_of_molecular_oxygen_in_sea_water
+standard_name:     depth_at_shallowest_local_minimum_in_vertical_profile_of_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water
 units:             m
 cell_methods:      time: mean area: mean where sea
 cell_measures:      area: areacello
