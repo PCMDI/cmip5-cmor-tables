@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   01 July 2010 ! date this table was constructed
+table_date:   07 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -170,7 +170,7 @@ axis_entry: rho
 !----------------------------------
 ! Axis attributes:
 !----------------------------------
-units:            ?
+units:            kg m-3
 axis:             Z             ! X, Y, Z, T (default: undeclared)
 positive:         down         ! up or down (default: undeclared)
 long_name:        density++++?
@@ -1785,7 +1785,7 @@ type:              real
 !
 
 !============
-variable_entry:    intpcalc
+variable_entry:    intpcalcite
 !============
 modeling_realm:    ocnBgchem
 !----------------------------------
@@ -1801,7 +1801,7 @@ comment:           Vertically integrated calcite production
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude time
-out_name:          intpcalc
+out_name:          intpcalcite
 type:              real
 !----------------------------------
 !

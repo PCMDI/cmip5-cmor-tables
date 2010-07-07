@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   01 July 2010 ! date this table was constructed
+table_date:   07 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -162,6 +162,32 @@ valid_min:        0.0
 valid_max:        200.0 
 stored_direction: increasing
 type:             double
+must_have_bounds: yes
+!----------------------------------
+!
+
+
+!============
+axis_entry: sdepth1 
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+standard_name:    depth
+units:            m
+axis:             Z             ! X, Y, Z, T (default: undeclared)
+positive:         down         ! up or down (default: undeclared)
+long_name:        depth
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         depth
+valid_min:        0.0         
+valid_max:        0.2 
+stored_direction: increasing
+type:             double
+value:            0.05            ! of scalar (singleton) dimension 
+bounds_values:    0.0 0.1    ! of scalar (singleton) dimension bounds
 must_have_bounds: yes
 !----------------------------------
 !
