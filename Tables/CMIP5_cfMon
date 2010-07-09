@@ -3,10 +3,10 @@ modeling_realm: atmos
 
 frequency: mon
 
-cmor_version: 2.0         ! version of CMOR that can read this table
+cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   07 July 2010 ! date this table was constructed
+table_date:   08 July 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -75,6 +75,8 @@ expt_id_ok: 'AMIP plus 4K anomaly' 'amip4K'
 approx_interval:  0.000000     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.
+
+generic_levels:   alevel alevhalf
 
 !============
 axis_entry: longitude
@@ -216,26 +218,6 @@ type:             double
 value:            84000.            ! of scalar (singleton) dimension 
 bounds_values:    100000. 68000.    ! of scalar (singleton) dimension bounds
 must_have_bounds: no
-!----------------------------------
-!
-
-
-!============
-axis_entry: alevhalf
-!============
-!----------------------------------
-! Axis attributes:
-!----------------------------------
-axis:             Z             ! X, Y, Z, T (default: undeclared)
-positive:         up         ! up or down (default: undeclared)
-long_name:        atmospheric model half-level
-!----------------------------------
-! Additional axis information:
-!----------------------------------
-out_name:         lev
-type:             double
-must_have_bounds: no
-index_only:       ok
 !----------------------------------
 !
 

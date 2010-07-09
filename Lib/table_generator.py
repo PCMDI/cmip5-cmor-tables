@@ -3,7 +3,7 @@ import sys,time,os,genutil,numpy
 
 prefix = "CMIP5"
 
-general = """cmor_version: 2.0         ! version of CMOR that can read this table
+general = """cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   %s  ! project id
 table_date:   %s ! date this table was constructed
@@ -357,6 +357,7 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
 
 
     addLines = False
+    generic_levels = []
     for l in dlines[1:]:
         sp = process_a_line(l)
         foundnm = False
@@ -368,12 +369,39 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
                 addLines = True
                 zlevel_name = 'alevel'
                 file_add = 'Tables_csv/add_dims.txt'
+                if not "alevel" in generic_levels:
+                    generic_levels.append("alevel")
+            elif l.find("alev1")>-1:
+                addLines = True
+                zlevel_name = 'alevel'
+                file_add = 'Tables_csv/add_dims.txt'
+                if not "alev1" in generic_levels:
+                    generic_levels.append("alev1")
+            elif l.find("alevhalf")>-1:
+                addLines = True
+                zlevel_name = 'alevel'
+                file_add = 'Tables_csv/add_dims.txt'
+                if not "alevhalf" in generic_levels:
+                    generic_levels.append("alevhalf")
             elif l.find("olevel")>-1:
                 addLines = True
                 zlevel_name = 'olevel'
                 file_add = 'Tables_csv/add_dims2.txt'
                 if tbnm=='fx':
                     file_add= "Tables_csv/add_dims2_notime.txt"
+                if not "olevel" in generic_levels:
+                    generic_levels.append("olevel")
+    if generic_levels!=[]:
+        print >> fo, "\ngeneric_levels:   %s" % " ".join(generic_levels)
+    for l in dlines[1:]:
+        sp = process_a_line(l)
+        foundnm = False
+        for snm in sp[0].split(","):
+            if tbnm == snm.strip():
+                foundnm  = True
+        if foundnm:
+            if l.find("alevel")>-1 or l.find("alev1")>-1 or l.find("alevhalf")>-1 or l.find("olevel")>-1:
+                pass
             else:
                 print >> fo, process_template(axis_tmpl,cnms,sp)
     if addLines is True:

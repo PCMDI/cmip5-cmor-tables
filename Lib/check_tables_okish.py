@@ -88,7 +88,7 @@ for t in tables.split():
         for d in Vr['dimensions']:
             if d=='olevel':
                 vdims.append(dims['depth_coord'])
-            elif d=='alevel':
+            elif d in g.get('generic_levels',"").split():
                 vdims.append(dims['smooth_level'])
             else:
                 vdims.append(dims[d])
