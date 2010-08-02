@@ -436,6 +436,7 @@ def create_table(table_file, dims_file,minmax={}):
             f=open("Tables_csv/Amon_2D.csv")
             add_lines = f.readlines()
             if table_file[-11:-4] in ['cfSites','v/cf3hr']:
+                print 'Ok cfsite stuff'
                 tmplines=[]
                 for aline in add_lines:
                     a_line =aline.strip()
@@ -447,7 +448,7 @@ def create_table(table_file, dims_file,minmax={}):
                     ##     if sp[i2]=='tasmax' : print i2,sp[i2]
                     if len(sp)>15 and 'time' in sp[16]:
                         sp[16]=sp[16].replace('time','time1')
-                        if table_file[-11:-4]=='cfsites':
+                        if table_file[-11:-4]=='cfSites':
                             sp[16]=sp[16].replace("longitude latitude","site")
                         ## print 'Replaced to:',sp[16]
                     for i in range(len(sp)):
