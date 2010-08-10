@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+Tables = CMIP5_3hr CMIP5_Amon CMIP5_OImon CMIP5_Oyr CMIP5_cfDay CMIP5_cfSites CMIP5_grids CMIP5_6hrLev CMIP5_LImon CMIP5_Oclim CMIP5_aero CMIP5_cfMon CMIP5_day md5s CMIP5_6hrPlev CMIP5_Lmon CMIP5_Omon CMIP5_cf3hr CMIP5_cfOff CMIP5_fx
+
+all: install
+	@echo
+install: 
+	mkdir -p @prefix@/share
+	mkdir -p @prefix@/share/cmor
+	cd Tables; cp ${Tables} @prefix@/share/cmor
+uninstall:  
+	cd @prefix@/share/cmor ; rm ${Tables}
