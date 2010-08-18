@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   02 August 2010 ! date this table was constructed
+table_date:   17 August 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -72,7 +72,7 @@ expt_id_ok: 'aqua planet plus 4K anomaly' 'aqua4K'
 expt_id_ok: 'AMIP plus 4K anomaly' 'amip4K'
 
 
-approx_interval:  0.000000     ! approximate spacing between successive time
+approx_interval:  0.125000     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.
 

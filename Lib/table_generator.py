@@ -325,7 +325,8 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
     print >> fo, general
 
     # looking for approx interval, ASSUMING UNITS ARE IN DAYS SINCE
-    if tbnm.find("mon")>-1:
+    print 'Table nm:',tbnm,'__________________________________________'
+    if tbnm.lower().find("mon")>-1:
         interval = 30.
     elif tbnm.lower().find('clim')>-1:
         interval = 30.
@@ -335,12 +336,18 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         interval = 365.
     elif tbnm.lower().find('da')>-1:
         interval = 1.
-    elif tbnm.find("hr")==1:
-        interval = float(tbnm[0])/24.
-    elif tbnm.find("min")>-1:
+    elif tbnm.lower().find("hr")>-1:
+        indx = tbnm.lower().find("hr")
+        interval = float(tbnm[indx-1])/24.
+    elif tbnm.lower().find("cfoff")>-1:
+        interval = 30.
+    elif tbnm.lower().find("cfsites")>-1:
+        interval = 25./(24.*60.)
+    elif tbnm.lower().find("min")>-1:
         interval = float(tbnm[2:tbnm.find("min")])/1440.
     else:
         interval = 0.
+    print 'Interval:',interval,'________________________'
     print >> fo, """approx_interval:  %f     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.""" % interval
