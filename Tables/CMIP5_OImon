@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 August 2010 ! date this table was constructed
+table_date:   23 August 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -743,7 +743,7 @@ modeling_realm:    seaIce
 ! Variable attributes:
 !----------------------------------
 standard_name:     surface_snow_and_ice_sublimation_flux
-units:             kg m-2
+units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:      area: areacello
 long_name:         Sublimation over Sea Ice
@@ -769,7 +769,7 @@ units:             kg s-1
 cell_methods:      time: mean
 cell_measures:      area: areacello
 long_name:         X-Component of Sea Ice Mass Transport
-comment:           The sea ice transport is 0.0 in ice-free regions of the ocean.  Include snow is calculation of mass.
+comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Include snow in calculation of mass.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -789,8 +789,8 @@ modeling_realm:    seaIce
 units:             kg s-1
 cell_methods:      time: mean
 cell_measures:      area: areacello
-long_name:         Y-Component of Sea Ice Transport
-comment:           The sea ice transport is 0.0 in ice-free regions of the ocean.  Include snow is calculation of mass.
+long_name:         Y-Component of Sea Ice Mass Transport
+comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Include snow in calculation of mass.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -913,7 +913,7 @@ modeling_realm:    seaIce
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-units:             N m-2
+units:             N m-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:      area: areacello
 long_name:         Compressive Sea Ice Strength

@@ -423,6 +423,8 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         lns=lns.replace("zlevel",zlevel_name)
         if tbnm.find("Oclim")>-1:
             lns=lns.replace("dimensions:      longitude latitude time","dimensions:      longitude latitude time2")
+        if tbnm.find("cfSite")>-1:
+            lns=lns.replace("longitude latitude","site")
         print >> fo, lns
 
     return fo

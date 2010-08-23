@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 August 2010 ! date this table was constructed
+table_date:   23 August 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -1348,7 +1348,7 @@ units:             kg m-2 s-1
 cell_methods:      time: point
 cell_measures:      area: areacella
 long_name:         Surface Snow and Ice Sublimation Flux
-comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere.
+comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere. This differs from sbl appearing in table Limon in that the flux is averaged over the entire grid cell, not just the land portion.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

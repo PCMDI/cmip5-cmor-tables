@@ -83,9 +83,9 @@ anthropogenic aerosol forcing,"as in expt. 6.2a, but with anthropogenic aerosols
 sulfate aerosol forcing,"as in expt. 6.2a, but with sulfate aerosols from year 2000 of expt. 3.2",6.4b,,,all,,,all,all,all,all,,,all,,,all
 Cloud response to imposed 4xCO2,"consistent with CFMIP, impose AMIP (1979-2008) conditions (expt. 3.3) but with 4xCO2",6.5,,,all,,,all,all,all,,,,all,,,
 Cloud response to an imposed change in SST pattern,"consistent with CFMIP, add a patterned SST perturbation to AMIP SSTs of expt. 3.3.",6.6,,,all,,,all,all,all,,,,all,,,
-aqua planet: control run,"consistent with CFMIP, impose zonally uniform SSTs on a planet without continents",6.7a,,,all,,,all,all,all,,,,all,,,
-aqua planet: cloud response to imposed 4xCO2,"Consistent with CFMIP requirements, impose 4xCO2 on the zonally uniform SSTs of expt. 6.7a ",6.7b,,,all,,,all,all,all,,,,all,,,
-Aqua-planet: cloud response to an imposed uniform change in SST.,"Consistent with CFMIP requirements, add a uniform +4K to the zonally uniform SSTs of expt. 6.7a (which is the control for this run).",6.7c,,,all,,,all,all,all,,,,all,,,
+aqua planet: control run,"consistent with CFMIP, impose zonally uniform SSTs on a planet without continents",6.7a,,,all,,,,,,,,,all,,,
+aqua planet: cloud response to imposed 4xCO2,"Consistent with CFMIP requirements, impose 4xCO2 on the zonally uniform SSTs of expt. 6.7a ",6.7b,,,all,,,,,,,,,all,,,
+Aqua-planet: cloud response to an imposed uniform change in SST.,"Consistent with CFMIP requirements, add a uniform +4K to the zonally uniform SSTs of expt. 6.7a (which is the control for this run).",6.7c,,,all,,,,,,,,,all,,,
 Cloud response to an imposed uniform change in SST,"Consistent with CFMIP requirements, add a uniform +4 K SST to the AMIP SSTs of expt. 3.3 (which is the ""control"" for this run).",6.8,,,all,,,all,all,all,,,,all,,,
 natural-only,historical simulation but with natural forcing only,7.1,,all*,all,all**,all,all,all,all,all,,,all,,,
 GHG-only,historical simulation but with greenhouse gas forcing only,7.2,,all*,all,all**,all,all,all,all,,,,all,,,

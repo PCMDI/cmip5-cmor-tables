@@ -6,7 +6,7 @@ frequency: day
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 August 2010 ! date this table was constructed
+table_date:   23 August 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -1023,11 +1023,11 @@ modeling_realm:    seaIce ocean
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     eastward_sea_ice_velocity
+standard_name:     sea_ice_x_velocity
 units:             m s-1
 cell_methods:      time: mean
 cell_measures:      area: areacella
-long_name:         Eastward Sea Ice Velocity
+long_name:         X-Component of Sea Ice Velocity
 comment:           "Report on ocean's grid.  Report as ""missing"" in regions free of sea ice."
 !----------------------------------
 ! Additional variable information:
@@ -1049,11 +1049,11 @@ modeling_realm:    seaIce ocean
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     northward_sea_ice_velocity
+standard_name:     sea_ice_y_velocity
 units:             m s-1
 cell_methods:      time: mean
 cell_measures:      area: areacella
-long_name:         Northward Sea Ice Velocity
+long_name:         Y-Component of Sea Ice Velocity
 comment:           "Report on ocean's grid.  Report as ""missing"" in regions free of sea ice."
 !----------------------------------
 ! Additional variable information:
