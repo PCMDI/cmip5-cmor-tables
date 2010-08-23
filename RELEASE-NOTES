@@ -1,3 +1,4 @@
+2010-08-23 : some tweaks from Karl, releasing them along with CMOR 2.1
 2010-08-04 : added x/y grid with units of "degrees"
 2010-06-09 : tables generated with min/max now being 3 sigma (from 2) and (20% form 5%)
 2010-06-01 : table generation was sometimes gen same value for valid_min and valid_max, fixed
