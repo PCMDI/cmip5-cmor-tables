@@ -6,7 +6,7 @@ frequency: fx
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   23 August 2010 ! date this table was constructed
+table_date:   14 September 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -670,28 +670,6 @@ comment:           Report on the same grid as the temperature field.  flag_value
 !----------------------------------
 dimensions:        longitude latitude
 out_name:          basin
-type:              integer
-valid_min:         1.0
-valid_max:         10.0
-!----------------------------------
-!
-
-!============
-variable_entry:    basinv
-!============
-modeling_realm:    ocean
-!----------------------------------
-! Variable attributes:
-!----------------------------------
-standard_name:     region
-units:             1
-long_name:         Region Selection Index
-comment:           Report on the same grid as the ocean flag_values=0,1,2,3,4,5,6,7,8,9,10 corresponding to flag_meanings=global_land, southern_ocean, atlantic_ocean, pacific_ocean, arctic_ocean, indian_ocean, mediterranean_sea, black_sea, hudson_bay, baltic_sea, red_sea.   Report on the grid used for the meridional overturning stream function.
-!----------------------------------
-! Additional variable information:
-!----------------------------------
-dimensions:        longitude latitude
-out_name:          basinv
 type:              integer
 valid_min:         1.0
 valid_max:         10.0

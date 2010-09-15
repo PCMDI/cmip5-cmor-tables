@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   23 August 2010 ! date this table was constructed
+table_date:   14 September 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -678,12 +678,12 @@ standard_name:     mole_concentration_of_dissolved_inorganic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Inorganic Carbon Concentration
+long_name:         Dissolved Inorganic Carbon Concentration at Surface
 comment:           Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          dissic
 type:              real
 !----------------------------------
@@ -700,12 +700,12 @@ standard_name:     mole_concentration_of_dissolved_organic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Organic Carbon Concentration
+long_name:         Dissolved Organic Carbon Concentration at Surface
 comment:           Dissolved organic carbon concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          dissoc
 type:              real
 !----------------------------------
@@ -722,12 +722,12 @@ standard_name:     mole_concentration_of_phytoplankton_expressed_as_carbon_in_se
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Phytoplankton Carbon Concentration
+long_name:         Phytoplankton Carbon Concentration at Surface
 comment:           sum of phytoplankton carbon component concentrations.  In most (all?) cases this is the sum of phycdiat and phycmisc (i.e., ""Diatom Carbon Concentration"" and ""Non-Diatom Phytoplankton Carbon Concentration""
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phyc
 type:              real
 !----------------------------------
@@ -744,12 +744,12 @@ standard_name:     mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Zooplankton Carbon Concentration
+long_name:         Zooplankton Carbon Concentration at Surface
 comment:           sum of zooplankton carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          zooc
 type:              real
 !----------------------------------
@@ -766,12 +766,12 @@ standard_name:     mole_concentration_of_bacteria_expressed_as_carbon_in_sea_wat
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Bacterial Carbon Concentration
+long_name:         Bacterial Carbon Concentration at Surface
 comment:           sum of bacterial carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          bacc
 type:              real
 !----------------------------------
@@ -788,12 +788,12 @@ standard_name:     mole_concentration_of_organic_detritus_expressed_as_carbon_in
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Detrital Organic Carbon Concentration
+long_name:         Detrital Organic Carbon Concentration at Surface
 comment:           sum of detrital organic carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          detoc
 type:              real
 !----------------------------------
@@ -810,12 +810,12 @@ standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_wate
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Calcite Concentration
+long_name:         Calcite Concentration at Surface
 comment:           sum of particulate calcite component concentrations (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          calc
 type:              real
 !----------------------------------
@@ -832,12 +832,12 @@ standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_wa
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Aragonite Concentration
+long_name:         Aragonite Concentration at Surface
 comment:           sum of particulate aragonite components (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          arag
 type:              real
 !----------------------------------
@@ -854,12 +854,12 @@ standard_name:     mole_concentration_of_diatoms_expressed_as_carbon_in_sea_wate
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Diatoms expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Diatoms expressed as Carbon in Sea Water at Surface
 comment:           carbon from the diatom phytoplankton component concentration alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phydiat
 type:              real
 !----------------------------------
@@ -876,12 +876,12 @@ standard_name:     mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phydiaz
 type:              real
 !----------------------------------
@@ -898,12 +898,12 @@ standard_name:     mole_concentration_of_calcareous_phytoplankton_expressed_as_c
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Calcareous Phytoplankton expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Calcareous Phytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from calcareous (calcite-producing) phytoplankton component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phycalc
 type:              real
 !----------------------------------
@@ -920,12 +920,12 @@ standard_name:     mole_concentration_of_picophytoplankton_expressed_as_carbon_i
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Picophytoplankton expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Picophytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phypico
 type:              real
 !----------------------------------
@@ -942,12 +942,12 @@ standard_name:     mole_concentration_of_miscellaneous_phytoplankton_expressed_a
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Miscellaneous Phytoplankton expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Miscellaneous Phytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from additional phytoplankton component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phymisc
 type:              real
 !----------------------------------
@@ -964,12 +964,12 @@ standard_name:     mole_concentration_of_microzooplankton_expressed_as_carbon_in
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Microzooplankton expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Microzooplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon  concentration from the microzooplankton (<20 um) component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          zmicro
 type:              real
 !----------------------------------
@@ -986,12 +986,12 @@ standard_name:     mole_concentration_of_mesozooplankton_expressed_as_carbon_in_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Mesozooplankton expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Mesozooplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon  concentration from mesozooplankton (20-200 um) component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          zmeso
 type:              real
 !----------------------------------
@@ -1008,12 +1008,12 @@ standard_name:     mole_concentration_of_miscellaneous_zooplankton_expressed_as_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Other Zooplankton Carbon Concentration
+long_name:         Other Zooplankton Carbon Concentration at Surface
 comment:           carbon from additional zooplankton component concentrations alone (e.g. Micro, meso).  Since the models all have different numbers of components, this variable has been included to provide a check for intercomparison between models since some phytoplankton groups are supersets.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          zoocmisc
 type:              real
 !----------------------------------
@@ -1030,12 +1030,12 @@ standard_name:     sea_water_alkalinity_expressed_as_mole_equivalent
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Total Alkalinity
+long_name:         Total Alkalinity at Surface
 comment:           total alkalinity equivalent concentration (including carbonate, nitrogen, silicate, and borate components)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          talk
 type:              real
 !----------------------------------
@@ -1052,12 +1052,12 @@ standard_name:     sea_water_ph_reported_on_total_scale
 units:             1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         pH
+long_name:         pH at Surface
 comment:           negative log of hydrogen ion concentration with the concentration expressed as mol H kg-1.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          ph
 type:              real
 !----------------------------------
@@ -1074,12 +1074,12 @@ standard_name:     mole_concentration_of_molecular_oxygen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolve Oxygen Concentration
+long_name:         Dissolve Oxygen Concentration at Surface
 comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          o2
 type:              real
 !----------------------------------
@@ -1096,12 +1096,12 @@ standard_name:     mole_concentration_of_nitrate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Nitrate Concentration
+long_name:         Dissolved Nitrate Concentration at Surface
 comment:           dissolved nitrate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          no3
 type:              real
 !----------------------------------
@@ -1118,12 +1118,12 @@ standard_name:     mole_concentration_of_ammonium_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Ammonium Concentration
+long_name:         Dissolved Ammonium Concentration at Surface
 comment:           dissolved ammonium concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          nh4
 type:              real
 !----------------------------------
@@ -1140,12 +1140,12 @@ standard_name:     mole_concentration_of_phosphate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Phosphate Concentration
+long_name:         Dissolved Phosphate Concentration at Surface
 comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          po4
 type:              real
 !----------------------------------
@@ -1162,12 +1162,12 @@ standard_name:     mole_concentration_of_dissolved_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Iron Concentration
+long_name:         Dissolved Iron Concentration at Surface
 comment:           dissolved iron concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          dfe
 type:              real
 !----------------------------------
@@ -1184,12 +1184,12 @@ standard_name:     mole_concentration_of_silicate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dissolved Silicate Concentration
+long_name:         Dissolved Silicate Concentration at Surface
 comment:           dissolved silicate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          si
 type:              real
 !----------------------------------
@@ -1206,12 +1206,12 @@ standard_name:     mass_concentration_of_phytoplankton_expressed_as_chlorophyll_
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Total Chlorophyll Mass Concentration
+long_name:         Total Chlorophyll Mass Concentration at Surface
 comment:           sum of chlorophyll from all phytoplankton group concentrations.  In most models this is equal to chldiat+chlmisc, that is the sum of ""Diatom Chlorophyll Mass Concentration"" plus ""Other Phytoplankton Chlorophyll Mass Concentration""
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chl
 type:              real
 !----------------------------------
@@ -1228,12 +1228,12 @@ standard_name:     mass_concentration_of_diatoms_expressed_as_chlorophyll_in_sea
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Diatom Chlorophyll Mass Concentration
+long_name:         Diatom Chlorophyll Mass Concentration at Surface
 comment:           chlorophyll from diatom phytoplankton component concentration alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chldiat
 type:              real
 !----------------------------------
@@ -1250,12 +1250,12 @@ standard_name:     mass_concentration_of_diazotrophs_expressed_as_chlorophyll_in
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mass Concentration of Diazotrophs expressed as Chlorophyll in Sea Water
+long_name:         Mass Concentration of Diazotrophs expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chldiaz
 type:              real
 !----------------------------------
@@ -1272,12 +1272,12 @@ standard_name:     mass_concentration_of_calcareous_phytoplankton_expressed_as_c
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mass Concentration of Calcareous Phytoplankton expressed as Chlorophyll in Sea Water
+long_name:         Mass Concentration of Calcareous Phytoplankton expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the calcite-producing phytoplankton component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chlcalc
 type:              real
 !----------------------------------
@@ -1294,12 +1294,12 @@ standard_name:     mass_concentration_of_picophytoplankton_expressed_as_chloroph
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mass Concentration of Picophytoplankton expressed as Chlorophyll in Sea Water
+long_name:         Mass Concentration of Picophytoplankton expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chlpico
 type:              real
 !----------------------------------
@@ -1316,12 +1316,12 @@ standard_name:     mass_concentration_of_miscellaneous_phytoplankton_expressed_a
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Other Phytoplankton Chlorophyll Mass Concentration
+long_name:         Other Phytoplankton Chlorophyll Mass Concentration at Surface
 comment:           chlorophyll from additional phytoplankton component concentrations alone
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          chlmisc
 type:              real
 !----------------------------------
@@ -1338,12 +1338,12 @@ standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Particulate Organic Nitrogen Concentration
+long_name:         Particulate Organic Nitrogen Concentration at Surface
 comment:           sum of particulate organic nitrogen component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          pon
 type:              real
 !----------------------------------
@@ -1360,12 +1360,12 @@ standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Particulate Organic Phosphorus Concentration
+long_name:         Particulate Organic Phosphorus Concentration at Surface
 comment:           sum of particulate organic phosphorus component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          pop
 type:              real
 !----------------------------------
@@ -1382,12 +1382,12 @@ standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Particulate Biogenic Iron Concentration
+long_name:         Particulate Biogenic Iron Concentration at Surface
 comment:           sum of particulate organic iron component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          bfe
 type:              real
 !----------------------------------
@@ -1404,12 +1404,12 @@ standard_name:     mole_concentration_of_particulate_matter_expressed_as_silicon
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Particulate Biogenic Silica Concentration
+long_name:         Particulate Biogenic Silica Concentration at Surface
 comment:           sum of particulate silica component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          bsi
 type:              real
 !----------------------------------
@@ -1426,12 +1426,12 @@ standard_name:     mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Phytoplankton Nitrogen Concentration
+long_name:         Phytoplankton Nitrogen Concentration at Surface
 comment:           sum of phytoplankton nitrogen component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phyn
 type:              real
 !----------------------------------
@@ -1448,12 +1448,12 @@ standard_name:     mole_concentration_of_phytoplankton_expressed_as_phosphorus_i
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Phytoplankton Phosphorus Concentration
+long_name:         Phytoplankton Phosphorus Concentration at Surface
 comment:           sum of phytoplankton phosphorus components
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phyp
 type:              real
 !----------------------------------
@@ -1470,12 +1470,12 @@ standard_name:     mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Phytoplankton Iron Concentration
+long_name:         Phytoplankton Iron Concentration at Surface
 comment:           sum of phytoplankton iron component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          phyfe
 type:              real
 !----------------------------------
@@ -1492,12 +1492,12 @@ standard_name:     mole_concentration_of_phytoplankton_expressed_as_silicon_in_s
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Phytoplankton Silica Concentration
+long_name:         Phytoplankton Silica Concentration at Surface
 comment:           sum of phytoplankton silica component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          physi
 type:              real
 !----------------------------------
@@ -1514,12 +1514,12 @@ standard_name:     mole_concentration_of_dimethyl_sulfide_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Dimethyl Sulphide Concentration
+long_name:         Dimethyl Sulphide Concentration at Surface
 comment:           dimethyl sulphide concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          dms
 type:              real
 !----------------------------------
@@ -1536,12 +1536,12 @@ standard_name:     mole_concentration_of_carbonate_expressed_as_carbon_in_sea_wa
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water
+long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water at Surface
 comment:           carbonate ion concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          co3
 type:              real
 !----------------------------------
@@ -1558,12 +1558,12 @@ standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_wate
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation
+long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation at Surface
 comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          co3satcalc
 type:              real
 !----------------------------------
@@ -1580,12 +1580,12 @@ standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_wa
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:      area: areacello volume: volcello
-long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation
+long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation at Surface
 comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time
+dimensions:        longitude latitude depth0m time
 out_name:          co3satarag
 type:              real
 !----------------------------------
