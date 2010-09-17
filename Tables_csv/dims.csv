@@ -1,8 +1,8 @@
 CMOR Dimensions,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,
 CMOR table(s),CMOR dimension,output dimension name,description,standard name,long name,axis,units,index axis?,coords_attrib,bounds?,stored direction,valid_min,valid_max,type,positive,value,bounds _values,requested,bounds_ requested,tol_on_requests: variance from requested values that is tolerated
-"fx, Amon, Lmon, LImon, OImon, aero, day, 6hrLev, 6hrPlev, 3hr,  Oclim, Oyr, Omon, cfMon, cfOff, cfDay, cf3hr",longitude,lon,,longitude,longitude,X,degrees_east,,,yes,increasing,0.0,360.0,double,,,,,,
-"fx, Amon, Lmon, LImon, OImon, aero, day, 6hrLev, 6hrPlev, 3hr,  Oclim, Oyr, Omon, cfMon, cfOff, cfDay, cf3hr",latitude,lat,,latitude,latitude,Y,degrees_north,,,yes,increasing,-90.0,90.0,double,,,,,,
+"fx, Amon, Lmon, LImon, OImon, aero, day, 6hrLev, 6hrPlev, 3hr,  Oclim, Oyr, Omon, cfMon, cfOff, cfDay, cf3hr, cfSites",longitude,lon,,longitude,longitude,X,degrees_east,,,yes,increasing,0.0,360.0,double,,,,,,
+"fx, Amon, Lmon, LImon, OImon, aero, day, 6hrLev, 6hrPlev, 3hr,  Oclim, Oyr, Omon, cfMon, cfOff, cfDay, cf3hr, cfSites",latitude,lat,,latitude,latitude,Y,degrees_north,,,yes,increasing,-90.0,90.0,double,,,,,,
 Amon,plevs,plev,There are 17 mandatory levels and up to 6 additional levels requested of models with sufficient resolution in the stratosphere.,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,,,100000. 92500. 85000. 70000. 60000. 50000. 40000. 30000. 25000. 20000. 15000. 10000. 7000. 5000. 3000. 2000. 1000.,,0.001
 day,plev8,plev,,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,,,100000. 85000. 70000. 50000. 25000. 10000. 5000. 1000.,,0.001
 6hrPlev,plev3,plev,,air_pressure,pressure,Z,Pa,,,no,decreasing,,,double,down,,,85000. 50000. 25000. ,,0.001
@@ -27,7 +27,7 @@ aero,alev1,lev,atmospheric model's lowest level,,lowest atmospheric model level,
 "cfOff, cf3hr",scatratio,scatratio,15 bins of scattering ratio for the CALIPSO simulator CFAD,backscattering_ratio,lidar backscattering ratio,,1.0,,,yes,increasing,,,double,,,,0.0605 2.1 4. 6. 8.5 12.5 17.5 22.5 27.5 35. 45. 55. 70. 539.5 1004.,0.01 1.2 1.2 3. 3. 5. 5. 7. 7. 10. 10. 15. 15. 20. 20. 25. 25. 30. 30. 40. 40. 50. 50. 60. 60. 80. 80. 999. 999. 1009.,0.001
 "cfOff, cf3hr",dbze,dbze,15 bins of radar reflectivity for CloudSat simulator CFAD,equivalent_reflectivity_factor,CloudSat simulator equivalent radar reflectivity factor,,dBZ,,,yes,increasing,,,double,,,,-47.5 -42.5 -37.5 -32.5 -27.5 -22.5 -17.5 -12.5 -7.5 -2.5 2.5 7.5 12.5 17.5 22.5,-50. -45. -45. -40. -40. -35. -35. -30. -30. -25. -25. -20. -20. -15. -15. -10. -10. -5. -5. 0. 0. 5. 5. 10. 10. 15. 15. 20. 20. 25.,0.001
 "cfMon, cfOff, cfDay, cf3hr",sza5,sza,5 solar zenith angles for PARASOL reflectances,solar_zenith_angle,solar zenith angle,,degree,,,no,increasing,,,double,,,,0. 20. 40. 60. 80.,,0.001
-cfSites,site,site,an integer assigned to each of 119 stations (standard) and 73 stations (aquaplanet),,site index,,1.0,ok,,no,,,,integer,,,,,,
+,site,site,an integer assigned to each of 119 stations (standard) and 73 stations (aquaplanet),,site index,,1.0,ok,,no,,,,integer,,,,,,
 Omon,basin,basin,,region,ocean basin,,1.0,,region,no,,,,character,,,,atlantic_arctic_ocean indian_pacific_ocean global_ocean,,
 Omon,rho,rho,density?  Potential density++++? Check units,,density++++?,Z,kg m-3,,,yes,decreasing,,,double,down,,, ,,
 "fx, Oclim, Oyr, Omon",olevel,lev,generic ocean model vertical coordinate (nondimensional or dimensional),,ocean model level,Z,,ok,,yes,,,,double,down,,,,,

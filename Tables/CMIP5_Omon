@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.0.1         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   14 September 2010 ! date this table was constructed
+table_date:   17 September 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -683,7 +683,7 @@ comment:           Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          dissic
 type:              real
 !----------------------------------
@@ -705,7 +705,7 @@ comment:           Dissolved organic carbon concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          dissoc
 type:              real
 !----------------------------------
@@ -727,7 +727,7 @@ comment:           sum of phytoplankton carbon component concentrations.  In mos
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phyc
 type:              real
 !----------------------------------
@@ -749,7 +749,7 @@ comment:           sum of zooplankton carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          zooc
 type:              real
 !----------------------------------
@@ -771,7 +771,7 @@ comment:           sum of bacterial carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          bacc
 type:              real
 !----------------------------------
@@ -793,7 +793,7 @@ comment:           sum of detrital organic carbon component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          detoc
 type:              real
 !----------------------------------
@@ -815,7 +815,7 @@ comment:           sum of particulate calcite component concentrations (e.g. Phy
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          calc
 type:              real
 !----------------------------------
@@ -837,7 +837,7 @@ comment:           sum of particulate aragonite components (e.g. Phytoplankton, 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          arag
 type:              real
 !----------------------------------
@@ -859,7 +859,7 @@ comment:           carbon from the diatom phytoplankton component concentration 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phydiat
 type:              real
 !----------------------------------
@@ -881,7 +881,7 @@ comment:           carbon concentration from the diazotrophic phytoplankton comp
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phydiaz
 type:              real
 !----------------------------------
@@ -903,7 +903,7 @@ comment:           carbon concentration from calcareous (calcite-producing) phyt
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phycalc
 type:              real
 !----------------------------------
@@ -925,7 +925,7 @@ comment:           carbon concentration from the picophytoplankton (<2 um) compo
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phypico
 type:              real
 !----------------------------------
@@ -947,7 +947,7 @@ comment:           carbon concentration from additional phytoplankton component 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phymisc
 type:              real
 !----------------------------------
@@ -969,7 +969,7 @@ comment:           carbon  concentration from the microzooplankton (<20 um) comp
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          zmicro
 type:              real
 !----------------------------------
@@ -991,7 +991,7 @@ comment:           carbon  concentration from mesozooplankton (20-200 um) compon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          zmeso
 type:              real
 !----------------------------------
@@ -1013,7 +1013,7 @@ comment:           carbon from additional zooplankton component concentrations a
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          zoocmisc
 type:              real
 !----------------------------------
@@ -1035,7 +1035,7 @@ comment:           total alkalinity equivalent concentration (including carbonat
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          talk
 type:              real
 !----------------------------------
@@ -1057,7 +1057,7 @@ comment:           negative log of hydrogen ion concentration with the concentra
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          ph
 type:              real
 !----------------------------------
@@ -1079,7 +1079,7 @@ comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          o2
 type:              real
 !----------------------------------
@@ -1101,7 +1101,7 @@ comment:           dissolved nitrate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          no3
 type:              real
 !----------------------------------
@@ -1123,7 +1123,7 @@ comment:           dissolved ammonium concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          nh4
 type:              real
 !----------------------------------
@@ -1145,7 +1145,7 @@ comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          po4
 type:              real
 !----------------------------------
@@ -1167,7 +1167,7 @@ comment:           dissolved iron concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          dfe
 type:              real
 !----------------------------------
@@ -1189,7 +1189,7 @@ comment:           dissolved silicate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          si
 type:              real
 !----------------------------------
@@ -1211,7 +1211,7 @@ comment:           sum of chlorophyll from all phytoplankton group concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chl
 type:              real
 !----------------------------------
@@ -1233,7 +1233,7 @@ comment:           chlorophyll from diatom phytoplankton component concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chldiat
 type:              real
 !----------------------------------
@@ -1255,7 +1255,7 @@ comment:           chlorophyll concentration from the diazotrophic phytoplankton
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chldiaz
 type:              real
 !----------------------------------
@@ -1277,7 +1277,7 @@ comment:           chlorophyll concentration from the calcite-producing phytopla
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chlcalc
 type:              real
 !----------------------------------
@@ -1299,7 +1299,7 @@ comment:           chlorophyll concentration from the picophytoplankton (<2 um) 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chlpico
 type:              real
 !----------------------------------
@@ -1321,7 +1321,7 @@ comment:           chlorophyll from additional phytoplankton component concentra
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          chlmisc
 type:              real
 !----------------------------------
@@ -1343,7 +1343,7 @@ comment:           sum of particulate organic nitrogen component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          pon
 type:              real
 !----------------------------------
@@ -1365,7 +1365,7 @@ comment:           sum of particulate organic phosphorus component concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          pop
 type:              real
 !----------------------------------
@@ -1387,7 +1387,7 @@ comment:           sum of particulate organic iron component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          bfe
 type:              real
 !----------------------------------
@@ -1409,7 +1409,7 @@ comment:           sum of particulate silica component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          bsi
 type:              real
 !----------------------------------
@@ -1431,7 +1431,7 @@ comment:           sum of phytoplankton nitrogen component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phyn
 type:              real
 !----------------------------------
@@ -1453,7 +1453,7 @@ comment:           sum of phytoplankton phosphorus components
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phyp
 type:              real
 !----------------------------------
@@ -1475,7 +1475,7 @@ comment:           sum of phytoplankton iron component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          phyfe
 type:              real
 !----------------------------------
@@ -1497,7 +1497,7 @@ comment:           sum of phytoplankton silica component concentrations
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          physi
 type:              real
 !----------------------------------
@@ -1519,7 +1519,7 @@ comment:           dimethyl sulphide concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          dms
 type:              real
 !----------------------------------
@@ -1541,7 +1541,7 @@ comment:           carbonate ion concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          co3
 type:              real
 !----------------------------------
@@ -1563,7 +1563,7 @@ comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          co3satcalc
 type:              real
 !----------------------------------
@@ -1585,7 +1585,7 @@ comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude depth0m time
+dimensions:        longitude latitude time depth0m
 out_name:          co3satarag
 type:              real
 !----------------------------------

@@ -4,7 +4,7 @@ table_id: Table grids
 cmor_version: 2.0         ! version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5       ! project id
-table_date:   11 August 2010 ! date this table was constructed
+table_date:   19 September 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -78,6 +78,22 @@ parameter: false_northing
 coordinates: rlon rlat
 !
 !============
+axis_entry: site
+!============
+!
+!------------
+!
+! Axis attributes:
+!----------------------------------
+out_name:         site
+units:            1
+long_name:        site index
+type: 		  integer
+index_only:       ok
+!----------------------------------	
+!
+!
+!============
 axis_entry: i_index
 !============
 !
@@ -88,6 +104,7 @@ axis_entry: i_index
 out_name:         i
 units:            1
 long_name:        cell index along first dimension
+type: 		  integer
 !----------------------------------	
 !
 !
@@ -102,6 +119,7 @@ axis_entry: j_index
 out_name:         j
 units:            1
 long_name:        cell index along second dimension
+type: 		  integer
 !----------------------------------	
 !
 !
@@ -116,6 +134,7 @@ axis_entry: k_index
 out_name:         k
 units:            1
 long_name:        cell index along third dimension
+type: 		  integer
 !----------------------------------	
 !
 !============
@@ -129,6 +148,7 @@ axis_entry: l_index
 out_name:         l
 units:            1
 long_name:        cell index along fourth dimension
+type: 		  integer
 !----------------------------------	
 !
 !============
@@ -142,6 +162,7 @@ axis_entry: m_index
 out_name:         m
 units:            1
 long_name:        cell index along fifth dimension
+type: 		  integer
 !----------------------------------	
 !
 !============
