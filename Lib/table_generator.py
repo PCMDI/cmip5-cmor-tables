@@ -155,6 +155,9 @@ def process_a_line(line):
         print
     else:
         debug=False
+    iadd = line.find("$$$$add at surface$$$")
+    if iadd>-1:
+        line=line.replace("$$$$add at surface$$$","")
     line=line.replace("\r\n","\n") # dos character 
     line = line.replace('""','"$$$')
     sps = line .split(",")
@@ -176,10 +179,10 @@ def process_a_line(line):
             else:
                 s = ','.join([s,s2[:-1]])                
         sp.append(s.replace("$$$",'"'))
-    return sp
+    return sp,iadd
 
 
-def process_template(tmpl,cnames,cols,voids={},minmax={}):
+def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
     F = genutil.StringConstructor(tmpl)
 
     keys = F.keys()
@@ -196,6 +199,8 @@ def process_template(tmpl,cnames,cols,voids={},minmax={}):
             if  val.strip()=='time2':
                 setattr(F,"climatology","yes")
                 if "climatology" in keys: keys.remove("climatology")
+            if c=="long name" and iadd!=-1:
+                val+=" at Surface"
             if val.strip()!="":
                 ## if c=="valid max":
                 ##     print 'ok we havew a val max predefined at:',cols
@@ -347,7 +352,7 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         interval = float(tbnm[2:tbnm.find("min")])/1440.
     else:
         interval = 0.
-    print 'Interval:',interval,'________________________'
+    #print 'Interval:',interval,'________________________'
     print >> fo, """approx_interval:  %f     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.""" % interval
@@ -366,7 +371,7 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
     addLines = False
     generic_levels = []
     for l in dlines[1:]:
-        sp = process_a_line(l)
+        sp, iadd = process_a_line(l)
         foundnm = False
         for snm in sp[0].split(","):
             if tbnm == snm.strip():
@@ -401,16 +406,17 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
     if generic_levels!=[]:
         print >> fo, "\ngeneric_levels:   %s" % " ".join(generic_levels)
     for l in dlines[1:]:
-        sp = process_a_line(l)
+        sp, iadd = process_a_line(l)
         foundnm = False
         for snm in sp[0].split(","):
             if tbnm == snm.strip():
                 foundnm  = True
+        if iadd!=-1: print 'iadd is:',iadd
         if foundnm:
             if l.find("alevel")>-1 or l.find("alev1")>-1 or l.find("alevhalf")>-1 or l.find("olevel")>-1:
                 pass
             else:
-                print >> fo, process_template(axis_tmpl,cnms,sp)
+                print >> fo, process_template(axis_tmpl,cnms,sp,iadd=iadd)
     if addLines is True:
         print 'adding:',file_add,'to',tbnm
         tmpf=open(file_add)
@@ -423,8 +429,8 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         lns=lns.replace("zlevel",zlevel_name)
         if tbnm.find("Oclim")>-1:
             lns=lns.replace("dimensions:      longitude latitude time","dimensions:      longitude latitude time2")
-        if tbnm.find("cfSite")>-1:
-            lns=lns.replace("longitude latitude","site")
+##         if tbnm.find("cfSite")>-1:
+##             lns=lns.replace("longitude latitude","site")
         print >> fo, lns
 
     return fo
@@ -452,13 +458,13 @@ def create_table(table_file, dims_file,minmax={}):
                     if len(a_line)==0:
                         continue
                     if a_line[-1]!=',' : a_line=a_line+','
-                    sp = process_a_line(a_line)
+                    sp, iadd = process_a_line(a_line)
                     ## for i2 in range(len(sp)):
                     ##     if sp[i2]=='tasmax' : print i2,sp[i2]
                     if len(sp)>15 and 'time' in sp[16]:
                         sp[16]=sp[16].replace('time','time1')
-                        if table_file[-11:-4]=='cfSites':
-                            sp[16]=sp[16].replace("longitude latitude","site")
+##                         if table_file[-11:-4]=='cfSites':
+##                             sp[16]=sp[16].replace("longitude latitude","site")
                         ## print 'Replaced to:',sp[16]
                     for i in range(len(sp)):
                         if sp[i].find(",")>-1:
@@ -474,13 +480,18 @@ def create_table(table_file, dims_file,minmax={}):
             dlines2=dlines2+add_lines
         elif dlines[i].find("include Oyr")>-1:
             f=open("Tables_csv/Oyr_tracer.csv")
-            dlines2=dlines2+f.readlines()
+            addedlines=[]
+            for l in f.xreadlines():
+                l=l.replace("olevel time","time depth0m")
+                l=l.replace("olevel","depth0m")
+                l+='$$$$add at surface$$$'
+                addedlines.append(l)
+            dlines2=dlines2+addedlines
         else:
             dlines2.append(dlines[i])
     dlines=dlines2
     for l in dlines:
-        #print 'processing:',l.strip()
-        sp = process_a_line(l)
+        sp,iadd = process_a_line(l)
         if 0<=sp[0].find("CMOR Table")<=1 and foundnm == False: # line that will give us the table name
             i=1
             while sp[i].strip()=="":
@@ -501,7 +512,7 @@ def create_table(table_file, dims_file,minmax={}):
                 print 'Creating table:',tbnm
                 fo = create_table_header(tbnm,table_file,dims_file,fqcy)
                 tables[tbnm]=fo
-            print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmax)
+            print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmax,iadd=iadd)
     print 'Created tables:',tables.keys()
                 
         

@@ -28,7 +28,7 @@ The rest of the daily mean fields on this spreadsheet should be collected only f
 ,,,pre-industrial controls,"20 years, preferably corresponding to years 1986-2005 of the historical run",,,,,,,,,,,,,,,,,,
 ,,,historical,Jan 1950 -- Dec 2005,,,,,,,,,,,,,,,,,,
 ,,,future simulations driven by RCP concentrations or emissions,"only years 2006-2100, 2181-2200, and 2281-2300",,,,,,,,,,,,,,,,,,
-,,,AMIP,all years,,,,,,,,,,,,,,,,,,
+,,,AMIP & 2030 time-slice run,all years,,,,,,,,,,,,,,,,,,
 "CMOR Table day: 2-D daily-mean atmospheric and surface fields (All fields should be reported on the atmospheric grid except (as noted below) the sea ice fields, which should be reported on the ocean grid.)",,,,,,,,,,,,,,,,,,,,,,
 priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,Moisture in Upper 0.1 m of Soil Column,kg m-2,Compute the mass of water in all phases in the upper 0.1 meters of soil.,,mrsos,moisture_content_of_soil_layer,,kg m-2,time: mean area: mean where land ,,,,,,real,longitude latitude time sdepth1,mrsos,land,,area: areacella,,
@@ -64,8 +64,8 @@ priority,long name,units ,comment ,questions,output variable name ,standard name
 1.0,Relative Humidity,%,"This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.",,hur,relative_humidity,,%,time: mean,,,,,,real,longitude latitude plev8 time,hur,atmos,,area: areacella,,
 1.0,Specific Humidity,1.0,,,hus,specific_humidity,,1.0,time: mean,,,,,,real,longitude latitude plev8 time,hus,atmos,,area: areacella,,
 1.0,omega (=dp/dt),Pa s-1,"commonly referred to as ""omega"", this represents the vertical component of velocity in pressure coordinates (positive down)",,wap,lagrangian_tendency_of_air_pressure,,Pa s-1,time: mean,,,,,,real,longitude latitude plev8 time,wap,atmos,,area: areacella,,
-1.0,Northward Wind,m s-1 ,,,va,northward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude plev8 time,va,atmos,,area: areacella,,
-1.0,Eastward Wind,m s-1 ,,,ua,eastward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude plev8 time,ua,atmos,,area: areacella,,
+1.0,Northward Wind,m s-1 ,,,va,northward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude plev8 time,va,atmos,,,,
+1.0,Eastward Wind,m s-1 ,,,ua,eastward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude plev8 time,ua,atmos,,,,
 2.0,Geopotential Height,m,,,zg,geopotential_height,,m,time: mean,,,,,,real,longitude latitude plev8 time,zg,atmos,,area: areacella,,
 
 

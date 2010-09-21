@@ -46,8 +46,8 @@ priority,long name,units ,comment ,questions,output variable name ,standard name
 1.0,CALIPSO High Level Cloud Fraction ,%,,,clhcalipso,cloud_area_fraction_in_atmosphere_layer,,%,time: mean,,,,,,real,longitude latitude time,clhcalipso,atmos,,area: areacella,,
 "In CMOR Table  cfDay: ""CFMIP daily 3D"" --daily mean 3-D fields on model levels plus CALIPSO and ISCCP cloud fractions",,,,,,,,,,,,,,,,,,,,,,
 priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
-1.0,Eastward Wind,m s-1 ,,,ua,eastward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude alevel time,ua,atmos,,area: areacella,,
-1.0,Northward Wind,m s-1,,,va,northward_wind,,m s-1,time: mean,,,,,,real,longitude latitude alevel time,va,atmos,,area: areacella,,
+1.0,Eastward Wind,m s-1 ,,,ua,eastward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude alevel time,ua,atmos,,,,
+1.0,Northward Wind,m s-1,,,va,northward_wind,,m s-1,time: mean,,,,,,real,longitude latitude alevel time,va,atmos,,,,
 1.0,Air Temperature,K,,,ta,air_temperature,,K,time: mean,,,,,,real,longitude latitude alevel time,ta,atmos,,area: areacella,,
 1.0,Specific Humidity,1.0,,,hus,specific_humidity,,1.0,time: mean,,,,,,real,longitude latitude alevel time,hus,atmos,,area: areacella,,
 1.0,omega (=dp/dt),Pa s-1,"commonly referred to as ""omega"", this represents the vertical component of velocity in pressure coordinates (positive down)",,wap,lagrangian_tendency_of_air_pressure,,Pa s-1,time: mean,,,,,,real,longitude latitude alevel time,wap,atmos,,area: areacella,,

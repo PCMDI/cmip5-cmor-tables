@@ -4,7 +4,7 @@ The 3-hourly data should be collected only for the following experiments and yea
 ,,,experiment,time-period requested,,,,,,,,,,,,,,,,,,
 ,,,decadal hindcasts/forecasts,all years,,,,,,,,,,,,,,,,,,
 ,,,historical,Jan 1960 - Dec 2005,,,,,,,,,,,,,,,,,,
-,,,AMIP,all years,,,,,,,,,,,,,,,,,,
+,,,AMIP & future 2030 time-slice,all years,,,,,,,,,,,,,,,,,,
 ,,,future simulations driven by RCP concentrations or emissions,"Jan 2026 - Dec 2045, Jan 2081-Dec 2100, 2181-2200, and 2281-2300",,,,,,,,,,,,,,,,,,
 ,,,pre-industrial control,30 years (ideally the years corresponding to the last 30 years of abrupt 4xCO2 run),,,,,,,,,,,,,,,,,,
 ,,,1 percent per year CO2,last 30 years,,,,,,,,,,,,,,,,,,
