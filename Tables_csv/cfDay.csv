@@ -12,7 +12,7 @@ CMOR Table  cfDay: CFMIP Daily-Mean Cloud Diagnostic Fields,,,,, cfDay,day,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
-priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
+priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,ext_cell_measures,flag_values,flag_meanings
 1.0,Surface Air Pressure,Pa,,,ps,surface_air_pressure,,Pa,time: mean,,,,,,real,longitude latitude time,ps,atmos,,area: areacella,,
 1.0,TOA Incident Shortwave Radiation,W m-2,,,rsdt,toa_incoming_shortwave_flux,,W m-2,time: mean,,,,,down,real,longitude latitude time,rsdt,atmos,,area: areacella,,
 1.0,TOA Outgoing Shortwave Radiation,W m-2,,,rsut,toa_outgoing_shortwave_flux,,W m-2,time: mean,,,,,up,real,longitude latitude time,rsut,atmos,,area: areacella,,
@@ -45,7 +45,7 @@ priority,long name,units ,comment ,questions,output variable name ,standard name
 1.0,CALIPSO Mid Level Cloud Fraction ,%,,,clmcalipso,cloud_area_fraction_in_atmosphere_layer,,%,time: mean,,,,,,real,longitude latitude time,clmcalipso,atmos,,area: areacella,,
 1.0,CALIPSO High Level Cloud Fraction ,%,,,clhcalipso,cloud_area_fraction_in_atmosphere_layer,,%,time: mean,,,,,,real,longitude latitude time,clhcalipso,atmos,,area: areacella,,
 "In CMOR Table  cfDay: ""CFMIP daily 3D"" --daily mean 3-D fields on model levels plus CALIPSO and ISCCP cloud fractions",,,,,,,,,,,,,,,,,,,,,,
-priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
+priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,ext_cell_measures,flag_values,flag_meanings
 1.0,Eastward Wind,m s-1 ,,,ua,eastward_wind,,m s-1 ,time: mean,,,,,,real,longitude latitude alevel time,ua,atmos,,,,
 1.0,Northward Wind,m s-1,,,va,northward_wind,,m s-1,time: mean,,,,,,real,longitude latitude alevel time,va,atmos,,,,
 1.0,Air Temperature,K,,,ta,air_temperature,,K,time: mean,,,,,,real,longitude latitude alevel time,ta,atmos,,area: areacella,,

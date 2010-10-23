@@ -1,3 +1,8 @@
+2010-10-22 : Table replaced cell_measures with ext_cell_measures to be CF compliant
+2010-10-19 : added required attribute parent_experiment_rip
+2010-10-19 : restored "site" in cfSite
+2010-10-19 : removed some historical expt_id_ok
+2010-10-19 : 6hrPlev new valid min/max
 2010-09-15 : updated Omon longname for var coming from Oyr, also changed olevel to depth0m for these
 2010-08-23 : some tweaks from Karl, releasing them along with CMOR 2.1
 2010-08-04 : added x/y grid with units of "degrees"

@@ -3,10 +3,10 @@ modeling_realm: atmos
 
 frequency: 6hr
 
-cmor_version: 2.0.1         ! version of CMOR that can read this table
+cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 September 2010 ! date this table was constructed
+table_date:   22 October 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -184,8 +168,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          ua
 type:              real
-valid_min:         -68.65
-valid_max:         136.6
+valid_min:         -90.0
+valid_max:         145.0
 ok_min_mean_abs:   1.101
 ok_max_mean_abs:   22.42
 !----------------------------------
@@ -208,8 +192,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          va
 type:              real
-valid_min:         -71.1
-valid_max:         69.93
+valid_min:         -80.0
+valid_max:         80.0
 ok_min_mean_abs:   0.9886
 ok_max_mean_abs:   4.679
 !----------------------------------
@@ -224,7 +208,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     air_temperature
 units:             K
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Air Temperature
 comment:           on the following pressure levels: 850, 500, 250 hPa
 !----------------------------------
@@ -233,8 +217,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          ta
 type:              real
-valid_min:         157.1
-valid_max:         326.4
+valid_min:         144.0
+valid_max:         330.0
 ok_min_mean_abs:   200.2
 ok_max_mean_abs:   289.9
 !----------------------------------
@@ -249,7 +233,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     air_pressure_at_sea_level
 units:             Pa
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Sea Level Pressure
 !----------------------------------
 ! Additional variable information:
@@ -257,8 +241,8 @@ long_name:         Sea Level Pressure
 dimensions:        longitude latitude time1
 out_name:          psl
 type:              real
-valid_min:         9.477e+04
-valid_max:         1.124e+05
+valid_min:         92500.0
+valid_max:         113000.0
 ok_min_mean_abs:   1.003e+05
 ok_max_mean_abs:   1.017e+05
 !----------------------------------

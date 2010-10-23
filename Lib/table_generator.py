@@ -3,7 +3,7 @@ import sys,time,os,genutil,numpy
 
 prefix = "CMIP5"
 
-general = """cmor_version: 2.0.1         ! version of CMOR that can read this table
+general = """cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   %s  ! project id
 table_date:   %s ! date this table was constructed
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -74,6 +58,24 @@ expt_id_ok: 'AMIP plus 4K anomaly' 'amip4K'
 """ % (prefix,time.strftime("%d %B %Y"))
 
 
+olexps="""
+expt_id_ok: 'anthropogenic-only' 'historicalAnt'
+expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
+expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
+expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
+expt_id_ok: 'tropospheric ozone only' 'historicalTO'
+expt_id_ok: 'stratospheric ozone' 'historicalSO'
+expt_id_ok: 'ozone only' 'historicalOz'
+expt_id_ok: 'land-use change only' 'historicalLU'
+expt_id_ok: 'solar irradiance only' 'historicalSl'
+expt_id_ok: 'volcanic aerosol only' 'historicalVl'
+expt_id_ok: 'sea salt only' 'historicalSS'
+expt_id_ok: 'dust' 'historicalDs'
+expt_id_ok: 'black carbon only' 'historicalBC'
+expt_id_ok: 'mineral dust only' 'historicalMD'
+expt_id_ok: 'organic carbon only' 'historicalOC'
+expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
+"""
 
 #realm:	      %s
 #table_id:     Table %s    ! table id
@@ -126,7 +128,7 @@ modeling_realm:    %(realm)
 standard_name:     %(standard name)
 units:             %(unformatted units)
 cell_methods:      %(cell_methods)
-cell_measures:      %(cell_measures)
+ext_cell_measures: %(ext_cell_measures)
 long_name:         %(long name)
 comment:           %(comment)
 !----------------------------------
@@ -429,8 +431,8 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         lns=lns.replace("zlevel",zlevel_name)
         if tbnm.find("Oclim")>-1:
             lns=lns.replace("dimensions:      longitude latitude time","dimensions:      longitude latitude time2")
-##         if tbnm.find("cfSite")>-1:
-##             lns=lns.replace("longitude latitude","site")
+        if tbnm.find("cfSite")>-1:
+            lns=lns.replace("longitude latitude","site")
         print >> fo, lns
 
     return fo
@@ -463,8 +465,8 @@ def create_table(table_file, dims_file,minmax={}):
                     ##     if sp[i2]=='tasmax' : print i2,sp[i2]
                     if len(sp)>15 and 'time' in sp[16]:
                         sp[16]=sp[16].replace('time','time1')
-##                         if table_file[-11:-4]=='cfSites':
-##                             sp[16]=sp[16].replace("longitude latitude","site")
+                        if table_file[-11:-4]=='cfSites':
+                            sp[16]=sp[16].replace("longitude latitude","site")
                         ## print 'Replaced to:',sp[16]
                     for i in range(len(sp)):
                         if sp[i].find(",")>-1:

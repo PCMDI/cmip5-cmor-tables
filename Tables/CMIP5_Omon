@@ -3,10 +3,10 @@ modeling_realm: ocean
 
 frequency: mon
 
-cmor_version: 2.0.1         ! version of CMOR that can read this table
+cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 September 2010 ! date this table was constructed
+table_date:   22 October 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -677,7 +661,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_inorganic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Inorganic Carbon Concentration at Surface
 comment:           Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration
 !----------------------------------
@@ -699,7 +683,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_organic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Organic Carbon Concentration at Surface
 comment:           Dissolved organic carbon concentration
 !----------------------------------
@@ -721,7 +705,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Carbon Concentration at Surface
 comment:           sum of phytoplankton carbon component concentrations.  In most (all?) cases this is the sum of phycdiat and phycmisc (i.e., ""Diatom Carbon Concentration"" and ""Non-Diatom Phytoplankton Carbon Concentration""
 !----------------------------------
@@ -743,7 +727,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Zooplankton Carbon Concentration at Surface
 comment:           sum of zooplankton carbon component concentrations
 !----------------------------------
@@ -765,7 +749,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Bacterial Carbon Concentration at Surface
 comment:           sum of bacterial carbon component concentrations
 !----------------------------------
@@ -787,7 +771,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Detrital Organic Carbon Concentration at Surface
 comment:           sum of detrital organic carbon component concentrations
 !----------------------------------
@@ -809,7 +793,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Calcite Concentration at Surface
 comment:           sum of particulate calcite component concentrations (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
@@ -831,7 +815,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Aragonite Concentration at Surface
 comment:           sum of particulate aragonite components (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
@@ -853,7 +837,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Diatoms expressed as Carbon in Sea Water at Surface
 comment:           carbon from the diatom phytoplankton component concentration alone
 !----------------------------------
@@ -875,7 +859,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
@@ -897,7 +881,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Calcareous Phytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from calcareous (calcite-producing) phytoplankton component alone
 !----------------------------------
@@ -919,7 +903,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Picophytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
@@ -941,7 +925,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Miscellaneous Phytoplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon concentration from additional phytoplankton component alone
 !----------------------------------
@@ -963,7 +947,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Microzooplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon  concentration from the microzooplankton (<20 um) component alone
 !----------------------------------
@@ -985,7 +969,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Mesozooplankton expressed as Carbon in Sea Water at Surface
 comment:           carbon  concentration from mesozooplankton (20-200 um) component alone
 !----------------------------------
@@ -1007,7 +991,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Other Zooplankton Carbon Concentration at Surface
 comment:           carbon from additional zooplankton component concentrations alone (e.g. Micro, meso).  Since the models all have different numbers of components, this variable has been included to provide a check for intercomparison between models since some phytoplankton groups are supersets.
 !----------------------------------
@@ -1029,7 +1013,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sea_water_alkalinity_expressed_as_mole_equivalent
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Total Alkalinity at Surface
 comment:           total alkalinity equivalent concentration (including carbonate, nitrogen, silicate, and borate components)
 !----------------------------------
@@ -1051,7 +1035,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sea_water_ph_reported_on_total_scale
 units:             1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         pH at Surface
 comment:           negative log of hydrogen ion concentration with the concentration expressed as mol H kg-1.
 !----------------------------------
@@ -1073,7 +1057,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_molecular_oxygen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolve Oxygen Concentration at Surface
 comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
@@ -1095,7 +1079,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_nitrate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Nitrate Concentration at Surface
 comment:           dissolved nitrate concentration in sea water
 !----------------------------------
@@ -1117,7 +1101,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_ammonium_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Ammonium Concentration at Surface
 comment:           dissolved ammonium concentration in sea water
 !----------------------------------
@@ -1139,7 +1123,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phosphate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Phosphate Concentration at Surface
 comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
@@ -1161,7 +1145,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Iron Concentration at Surface
 comment:           dissolved iron concentration in sea water
 !----------------------------------
@@ -1183,7 +1167,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_silicate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Silicate Concentration at Surface
 comment:           dissolved silicate concentration in sea water
 !----------------------------------
@@ -1205,7 +1189,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Total Chlorophyll Mass Concentration at Surface
 comment:           sum of chlorophyll from all phytoplankton group concentrations.  In most models this is equal to chldiat+chlmisc, that is the sum of ""Diatom Chlorophyll Mass Concentration"" plus ""Other Phytoplankton Chlorophyll Mass Concentration""
 !----------------------------------
@@ -1227,7 +1211,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_diatoms_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Diatom Chlorophyll Mass Concentration at Surface
 comment:           chlorophyll from diatom phytoplankton component concentration alone
 !----------------------------------
@@ -1249,7 +1233,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_diazotrophs_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Diazotrophs expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
@@ -1271,7 +1255,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_calcareous_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Calcareous Phytoplankton expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the calcite-producing phytoplankton component alone
 !----------------------------------
@@ -1293,7 +1277,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_picophytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Picophytoplankton expressed as Chlorophyll in Sea Water at Surface
 comment:           chlorophyll concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
@@ -1315,7 +1299,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_miscellaneous_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Other Phytoplankton Chlorophyll Mass Concentration at Surface
 comment:           chlorophyll from additional phytoplankton component concentrations alone
 !----------------------------------
@@ -1337,7 +1321,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Organic Nitrogen Concentration at Surface
 comment:           sum of particulate organic nitrogen component concentrations
 !----------------------------------
@@ -1359,7 +1343,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Organic Phosphorus Concentration at Surface
 comment:           sum of particulate organic phosphorus component concentrations
 !----------------------------------
@@ -1381,7 +1365,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Biogenic Iron Concentration at Surface
 comment:           sum of particulate organic iron component concentrations
 !----------------------------------
@@ -1403,7 +1387,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Biogenic Silica Concentration at Surface
 comment:           sum of particulate silica component concentrations
 !----------------------------------
@@ -1425,7 +1409,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Nitrogen Concentration at Surface
 comment:           sum of phytoplankton nitrogen component concentrations
 !----------------------------------
@@ -1447,7 +1431,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Phosphorus Concentration at Surface
 comment:           sum of phytoplankton phosphorus components
 !----------------------------------
@@ -1469,7 +1453,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Iron Concentration at Surface
 comment:           sum of phytoplankton iron component concentrations
 !----------------------------------
@@ -1491,7 +1475,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Silica Concentration at Surface
 comment:           sum of phytoplankton silica component concentrations
 !----------------------------------
@@ -1513,7 +1497,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dimethyl_sulfide_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dimethyl Sulphide Concentration at Surface
 comment:           dimethyl sulphide concentration
 !----------------------------------
@@ -1535,7 +1519,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water at Surface
 comment:           carbonate ion concentration
 !----------------------------------
@@ -1557,7 +1541,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_at_saturation
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation at Surface
 comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
@@ -1579,7 +1563,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_at_saturation
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation at Surface
 comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
@@ -1601,7 +1585,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_phytoplankton
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Primary Organic Carbon Production by All Types of Phytoplankton
 comment:           Vertically integrated total primary (organic carbon) production by phytoplankton.  This should equal the sum of intpdiat+intpphymisc, but those individual components may be unavailable in some models.
 !----------------------------------
@@ -1623,7 +1607,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_due_to_nitrate_utilization
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Primary Organic Carbon Production by Phytoplankton Based on Nitrate Uptake Alone
 comment:           Vertically integrated primary (organic carbon) production by phytoplankton based on nitrate uptake alone
 !----------------------------------
@@ -1645,7 +1629,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_diatoms
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Primary Organic Carbon Production by Diatoms
 comment:           Vertically integrated primary (organic carbon) production by the diatom phytoplankton component alone
 !----------------------------------
@@ -1667,7 +1651,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_diazotrophs
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Net Primary Mole Productivity of Carbon by Diazotrophs
 !----------------------------------
 ! Additional variable information:
@@ -1688,7 +1672,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_calcareous_phytoplankton
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Net Primary Mole Productivity of Carbon by Calcareous Phytoplankton
 !----------------------------------
 ! Additional variable information:
@@ -1709,7 +1693,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_picophytoplankton
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Net Primary Mole Productivity of Carbon by Picophytoplankton
 !----------------------------------
 ! Additional variable information:
@@ -1730,7 +1714,7 @@ modeling_realm:    ocnBgchem
 standard_name:     net_primary_mole_productivity_of_carbon_by_miscellaneous_phytoplankton
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Primary Organic Carbon Production by Other Phytoplankton
 comment:           Vertically integrated total primary (organic carbon) production by other phytoplankton components alone
 !----------------------------------
@@ -1752,7 +1736,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_iron_due_to_biological_production
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Iron Production
 comment:           Vertically integrated biogenic iron production
 !----------------------------------
@@ -1774,7 +1758,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_silicon_due_to_biological_production
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Silica Production
 comment:           Vertically integrated biogenic silica production
 !----------------------------------
@@ -1796,7 +1780,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_calcite_expressed_as_carbon_due_to_biological_production
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Calcite Production
 comment:           Vertically integrated calcite production
 !----------------------------------
@@ -1818,7 +1802,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_aragonite_expressed_as_carbon_due_to_biological_production
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Aragonite Production
 comment:           Vertically integrated aragonite production
 !----------------------------------
@@ -1840,7 +1824,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_organic_matter_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Flux of Particle Organic Carbon at 100M
 comment:           sinking flux of organic carbon at 100m
 !----------------------------------
@@ -1863,7 +1847,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_iron_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Flux of Particulate Iron at 100M
 comment:           sinking flux of biogenic and scavenged iron at 100m
 !----------------------------------
@@ -1886,7 +1870,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_silicon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Flux of Particulate Silica at 100M
 comment:           sinking flux of biogenic silica at 100m
 !----------------------------------
@@ -1909,7 +1893,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_calcite_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Flux of Calcite at 100M
 comment:           sinking flux of calcite at 100m
 !----------------------------------
@@ -1932,7 +1916,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_aragonite_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Flux of Aragonite at 100M
 comment:           sinking flux of aragonite at 100m
 !----------------------------------
@@ -1955,7 +1939,7 @@ modeling_realm:    ocnBgchem
 standard_name:     ocean_mass_content_of_dissolved_inorganic_carbon
 units:             kg m-2
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Dissolved Inorganic Carbon Content
 comment:           Vertically integrated DIC
 !----------------------------------
@@ -1977,7 +1961,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_partial_pressure_of_carbon_dioxide_in_sea_water
 units:             Pa
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Aqueous Partial Pressure of CO2
 comment:           Surface aqueous partial pressure of CO2
 !----------------------------------
@@ -1999,7 +1983,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_carbon_dioxide_partial_pressure_difference_between_sea_water_and_air
 units:             Pa
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Delta PCO2
 comment:           Difference between atmospheric and oceanic partial pressure of CO2 (positive meaning ocean > atmosphere)
 !----------------------------------
@@ -2021,7 +2005,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_molecular_oxygen_partial_pressure_difference_between_sea_water_and_air
 units:             Pa
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Delta PO2
 comment:           Difference between atmospheric and oceanic partial pressure of O2 (positive meaning ocean > atmosphere)
 !----------------------------------
@@ -2043,7 +2027,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_downward_mass_flux_of_carbon_dioxide_expressed_as_carbon
 units:             kg m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward CO2 Flux
 comment:           Gas exchange flux of CO2 (positive into ocean)
 !----------------------------------
@@ -2066,7 +2050,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_downward_mole_flux_of_molecular_oxygen
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward O2 Flux
 comment:           Gas exchange flux of O2 (positive into ocean)
 !----------------------------------
@@ -2089,7 +2073,7 @@ modeling_realm:    ocnBgchem
 standard_name:     surface_upward_mole_flux_of_dimethyl_sulfide
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Upward DMS Flux
 comment:           Gas exchange flux of DMS (positive into atmosphere)
 !----------------------------------
@@ -2112,7 +2096,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_carbon_due_to_runoff_and_sediment_dissolution
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Flux of Carbon Into Ocean Surface by Runoff and Sediment Dissolution
 comment:           Carbon supply to ocean through runoff and sediment dissolution (neglects gas exchange)
 !----------------------------------
@@ -2134,7 +2118,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_carbon_due_to_sedimentation
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Carbon Flux at Ocean Bottom
 comment:           Carbon loss to sediments
 !----------------------------------
@@ -2157,7 +2141,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_fixation
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Nitrogen Fixation Rate in Ocean
 comment:           Vertically integrated nitrogen fixation
 !----------------------------------
@@ -2179,7 +2163,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_deposition_and_fixation_and_runoff
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward Net Flux of Nitrogen
 comment:           N supply through deposition flux onto sea surface, nitrogen fixation, and runoff
 !----------------------------------
@@ -2202,7 +2186,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Nitrogen Loss to Sediments and through Denitrification
 comment:           N loss to sediment and water column denitrification
 !----------------------------------
@@ -2224,7 +2208,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_iron_due_to_deposition_and_runoff_and_sediment_dissolution
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward Net Flux of Iron
 comment:           Iron supply through deposition flux onto sea surface, runoff, coasts, sediments, etc
 !----------------------------------
@@ -2247,7 +2231,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_iron_due_to_sedimentation
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Iron Loss to Sediments
 comment:           Iron loss to sediments
 !----------------------------------
@@ -2269,7 +2253,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_shallowest_local_minimum_in_vertical_profile
 units:             mol m-3
 cell_methods:      time: mean area: where sea depth: minimum
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Oxygen Minimum Concentration
 comment:           Vertical minimum concentration of dissolved oxygen gas
 !----------------------------------
@@ -2291,7 +2275,7 @@ modeling_realm:    ocnBgchem
 standard_name:     depth_at_shallowest_local_minimum_in_vertical_profile_of_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water
 units:             m
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Depth of Oxygen Minimum Concentration
 comment:           Depth of vertical minimum concentration of dissolved oxygen gas (if two, then the shallower)
 !----------------------------------
@@ -2313,7 +2297,7 @@ modeling_realm:    ocnBgchem
 standard_name:     minimum_depth_of_calcite_undersaturation_in_sea_water
 units:             m
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Calcite Saturation Depth
 comment:           Depth of calcite saturation horizon (0 if < surface, ""missing"" if > bottom, if two, then the shallower)
 !----------------------------------
@@ -2335,7 +2319,7 @@ modeling_realm:    ocnBgchem
 standard_name:     minimum_depth_of_aragonite_undersaturation_in_sea_water
 units:             m
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Aragonite Saturation Depth
 comment:           Depth of aragonite saturation horizon (0 if < surface, ""missing""  if > bottom, if two, then the shallower)
 !----------------------------------
@@ -2357,7 +2341,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Carbon
 comment:           Net time rate of change of dissolved inorganic carbon in upper 100m
 !----------------------------------
@@ -2379,7 +2363,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Nitrogen
 comment:           Net time rate of change of nitrogen nutrients (e.g. NO3+NH4) in upper 100m
 !----------------------------------
@@ -2401,7 +2385,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Phosphate
 comment:           vertical integral of net  time rate of change of phosphate in upper 100m
 !----------------------------------
@@ -2423,7 +2407,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_iron
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Iron
 comment:           vertical integral of net time rate of change of dissolved inorganic iron in upper 100m
 !----------------------------------
@@ -2445,7 +2429,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Silicate
 comment:           vertical integral of net time rate of change of dissolved inorganic silicate in upper 100m
 !----------------------------------
@@ -2467,7 +2451,7 @@ modeling_realm:    ocnBgchem
 standard_name:     integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Alkalinity
 comment:           vertical integral of net time rate of change of alkalinity in upper 100m
 !----------------------------------
@@ -2489,7 +2473,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Carbon due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic carbon in upper 100m
 !----------------------------------
@@ -2511,7 +2495,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Nitrogen due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of nitrogen nutrients (e.g. NO3+NH4) in upper 100m
 !----------------------------------
@@ -2533,7 +2517,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Phosphate due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of phosphate in upper 100m
 !----------------------------------
@@ -2555,7 +2539,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_iron_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Iron due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic iron in upper 100m
 !----------------------------------
@@ -2577,7 +2561,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Silicate due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic silicate in upper 100m
 !----------------------------------
@@ -2599,7 +2583,7 @@ modeling_realm:    ocnBgchem
 standard_name:     integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent_due_to_biological_processes
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rate of Change in Upper 100 m of Biological Alkalinity due to Biological Activity
 comment:           vertical integral of net biological terms in time rate of change of alkalinity in upper 100m
 !----------------------------------
@@ -2641,7 +2625,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_pressure_at_sea_floor
 units:             dbar 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Sea Water Pressure at Sea floor 
 !----------------------------------
 ! Additional variable information:
@@ -2662,7 +2646,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_pressure_at_sea_water_surface
 units:             dbar 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Sea Water Pressure at Sea Water Surface 
 !----------------------------------
 ! Additional variable information:
@@ -2703,7 +2687,7 @@ modeling_realm:    ocean
 standard_name:     sea_surface_height_above_geoid
 units:             m 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Sea Surface Height Above Geoid 
 !----------------------------------
 ! Additional variable information:
@@ -2728,7 +2712,7 @@ modeling_realm:    ocean
 standard_name:     square_of_sea_surface_height_above_geoid
 units:             m2
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Square of Sea Surface Height Above Geoid 
 !----------------------------------
 ! Additional variable information:
@@ -2817,7 +2801,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_mass_per_unit_area
 units:             kg m-2
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sea Water Mass Per Unit Area 
 !----------------------------------
 ! Additional variable information:
@@ -2838,7 +2822,7 @@ modeling_realm:    ocean
 standard_name:     cell_thickness
 units:             m 
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Ocean Model Cell Thickness 
 !----------------------------------
 ! Additional variable information:
@@ -2859,7 +2843,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_potential_temperature
 units:             K 
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sea Water Potential Temperature 
 !----------------------------------
 ! Additional variable information:
@@ -2904,7 +2888,7 @@ modeling_realm:    ocean
 standard_name:     sea_surface_temperature
 units:             K 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Sea Surface Temperature 
 comment:           "this may differ from ""surface temperature"" in regions of sea ice."
 !----------------------------------
@@ -2930,7 +2914,7 @@ modeling_realm:    ocean
 standard_name:     square_of_sea_surface_temperature
 units:             K2 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Square of Sea Surface Temperature 
 !----------------------------------
 ! Additional variable information:
@@ -2951,7 +2935,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_salinity
 units:             psu 
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sea Water Salinity 
 !----------------------------------
 ! Additional variable information:
@@ -2996,7 +2980,7 @@ modeling_realm:    ocean
 standard_name:     sea_surface_salinity
 units:             psu 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Sea Surface Salinity 
 !----------------------------------
 ! Additional variable information:
@@ -3017,7 +3001,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_potential_density
 units:             kg m-3
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sea Water Potential Density 
 !----------------------------------
 ! Additional variable information:
@@ -3042,7 +3026,7 @@ modeling_realm:    ocean
 standard_name:     sea_water_age_since_surface_contact
 units:             yr 
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sea Water Age Since Surface Contact 
 !----------------------------------
 ! Additional variable information:
@@ -3063,7 +3047,7 @@ modeling_realm:    ocean
 standard_name:     moles_of_cfc11_per_unit_mass_in_sea_water
 units:             mol kg-1 
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Moles Per Unit Mass of CFC-11 in Sea Water 
 !----------------------------------
 ! Additional variable information:
@@ -3084,7 +3068,7 @@ modeling_realm:    ocean
 standard_name:     ocean_barotropic_mass_streamfunction
 units:             kg s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Ocean Barotropic Mass Streamfunction 
 comment:           differs from CMIP3 because it includes mass.
 !----------------------------------
@@ -3106,7 +3090,7 @@ modeling_realm:    ocean
 standard_name:     ocean_mixed_layer_thickness_defined_by_sigma_t
 units:             m 
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Ocean Mixed Layer Thickness Defined by Sigma T 
 !----------------------------------
 ! Additional variable information:
@@ -3127,7 +3111,7 @@ modeling_realm:    ocean
 standard_name:     square_of_ocean_mixed_layer_thickness_defined_by_sigma_t
 units:             m2
 cell_methods:      time: mean
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Square of Ocean Mixed Layer Thickness Defined by Sigma T 
 !----------------------------------
 ! Additional variable information:
@@ -3148,7 +3132,7 @@ modeling_realm:    ocean
 standard_name:     ocean_mixed_layer_thickness_defined_by_mixing_scheme
 units:             m 
 cell_methods:      time: maximum within days time: mean over days
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Mean Daily Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme 
 !----------------------------------
 ! Additional variable information:
@@ -3169,7 +3153,7 @@ modeling_realm:    ocean
 standard_name:     ocean_mixed_layer_thickness_defined_by_mixing_scheme
 units:             m 
 cell_methods:      time: maximum
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Monthly Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme 
 !----------------------------------
 ! Additional variable information:
@@ -3190,7 +3174,6 @@ modeling_realm:    ocean
 standard_name:     sea_water_x_velocity
 units:             m s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
 long_name:         Sea Water X Velocity 
 !----------------------------------
 ! Additional variable information:
@@ -3215,7 +3198,6 @@ modeling_realm:    ocean
 standard_name:     sea_water_y_velocity
 units:             m s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
 long_name:         Sea Water Y Velocity 
 !----------------------------------
 ! Additional variable information:
@@ -3240,7 +3222,7 @@ modeling_realm:    ocean
 standard_name:     upward_ocean_mass_transport
 units:             kg s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Upward Ocean Mass Transport 
 comment:           differs from CMIP3, which only had upward velocity.
 !----------------------------------
@@ -3262,7 +3244,7 @@ modeling_realm:    ocean
 standard_name:     square_of_upward_ocean_mass_transport
 units:             kg2 s-2
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Square of Upward Ocean Mass Transport 
 !----------------------------------
 ! Additional variable information:
@@ -3283,7 +3265,6 @@ modeling_realm:    ocean
 standard_name:     ocean_mass_x_transport
 units:             kg s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
 long_name:         Ocean Mass X Transport 
 !----------------------------------
 ! Additional variable information:
@@ -3304,7 +3285,6 @@ modeling_realm:    ocean
 standard_name:     ocean_mass_y_transport
 units:             kg s-1
 cell_methods:      time: mean
-cell_measures:      area: areacello volume: volcello
 long_name:         Ocean Mass Y Transport 
 !----------------------------------
 ! Additional variable information:
@@ -3493,7 +3473,6 @@ modeling_realm:    ocean
 standard_name:     northward_ocean_heat_transport
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Northward Ocean Heat Transport 
 comment:           For a model with a cartesian latxlon grid, this is the same as the ""Ocean Heat Y Transport"", listed a few lines down, which should in this case be omitted.  For other models, this transport should be approximated as the transport along zig-zag paths corresponding to latitudes with spacing between latitudes appropriate to the model's resolution.
 !----------------------------------
@@ -3515,7 +3494,6 @@ modeling_realm:    ocean
 standard_name:     northward_ocean_heat_transport_due_to_bolus_advection
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Northward Ocean Heat Transport due to Bolus Advection 
 comment:           see note above.
 !----------------------------------
@@ -3537,7 +3515,6 @@ modeling_realm:    ocean
 standard_name:     northward_ocean_heat_transport_due_to_diffusion
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Northward Ocean Heat Transport due to Diffusion 
 comment:           see note above.
 !----------------------------------
@@ -3559,7 +3536,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_x_transport
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat X Transport 
 !----------------------------------
 ! Additional variable information:
@@ -3580,7 +3556,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_y_transport
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat Y Transport 
 comment:           For a model with a cartesian latxlon grid, this is the same as the ""Northward Ocean Heat Transport"", listed a few lines above, which should be saved instead of this.
 !----------------------------------
@@ -3602,7 +3577,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_y_transport_due_to_bolus_advection
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat Y Transport due to Bolus Advection 
 comment:           see note above.
 !----------------------------------
@@ -3624,7 +3598,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_y_transport_due_to_diffusion
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat Y Transport due to Diffussion
 comment:           see note above.
 !----------------------------------
@@ -3646,7 +3619,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_x_transport_due_to_bolus_advection
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat X Transport due to Bolus Advection 
 !----------------------------------
 ! Additional variable information:
@@ -3667,7 +3639,6 @@ modeling_realm:    ocean
 standard_name:     ocean_heat_x_transport_due_to_diffusion
 units:             W 
 cell_methods:      time: mean
-cell_measures:      area: areacello
 long_name:         Ocean Heat X Transport due to Diffusion 
 !----------------------------------
 ! Additional variable information:
@@ -3868,7 +3839,7 @@ modeling_realm:    ocean
 standard_name:     rainfall_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Rainfall Flux where Ice Free Ocean over Sea
 comment:           compute as the total mass of liquid water falling as liquid rain  into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -3894,7 +3865,7 @@ modeling_realm:    ocean
 standard_name:     snowfall_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Snowfall Flux where Ice Free Ocean over Sea
 comment:           compute as the total mass of ice directly falling as snow into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -3920,7 +3891,7 @@ modeling_realm:    ocean
 standard_name:     water_evaporation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Evaporation Flux Where Ice Free Ocean over Sea
 comment:           compute as the total mass of water vapor evaporating from the ice-free portion of the ocean  divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -3942,7 +3913,7 @@ modeling_realm:    ocean
 standard_name:     water_flux_into_sea_water_from_rivers
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Flux into Sea Water From Rivers 
 comment:           compute as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -3964,7 +3935,7 @@ modeling_realm:    ocean
 standard_name:     water_flux_into_sea_water_from_icebergs
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Water Flux into Sea Water From Icebergs 
 comment:           compute as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -3986,7 +3957,7 @@ modeling_realm:    ocean seaIce
 standard_name:     water_flux_into_sea_water_due_to_sea_ice_thermodynamics
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Flux into Sea Water due to Sea Ice Thermodynamics 
 comment:           compute as the sea ice thermodynamic water flux into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -4008,7 +3979,7 @@ modeling_realm:    ocean
 standard_name:     water_flux_into_sea_water
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Flux into Sea Water 
 comment:           compute as the water  flux into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the next two variables in this table.
 !----------------------------------
@@ -4034,7 +4005,7 @@ modeling_realm:    ocean
 standard_name:     water_flux_into_sea_water_without_flux_correction
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Flux into Sea Water Without Flux Correction 
 comment:           compute as the water  flux (without flux correction) into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the first 6 variables in this table?
 !----------------------------------
@@ -4056,7 +4027,7 @@ modeling_realm:    ocean
 standard_name:     water_flux_correction
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Water Flux Correction 
 comment:           If this does not vary from one year to the next, report only a single year.  Positive flux implies correction adds water to ocean.
 !----------------------------------
@@ -4079,7 +4050,7 @@ modeling_realm:    ocean
 standard_name:     virtual_salt_flux_into_sea_water_due_to_rainfall
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux into Sea Water due to Rainfall 
 !----------------------------------
 ! Additional variable information:
@@ -4100,7 +4071,7 @@ modeling_realm:    ocean
 standard_name:     virtual_salt_flux_into_sea_water_due_to_evaporation
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux into Sea Water due to Evaporation 
 !----------------------------------
 ! Additional variable information:
@@ -4121,7 +4092,7 @@ modeling_realm:    ocean
 standard_name:     virtual_salt_flux_into_sea_water_from_rivers
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux into Sea Water From Rivers 
 !----------------------------------
 ! Additional variable information:
@@ -4142,7 +4113,7 @@ modeling_realm:    ocean seaIce
 standard_name:     virtual_salt_flux_into_sea_water_due_to_sea_ice_thermodynamics
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux into Sea Water due to Sea Ice Thermodynamics 
 comment:           This variable measures the virtual salt flux into sea water due to the melting of sea ice. It is set to zero in models which receive a real water flux.
 !----------------------------------
@@ -4164,7 +4135,7 @@ modeling_realm:    ocean
 standard_name:     virtual_salt_flux_into_sea_water
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux into Sea Water 
 comment:           If this does not vary from one year to the next, report only a single year.  Positive flux implies correction increases salinity of water.  This includes all virtual salt flux, including that due to a salt flux correction.
 !----------------------------------
@@ -4186,7 +4157,7 @@ modeling_realm:    ocean
 standard_name:     virtual_salt_flux_correction
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Virtual Salt Flux Correction 
 !----------------------------------
 ! Additional variable information:
@@ -4207,7 +4178,7 @@ modeling_realm:    ocean seaIce
 standard_name:     downward_sea_ice_basal_salt_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Sea Ice Basal Salt Flux
 comment:           This field is physical, and it arises since sea ice has a nonzero salt content, so it exchanges salt with the liquid ocean upon melting and freezing.
 !----------------------------------
@@ -4229,7 +4200,7 @@ modeling_realm:    ocean
 standard_name:     salt_flux_into_sea_water_from_rivers
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Salt Flux into Sea Water from Rivers 
 !----------------------------------
 ! Additional variable information:
@@ -4250,7 +4221,7 @@ modeling_realm:    ocean
 standard_name:     upward_geothermal_heat_flux_at_sea_floor
 units:             W m-2
 cell_methods:      time: mean area: whre sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Upward Geothermal Heat Flux at Sea Floor 
 !----------------------------------
 ! Additional variable information:
@@ -4272,7 +4243,7 @@ modeling_realm:    ocean
 standard_name:     temperature_flux_due_to_rainfall_expressed_as_heat_flux_into_sea_water
 units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Temperature Flux due to Rainfall Expressed as Heat Flux into Sea Water 
 comment:           This is defined as ""where ice_free_sea over sea""; i.e., compute the total flux (considered here) entering the ice-free portion of the grid cell divided by the area of the ocean portion of the grid cell.
 !----------------------------------
@@ -4295,7 +4266,7 @@ modeling_realm:    ocean
 standard_name:     temperature_flux_due_to_evaporation_expressed_as_heat_flux_out_of_sea_water
 units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Temperature Flux due to Evaporation Expressed as Heat Flux Out of Sea Water 
 comment:           "This is defined as ""where ice_free_sea over sea"""
 !----------------------------------
@@ -4318,7 +4289,7 @@ modeling_realm:    ocean
 standard_name:     temperature_flux_due_to_runoff_expressed_as_heat_flux_into_sea_water
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water 
 comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4340,7 +4311,7 @@ modeling_realm:    ocean
 standard_name:     heat_flux_into_sea_water_due_to_snow_thermodynamics
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Snow Thermodynamics 
 comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4361,7 +4332,7 @@ modeling_realm:    ocean seaIce
 !----------------------------------
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Frazil Ice Formation 
 comment:           As of May 2010, the WGOMD document recommends that this field should be saved instead of the field listed immediately below.  In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4383,7 +4354,7 @@ modeling_realm:    ocean seaIce
 standard_name:     heat_flux_into_sea_water_due_to_sea_ice_thermodynamics
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Sea Ice Thermodynamics 
 comment:           As of May 2010, the WGOMD document recommends that instead of saving this field, the field listed immediately above should be saved instead.  In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4405,7 +4376,7 @@ modeling_realm:    ocean
 standard_name:     heat_flux_into_sea_water_due_to_iceberg_thermodynamics
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Iceberg Thermodynamics 
 comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4427,7 +4398,7 @@ modeling_realm:    ocean
 standard_name:     surface_net_downward_longwave_flux
 units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Net Downward Longwave Radiation
 comment:           "This is defined as ""where ice_free_sea over sea"""
 !----------------------------------
@@ -4454,7 +4425,7 @@ modeling_realm:    ocean
 standard_name:     surface_downward_latent_heat_flux
 units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward Latent Heat Flux
 comment:           "This is defined as ""where ice_free_sea over sea"""
 !----------------------------------
@@ -4481,7 +4452,7 @@ modeling_realm:    ocean
 standard_name:     surface_downward_sensible_heat_flux
 units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Surface Downward Sensible Heat Flux
 comment:           "This is defined as ""where ice_free_sea over sea"""
 !----------------------------------
@@ -4507,7 +4478,7 @@ modeling_realm:    ocean
 !----------------------------------
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Net Downward Shortwave Radiation at Sea Water Surface 
 comment:           This is the flux into the surface of liquid sea water only. This excludes shortwave flux absorbed by sea ice, but includes any light that passes through the ice and is absorbed by the ocean.
 !----------------------------------
@@ -4530,7 +4501,7 @@ modeling_realm:    ocean
 standard_name:     downwelling_shortwave_flux_in_sea_water
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Downwelling Shortwave Radiation in Sea Water 
 comment:           In general the shortwave flux should be reported as a function of ocean depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
@@ -4557,7 +4528,7 @@ modeling_realm:    ocean
 standard_name:     heat_flux_correction
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Heat Flux Correction 
 comment:           If this does not vary from one year to the next, report only a single year.  Positive indicates correction adds heat to ocean.
 !----------------------------------
@@ -4579,7 +4550,7 @@ modeling_realm:    ocean
 !----------------------------------
 units:             W m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
+ext_cell_measures: area: areacello
 long_name:         Downward Heat Flux at Sea Water Surface
 comment:           "This is the net flux of heat entering the liquid water column through its upper surface (excluding any ""flux adjustment"") ."
 !----------------------------------
@@ -4602,7 +4573,6 @@ modeling_realm:    ocean
 standard_name:     surface_downward_x_stress
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
 long_name:         Surface Downward X Stress 
 comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.
 !----------------------------------
@@ -4625,7 +4595,6 @@ modeling_realm:    ocean
 standard_name:     surface_downward_y_stress
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
 long_name:         Surface Downward Y Stress 
 comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.
 !----------------------------------
@@ -4648,7 +4617,6 @@ modeling_realm:    ocean
 standard_name:     surface_downward_x_stress_correction
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
 long_name:         Surface Downward X Stress Correction 
 comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.  If this does not vary from one year to the next, report only a single year.
 !----------------------------------
@@ -4671,7 +4639,6 @@ modeling_realm:    ocean
 standard_name:     surface_downward_y_stress_correction
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
-cell_measures:      area: areacello
 long_name:         Surface Downward Y Stress Correction 
 comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.  If this does not vary from one year to the next, report only a single year.
 !----------------------------------

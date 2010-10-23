@@ -3,10 +3,10 @@ modeling_realm: atmos
 
 frequency: 3hr
 
-cmor_version: 2.0.1         ! version of CMOR that can read this table
+cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 September 2010 ! date this table was constructed
+table_date:   22 October 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -249,7 +233,7 @@ modeling_realm:    atmos
 standard_name:     precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Precipitation
 comment:           at surface; includes both liquid and solid phases.  This is the 3-hour mean precipitation flux.
 !----------------------------------
@@ -275,7 +259,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: point
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Air Temperature
 comment:           near-surface (usually, 2 meter) air temperature, sampled synoptically.
 !----------------------------------
@@ -301,7 +285,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_latent_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Upward Latent Heat Flux
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -328,7 +312,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_sensible_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Upward Sensible Heat Flux
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -355,7 +339,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Downwelling Longwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -382,7 +366,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Upwelling Longwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -409,7 +393,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Downwelling Shortwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -436,7 +420,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Upwelling Shortwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -463,7 +447,6 @@ modeling_realm:    atmos
 standard_name:     eastward_wind
 units:             m s-1
 cell_methods:      time: point
-cell_measures:      area: areacella
 long_name:         Eastward Near-Surface Wind Speed
 comment:           sampled synoptically.
 !----------------------------------
@@ -489,7 +472,6 @@ modeling_realm:    atmos
 standard_name:     northward_wind
 units:             m s-1
 cell_methods:      time: point
-cell_measures:      area: areacella
 long_name:         Northward Near-Surface Wind Speed
 comment:           sampled synoptically.
 !----------------------------------
@@ -515,7 +497,7 @@ modeling_realm:    atmos
 standard_name:     specific_humidity
 units:             1
 cell_methods:      time: point
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Near-Surface Specific Humidity
 comment:           near-surface (usually 2 m) specific humidity, sampled synoptically.
 !----------------------------------
@@ -541,7 +523,7 @@ modeling_realm:    land
 standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: point area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Moisture in Upper 0.1 m of Soil Column
 comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
 !----------------------------------
@@ -567,7 +549,7 @@ modeling_realm:    land
 standard_name:     surface_temperature
 units:             K
 cell_methods:      time: point
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:          Surface Temperature Where Land or Sea Ice
 comment:           ""skin"" temperature of all surfaces except open ocean, sampled synoptically.  
 !----------------------------------
@@ -589,7 +571,7 @@ modeling_realm:    ocean
 standard_name:     sea_surface_temperature
 units:             K
 cell_methods:      time: point area: mean where sea
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Sea Surface Temperature
 comment:           temperature of surface of open ocean, sampled synoptically.
 !----------------------------------
@@ -611,7 +593,7 @@ modeling_realm:    atmos
 standard_name:     convective_precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Convective Precipitation
 comment:           at surface.  This is a 3-hour mean convective precipitation flux.
 !----------------------------------
@@ -637,7 +619,7 @@ modeling_realm:    atmos
 standard_name:     snowfall_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Snowfall Flux
 comment:           at surface.  Includes all forms of precipitating solid phase of water.  This is the 3-hour mean snowfall flux.
 !----------------------------------
@@ -663,7 +645,7 @@ modeling_realm:    land
 standard_name:     runoff_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Runoff
 comment:           compute the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell, averaged over the 3-hour interval.
 !----------------------------------
@@ -689,7 +671,7 @@ modeling_realm:    atmos
 standard_name:     downwelling_longwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Downwelling Clear-Sky Longwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -716,7 +698,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Downwelling Clear-Sky Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -743,7 +725,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Upwelling Clear-Sky Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -766,7 +748,7 @@ modeling_realm:    atmos
 standard_name:     surface_air_pressure
 units:             Pa
 cell_methods:      time: point
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Pressure
 comment:           sampled synoptically to diagnose atmospheric tides, this is better than mean sea level pressure.
 !----------------------------------
@@ -792,7 +774,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Cloud Fraction
 comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.  This is a 3-hour mean.
 !----------------------------------
@@ -817,7 +799,7 @@ modeling_realm:    atmos
 !----------------------------------
 units:             W m-2
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Downward Diffuse Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------

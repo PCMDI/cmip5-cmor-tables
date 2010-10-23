@@ -3,10 +3,10 @@ modeling_realm: ocean
 
 frequency: yr
 
-cmor_version: 2.0.1         ! version of CMOR that can read this table
+cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 September 2010 ! date this table was constructed
+table_date:   22 October 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -539,7 +523,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_inorganic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Inorganic Carbon Concentration
 comment:           Dissolved inorganic carbon (CO3+HCO3+H2CO3) concentration
 !----------------------------------
@@ -561,7 +545,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_organic_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Organic Carbon Concentration
 comment:           Dissolved organic carbon concentration
 !----------------------------------
@@ -583,7 +567,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Carbon Concentration
 comment:           sum of phytoplankton carbon component concentrations.  In most (all?) cases this is the sum of phycdiat and phycmisc (i.e., ""Diatom Carbon Concentration"" and ""Non-Diatom Phytoplankton Carbon Concentration""
 !----------------------------------
@@ -605,7 +589,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Zooplankton Carbon Concentration
 comment:           sum of zooplankton carbon component concentrations
 !----------------------------------
@@ -627,7 +611,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Bacterial Carbon Concentration
 comment:           sum of bacterial carbon component concentrations
 !----------------------------------
@@ -649,7 +633,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Detrital Organic Carbon Concentration
 comment:           sum of detrital organic carbon component concentrations
 !----------------------------------
@@ -671,7 +655,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Calcite Concentration
 comment:           sum of particulate calcite component concentrations (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
@@ -693,7 +677,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Aragonite Concentration
 comment:           sum of particulate aragonite components (e.g. Phytoplankton, Detrital, etc.)
 !----------------------------------
@@ -715,7 +699,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Diatoms expressed as Carbon in Sea Water
 comment:           carbon from the diatom phytoplankton component concentration alone
 !----------------------------------
@@ -737,7 +721,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Diazotrophs Expressed as Carbon in Sea Water
 comment:           carbon concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
@@ -759,7 +743,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Calcareous Phytoplankton expressed as Carbon in Sea Water
 comment:           carbon concentration from calcareous (calcite-producing) phytoplankton component alone
 !----------------------------------
@@ -781,7 +765,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Picophytoplankton expressed as Carbon in Sea Water
 comment:           carbon concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
@@ -803,7 +787,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Miscellaneous Phytoplankton expressed as Carbon in Sea Water
 comment:           carbon concentration from additional phytoplankton component alone
 !----------------------------------
@@ -825,7 +809,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Microzooplankton expressed as Carbon in Sea Water
 comment:           carbon  concentration from the microzooplankton (<20 um) component alone
 !----------------------------------
@@ -847,7 +831,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Mesozooplankton expressed as Carbon in Sea Water
 comment:           carbon  concentration from mesozooplankton (20-200 um) component alone
 !----------------------------------
@@ -869,7 +853,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Other Zooplankton Carbon Concentration
 comment:           carbon from additional zooplankton component concentrations alone (e.g. Micro, meso).  Since the models all have different numbers of components, this variable has been included to provide a check for intercomparison between models since some phytoplankton groups are supersets.
 !----------------------------------
@@ -891,7 +875,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sea_water_alkalinity_expressed_as_mole_equivalent
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Total Alkalinity
 comment:           total alkalinity equivalent concentration (including carbonate, nitrogen, silicate, and borate components)
 !----------------------------------
@@ -913,7 +897,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sea_water_ph_reported_on_total_scale
 units:             1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         pH
 comment:           negative log of hydrogen ion concentration with the concentration expressed as mol H kg-1.
 !----------------------------------
@@ -935,7 +919,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_molecular_oxygen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolve Oxygen Concentration
 comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
@@ -957,7 +941,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_nitrate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Nitrate Concentration
 comment:           dissolved nitrate concentration in sea water
 !----------------------------------
@@ -979,7 +963,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_ammonium_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Ammonium Concentration
 comment:           dissolved ammonium concentration in sea water
 !----------------------------------
@@ -1001,7 +985,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phosphate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Phosphate Concentration
 comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
@@ -1023,7 +1007,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dissolved_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Iron Concentration
 comment:           dissolved iron concentration in sea water
 !----------------------------------
@@ -1045,7 +1029,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_silicate_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dissolved Silicate Concentration
 comment:           dissolved silicate concentration in sea water
 !----------------------------------
@@ -1067,7 +1051,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Total Chlorophyll Mass Concentration
 comment:           sum of chlorophyll from all phytoplankton group concentrations.  In most models this is equal to chldiat+chlmisc, that is the sum of ""Diatom Chlorophyll Mass Concentration"" plus ""Other Phytoplankton Chlorophyll Mass Concentration""
 !----------------------------------
@@ -1089,7 +1073,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_diatoms_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Diatom Chlorophyll Mass Concentration
 comment:           chlorophyll from diatom phytoplankton component concentration alone
 !----------------------------------
@@ -1111,7 +1095,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_diazotrophs_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Diazotrophs expressed as Chlorophyll in Sea Water
 comment:           chlorophyll concentration from the diazotrophic phytoplankton component alone
 !----------------------------------
@@ -1133,7 +1117,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_calcareous_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Calcareous Phytoplankton expressed as Chlorophyll in Sea Water
 comment:           chlorophyll concentration from the calcite-producing phytoplankton component alone
 !----------------------------------
@@ -1155,7 +1139,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_picophytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mass Concentration of Picophytoplankton expressed as Chlorophyll in Sea Water
 comment:           chlorophyll concentration from the picophytoplankton (<2 um) component alone
 !----------------------------------
@@ -1177,7 +1161,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mass_concentration_of_miscellaneous_phytoplankton_expressed_as_chlorophyll_in_sea_water
 units:             kg m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Other Phytoplankton Chlorophyll Mass Concentration
 comment:           chlorophyll from additional phytoplankton component concentrations alone
 !----------------------------------
@@ -1199,7 +1183,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Organic Nitrogen Concentration
 comment:           sum of particulate organic nitrogen component concentrations
 !----------------------------------
@@ -1221,7 +1205,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Organic Phosphorus Concentration
 comment:           sum of particulate organic phosphorus component concentrations
 !----------------------------------
@@ -1243,7 +1227,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Biogenic Iron Concentration
 comment:           sum of particulate organic iron component concentrations
 !----------------------------------
@@ -1265,7 +1249,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particulate Biogenic Silica Concentration
 comment:           sum of particulate silica component concentrations
 !----------------------------------
@@ -1287,7 +1271,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Nitrogen Concentration
 comment:           sum of phytoplankton nitrogen component concentrations
 !----------------------------------
@@ -1309,7 +1293,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Phosphorus Concentration
 comment:           sum of phytoplankton phosphorus components
 !----------------------------------
@@ -1331,7 +1315,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Iron Concentration
 comment:           sum of phytoplankton iron component concentrations
 !----------------------------------
@@ -1353,7 +1337,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Phytoplankton Silica Concentration
 comment:           sum of phytoplankton silica component concentrations
 !----------------------------------
@@ -1375,7 +1359,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_dimethyl_sulfide_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Dimethyl Sulphide Concentration
 comment:           dimethyl sulphide concentration
 !----------------------------------
@@ -1397,7 +1381,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water
 comment:           carbonate ion concentration
 !----------------------------------
@@ -1419,7 +1403,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_at_saturation
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation
 comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
@@ -1441,7 +1425,7 @@ modeling_realm:    ocnBgchem
 standard_name:     mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_at_saturation
 units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation
 comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
@@ -1463,7 +1447,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Primary Carbon Production by Phytoplankton
 comment:           total primary (organic carbon) production by phytoplankton
 !----------------------------------
@@ -1485,7 +1469,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_nitrate_utilization
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Primary Carbon Production by Phytoplankton due to Nitrate Uptake Alone
 comment:           Primary (organic carbon) production by phytoplankton due to nitrate uptake alone
 !----------------------------------
@@ -1507,7 +1491,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_iron_in_sea_water_due_to_biological_production
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Biogenic Iron Production
 comment:           Biogenic iron production
 !----------------------------------
@@ -1529,7 +1513,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_silicon_in_sea_water_due_to_biological_production
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Biogenic Silica Production
 comment:           Biogenic silica production
 !----------------------------------
@@ -1551,7 +1535,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_due_to_biological_production
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Calcite Production
 comment:           calcite production
 !----------------------------------
@@ -1573,7 +1557,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_due_to_biological_production
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Aragonite Production
 comment:           aragonite production
 !----------------------------------
@@ -1595,7 +1579,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_organic_matter_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sinking Particulate Organic Carbon Flux
 comment:           sinking flux of organic carbon
 !----------------------------------
@@ -1618,7 +1602,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_organic_nitrogen_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sinking Particulate Organic Nitrogen Flux
 comment:           sinking flux of organic nitrogen
 !----------------------------------
@@ -1685,7 +1669,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_particulate_silicon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sinking Particulate Silica Flux
 comment:           sinking flux of silica
 !----------------------------------
@@ -1708,7 +1692,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_calcite_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sinking Calcite Flux
 comment:           sinking flux of calcite
 !----------------------------------
@@ -1731,7 +1715,7 @@ modeling_realm:    ocnBgchem
 standard_name:     sinking_mole_flux_of_aragonite_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Sinking Aragonite Flux
 comment:           sinking flux of aragonite
 !----------------------------------
@@ -1754,7 +1738,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_due_to_dissolution
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Calcite Dissolution
 comment:           calcite dissolution
 !----------------------------------
@@ -1776,7 +1760,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_due_to_dissolution
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Aragonite Dissolution
 comment:           aragonite dissolution
 !----------------------------------
@@ -1798,7 +1782,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diatoms
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Diatom Primary Carbon Production
 comment:           Primary (organic carbon) production by the diatom component alone
 !----------------------------------
@@ -1820,7 +1804,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Diazotrophs
 comment:           Primary (organic carbon) production by the diazotrophic phytoplankton component alone
 !----------------------------------
@@ -1842,7 +1826,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_calcareous_phytoplankton
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Picophytoplankton
 comment:           Primary (organic carbon) production by the calcite-producing phytoplankton component alone
 !----------------------------------
@@ -1864,7 +1848,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_picophytoplankton
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Picophytoplankton
 comment:           Primary (organic carbon) production by the picophytoplankton (<2 um) component alone
 !----------------------------------
@@ -1886,7 +1870,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_miscellaneous_phytoplankton
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Other Phytoplankton Carbon Production
 comment:           Primary (organic carbon) production by other phytoplankton components alone
 !----------------------------------
@@ -1908,7 +1892,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Dissolved Inorganic Carbon due to Biological Activity
 comment:           Net of biological terms in time rate of change of dissolved inorganic carbon
 !----------------------------------
@@ -1930,7 +1914,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_inorganic_nitrogen_in_sea_water_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Nitrogen Nutrient due to Biological Activity
 comment:           Net of biological terms in time rate of change of nitrogen nutrients (e.g. NO3+NH4)
 !----------------------------------
@@ -1952,7 +1936,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_inorganic_phosphate_in_sea_water_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Dissolved Phosphate due to Biological Activity
 comment:           Net of biological terms in time rate of change of dissolved phosphate
 !----------------------------------
@@ -1974,7 +1958,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_inorganic_iron_in_sea_water_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Dissolved Inorganic Iron due to Biological Activity
 comment:           Net of biological terms in time rate of change of dissolved inorganic iron
 !----------------------------------
@@ -1996,7 +1980,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_inorganic_silicate_in_sea_water_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Dissolved Inorganic Silicate due to Biological Activity
 comment:           Net of biological terms in time rate of change of dissolved inorganic silicate
 !----------------------------------
@@ -2018,7 +2002,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent_due_to_biological_processes
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Rate of Change of Alkalinity due to Biological Activity
 comment:           Net of biological terms in time rate of change of alkalinity
 !----------------------------------
@@ -2040,7 +2024,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_iron_in_sea_water_due_to_scavenging_by_inorganic_particles
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Nonbiogenic Iron Scavenging
 comment:           Dissolved Fe removed through nonbiogenic scavenging onto particles
 !----------------------------------
@@ -2062,7 +2046,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_iron_in_sea_water_due_to_dissolution_from_inorganic_particles
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Particle Source of Dissolved Iron
 comment:           Dissolution, remineralization and desorption of iron back to the dissolved phase
 !----------------------------------
@@ -2084,7 +2068,7 @@ modeling_realm:    ocnBgchem
 standard_name:     tendency_of_mole_concentration_of_dissolved_iron_in_sea_water_due_to_grazing_of_phytoplankton
 units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
-cell_measures:      area: areacello volume: volcello
+ext_cell_measures: area: areacello volume: volcello
 long_name:         Total Grazing of Phytoplankton by Zooplankton
 comment:           Total grazing of phytoplankton by zooplankton
 !----------------------------------

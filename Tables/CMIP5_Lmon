@@ -3,10 +3,10 @@ modeling_realm: land
 
 frequency: mon
 
-cmor_version: 2.0.1         ! version of CMOR that can read this table
+cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 September 2010 ! date this table was constructed
+table_date:   22 October 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -15,7 +15,7 @@ missing_value: 1.e20      ! value used to indicate a missing value
 baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation 
 product: output
 
-required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id branch_time contact institute_id ! space separated required global attribute 
+required_global_attributes: creation_date tracking_id forcing model_id parent_experiment_id parent_experiment_rip branch_time contact institute_id ! space separated required global attribute 
 
 forcings:   N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA
 
@@ -42,22 +42,6 @@ expt_id_ok: '1 percent per year CO2' '1pctCO2'
 expt_id_ok: 'abrupt 4XCO2' 'abrupt4xCO2'
 expt_id_ok: 'natural-only' 'historicalNat'
 expt_id_ok: 'GHG-only' 'historicalGHG'
-expt_id_ok: 'anthropogenic-only' 'historicalAnt'
-expt_id_ok: 'anthropogenic sulfate aerosol direct effect only' 'historicalSD'
-expt_id_ok: 'anthropogenic sulfate aerosol indirect effect only' 'historicalSI'
-expt_id_ok: 'anthropogenic sulfate aerosol only' 'historicalSA'
-expt_id_ok: 'tropospheric ozone only' 'historicalTO'
-expt_id_ok: 'stratospheric ozone' 'historicalSO'
-expt_id_ok: 'ozone only' 'historicalOz'
-expt_id_ok: 'land-use change only' 'historicalLU'
-expt_id_ok: 'solar irradiance only' 'historicalSl'
-expt_id_ok: 'volcanic aerosol only' 'historicalVl'
-expt_id_ok: 'sea salt only' 'historicalSS'
-expt_id_ok: 'dust' 'historicalDs'
-expt_id_ok: 'black carbon only' 'historicalBC'
-expt_id_ok: 'mineral dust only' 'historicalMD'
-expt_id_ok: 'organic carbon only' 'historicalOC'
-expt_id_ok: 'anthropogenic aerosols only' 'historicalAA'
 expt_id_ok: 'AMIP' 'amip'
 expt_id_ok: '2030 time-slice' 'sst2030'
 expt_id_ok: 'control SST climatology' 'sstClim'
@@ -221,7 +205,7 @@ modeling_realm:    land
 standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Moisture in Upper 0.1 m of Soil Column
 comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
 !----------------------------------
@@ -247,7 +231,7 @@ modeling_realm:    land
 standard_name:     soil_moisture_content
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Soil Moisture Content
 comment:           Compute the mass per unit area  (summed over all soil layers) of water in all phases.
 !----------------------------------
@@ -273,7 +257,7 @@ modeling_realm:    land landIce
 standard_name:     soil_frozen_water_content
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Soil Frozen Water Content 
 comment:           Compute the mass (summed over all all layers) of frozen water.
 !----------------------------------
@@ -299,7 +283,7 @@ modeling_realm:    land
 standard_name:     surface_runoff_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Surface Runoff
 comment:           Compute the total surface runoff leaving the land portion of the grid cell.
 !----------------------------------
@@ -325,7 +309,7 @@ modeling_realm:    land
 standard_name:     runoff_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Runoff
 comment:           "compute the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell."
 !----------------------------------
@@ -351,7 +335,7 @@ modeling_realm:    land
 standard_name:     precipitation_flux_onto_canopy
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Precipitation onto Canopy
 comment:           Report the precipitation flux that is intercepted by the vegetation canopy (if present in model) before reaching the ground.
 !----------------------------------
@@ -373,7 +357,7 @@ modeling_realm:    land
 standard_name:     water_evaporation_flux_from_canopy
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Evaporation from Canopy
 comment:           Report the canopy evaporation+sublimation (if present in model).
 !----------------------------------
@@ -396,7 +380,7 @@ modeling_realm:    land
 standard_name:     water_evaporation_flux_from_soil
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Water Evaporation from Soil
 comment:           includes sublimation.  
 !----------------------------------
@@ -419,7 +403,7 @@ modeling_realm:    land
 standard_name:     transpiration_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Transpiration
 !----------------------------------
 ! Additional variable information:
@@ -441,7 +425,7 @@ modeling_realm:    land
 standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:          Water Content of Soil Layer
 comment:           in each soil layer, the mass of water in all phases, including ice.
 !----------------------------------
@@ -463,7 +447,7 @@ modeling_realm:    land
 standard_name:     soil_temperature
 units:             K
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Temperature of Soil
 comment:           "Temperature of each soil layer.  Report as ""missing"" for grid cells occupied entirely by ""sea""."
 !----------------------------------
@@ -485,7 +469,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Tree Cover Fraction
 comment:           fraction of entire grid cell  that is covered by trees.  
 !----------------------------------
@@ -507,7 +491,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Natural Grass Fraction
 comment:           fraction of entire grid cell that is covered by natural grass.  
 !----------------------------------
@@ -529,7 +513,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Shrub Fraction
 comment:           fraction of entire grid cell  that is covered by shrub.
 !----------------------------------
@@ -551,7 +535,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Crop Fraction
 comment:           fraction of entire grid cell  that is covered by crop. 
 !----------------------------------
@@ -573,7 +557,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Anthropogenic Pasture Fraction
 comment:           fraction of entire grid cell  that is covered by anthropogenic pasture. 
 !----------------------------------
@@ -595,7 +579,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Bare Soil Fraction
 comment:           fraction of entire grid cell  that is covered by bare soil.
 !----------------------------------
@@ -617,7 +601,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Fraction of Grid Cell that is Land but Neither Vegetation-Covered nor Bare Soil
 comment:           fraction of entire grid cell  that is land and is covered by ""non-vegetation"" and ""non-bare-soil"" (e.g., urban, ice, lakes, etc.) 
 !----------------------------------
@@ -639,7 +623,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Burnt Area Fraction
 comment:           fraction of entire grid cell  that is covered by burnt vegetation.
 !----------------------------------
@@ -661,7 +645,7 @@ modeling_realm:    land
 standard_name:     vegetation_carbon_content
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Vegetation
 !----------------------------------
 ! Additional variable information:
@@ -682,7 +666,7 @@ modeling_realm:    land
 standard_name:     litter_carbon_content
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Litter Pool
 !----------------------------------
 ! Additional variable information:
@@ -703,7 +687,7 @@ modeling_realm:    land
 standard_name:     soil_carbon_content
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Soil Pool
 !----------------------------------
 ! Additional variable information:
@@ -723,7 +707,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Products of Land Use Change
 !----------------------------------
 ! Additional variable information:
@@ -744,7 +728,7 @@ modeling_realm:    land
 standard_name:     leaf_area_index
 units:             1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Leaf Area Index
 comment:           projected leaf area per unit of ground area (i.e., only the land portion of the grid cell), expressed as a proper fraction (not a percentage)
 !----------------------------------
@@ -766,7 +750,7 @@ modeling_realm:    land
 standard_name:     gross_primary_productivity_of_carbon
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux out of Atmosphere due to Gross Primary Production on Land
 !----------------------------------
 ! Additional variable information:
@@ -788,7 +772,7 @@ modeling_realm:    land
 standard_name:     plant_respiration_carbon_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Autotrophic (Plant) Respiration on Land
 !----------------------------------
 ! Additional variable information:
@@ -810,7 +794,7 @@ modeling_realm:    land
 standard_name:     net_primary_productivity_of_carbon
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux out of Atmosphere due to Net Primary Production on Land
 comment:           needed for models that do not compute GPP (if any)
 !----------------------------------
@@ -833,7 +817,7 @@ modeling_realm:    land
 standard_name:     heterotrophic_respiration_carbon_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Heterotrophic Respiration on Land
 !----------------------------------
 ! Additional variable information:
@@ -854,7 +838,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to CO2 Emission from Fire
 comment:           CO2 emissions (expressed as a carbon mass flux) from natural fires + human ignition fires as calculated by the fire module of the DGVM, but excluding any CO2 flux from fire included in fLuc, defined below (CO2 Flux to Atmosphere from Land Use Change).
 !----------------------------------
@@ -876,7 +860,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Grazing on Land
 !----------------------------------
 ! Additional variable information:
@@ -897,7 +881,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Crop Harvesting
 !----------------------------------
 ! Additional variable information:
@@ -918,7 +902,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Net Carbon Mass Flux into Atmosphere due to Land Use Change
 comment:           human changes to land (excluding forest regrowth) accounting possibly for different time-scales related to fate of the wood, for example.
 !----------------------------------
@@ -940,7 +924,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux out of Atmosphere due to Net Biospheric Production on Land
 comment:           This is the net mass flux of carbon between land and atmosphere calculated as photosynthesis MINUS the sum of  plant and soil respiration, carbonfluxes  from fire, harvest, grazing  and land use change. Positive flux  is into the land.
 !----------------------------------
@@ -963,7 +947,7 @@ modeling_realm:    land
 standard_name:     litter_carbon_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Carbon Mass Flux from Vegetation to Litter
 !----------------------------------
 ! Additional variable information:
@@ -983,7 +967,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Carbon Mass Flux from Litter to Soil
 !----------------------------------
 ! Additional variable information:
@@ -1003,7 +987,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Carbon Mass Flux from Vegetation Directly to Soil
 comment:           In some models part of carbon (e.g., root exudate) can go directly into the soil pool without entering litter.
 !----------------------------------
@@ -1024,7 +1008,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Leaves
 !----------------------------------
 ! Additional variable information:
@@ -1044,7 +1028,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Wood
 comment:           including sapwood and hardwood.
 !----------------------------------
@@ -1065,7 +1049,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Roots
 comment:           including fine and coarse roots.
 !----------------------------------
@@ -1086,7 +1070,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Other Living Compartments on Land
 comment:           e.g., labile, fruits, reserves, etc.
 !----------------------------------
@@ -1107,7 +1091,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Coarse Woody Debris
 !----------------------------------
 ! Additional variable information:
@@ -1127,7 +1111,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Above-Ground Litter
 !----------------------------------
 ! Additional variable information:
@@ -1147,7 +1131,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Below-Ground Litter
 !----------------------------------
 ! Additional variable information:
@@ -1167,7 +1151,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Fast Soil Pool
 comment:           fast is meant as lifetime of less than 10 years for  reference climate conditions (20 C, no water limitations).
 !----------------------------------
@@ -1188,7 +1172,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Medium Soil Pool
 comment:           medium is meant as lifetime of more than than 10 years and less than 100 years for  reference climate conditions (20 C, no water limitations)
 !----------------------------------
@@ -1209,7 +1193,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass in Slow Soil Pool
 comment:           fast is meant as lifetime of more than 100 years for  reference climate conditions (20 C, no water limitations)
 !----------------------------------
@@ -1231,7 +1215,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Plant Functional Type Grid Fraction
 comment:           using each individual ESM PFT definition.   This includes natural PFTs, anthropogenic PFTs, bare soil, lakes, urban areas, etc.   Sum of all should equal the fraction of the grid-cell that is land.  Note that the ""types"" will be model dependent and for each type there should be a full description of the PFT (plant functional type).   To facilitate model comparison, it is also requested that the aggregated land cover types called for in lines 28 to 35 be archived (but not in this variable).
 !----------------------------------
@@ -1253,7 +1237,7 @@ modeling_realm:    land
 standard_name:     area_fraction
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Primary Deciduous Tree Fraction
 comment:           "Agregation of model PFTs as defined in 1st priority to aid model intercomparison.  This is the fraction of the entire grid cell  that is covered by ""total primary deciduous trees.""    "
 !----------------------------------
@@ -1274,7 +1258,7 @@ modeling_realm:    land
 !----------------------------------
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Primary Evergreen Tree Cover Fraction
 comment:           fraction of entire grid cell  that is covered by primary evergreen trees. 
 !----------------------------------
@@ -1295,7 +1279,7 @@ modeling_realm:    land
 !----------------------------------
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Secondary Deciduous Tree Cover Fraction
 comment:           fraction of entire grid cell  that is covered by secondary deciduous trees.
 !----------------------------------
@@ -1316,7 +1300,7 @@ modeling_realm:    land
 !----------------------------------
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total Secondary Evergreen Tree Cover Fraction
 comment:           fraction of entire grid cell  that is covered by secondary evergreen trees.
 !----------------------------------
@@ -1337,7 +1321,7 @@ modeling_realm:    land
 !----------------------------------
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total C3 PFT Cover Fraction
 comment:           fraction of entire grid cell  that is covered by C3 PFTs (including grass, crops, and trees).
 !----------------------------------
@@ -1358,7 +1342,7 @@ modeling_realm:    land
 !----------------------------------
 units:             %
 cell_methods:      time: mean
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Total C4 PFT Cover Fraction
 comment:           fraction of entire grid cell  that is covered by C4 PFTs (including grass and crops).
 !----------------------------------
@@ -1379,7 +1363,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Growth Autotrophic Respiration on Land
 comment:           "This flux and the one in the following row provide a breakdown of the higher priority ""Autotrophic (Plant) Respiration"" in an earlier row of this table; thus the sum should be identical to that."
 !----------------------------------
@@ -1401,7 +1385,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Maintenance Autotrophic Respiration on Land
 comment:           "This flux and the one in the previous row provide a breakdown of the higher priority ""Autotrophic (Plant) Respiration"" in an earlier row of this table; thus the sum should be identical to that."
 !----------------------------------
@@ -1423,7 +1407,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux due to NPP Allocation to Leaf
 comment:           This is the rate of carbon uptake by leaves due to NPP
 !----------------------------------
@@ -1445,7 +1429,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux due to NPP Allocation to Wood
 comment:           This is the rate of carbon uptake by wood due to NPP
 !----------------------------------
@@ -1467,7 +1451,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Carbon Mass Flux due to NPP Allocation to Roots
 comment:           This is the rate of carbon uptake by roots due to NPP
 !----------------------------------
@@ -1489,7 +1473,7 @@ modeling_realm:    land
 !----------------------------------
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-cell_measures:      area: areacella
+ext_cell_measures: area: areacella
 long_name:         Net Carbon Mass Flux out of Atmophere due to Net Ecosystem Productivity on Land.
 comment:           Natural flux of CO2 (expressed as a mass flux of carbon) from the atmosphere to the land calculated as the difference between uptake associated will photosynthesis and the release of CO2 from the sum of plant and soil respiration and fire.  Positive flux is into the land.  emissions from natural fires + human ignition fires as calculated by the fire module of the DGVM, but excluding any CO2 flux from fire included in fLuc, defined below (CO2 Flux to Atmosphere from Land Use Change).
 !----------------------------------
