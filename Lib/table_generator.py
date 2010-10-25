@@ -450,10 +450,10 @@ def create_table(table_file, dims_file,minmax={}):
     dlines2=[]
     for i in range(len(dlines)):
         if dlines[i].find("include Amon 2D")>-1:
+            #print 'Ok adding amon_2D',table_file,table_file[-11:-4]
             f=open("Tables_csv/Amon_2D.csv")
             add_lines = f.readlines()
             if table_file[-11:-4] in ['cfSites','v/cf3hr']:
-                print 'Ok cfsite stuff'
                 tmplines=[]
                 for aline in add_lines:
                     a_line =aline.strip()
@@ -467,7 +467,6 @@ def create_table(table_file, dims_file,minmax={}):
                         sp[16]=sp[16].replace('time','time1')
                         if table_file[-11:-4]=='cfSites':
                             sp[16]=sp[16].replace("longitude latitude","site")
-                        ## print 'Replaced to:',sp[16]
                     for i in range(len(sp)):
                         if sp[i].find(",")>-1:
                             sp[i]='"%s"' % sp[i]
@@ -494,6 +493,8 @@ def create_table(table_file, dims_file,minmax={}):
     dlines=dlines2
     for l in dlines:
         sp,iadd = process_a_line(l)
+        if len(sp)>15 and table_file[-11:-4]=='cfSites':
+                sp[16]=sp[16].replace("longitude latitude","site")
         if 0<=sp[0].find("CMOR Table")<=1 and foundnm == False: # line that will give us the table name
             i=1
             while sp[i].strip()=="":
