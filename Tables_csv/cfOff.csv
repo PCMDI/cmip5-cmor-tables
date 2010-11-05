@@ -12,7 +12,7 @@
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
-priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,ext_cell_measures,flag_values,flag_meanings
+priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,CALIPSO Cloud Fraction,%,(40 height levels),,  clcalipso ,cloud_area_fraction_in_atmosphere_layer,,%,time: mean,,,,,,real,longitude latitude alt40 time,  clcalipso ,atmos,,area: areacella,,
 1.0,CALIPSO Cloud Fraction Undetected by CloudSat,%,(40 height levels)  Clouds detected by CALIPSO but below the detectability threshold of CloudSat,,clcalipso2  ,cloud_area_fraction_in_atmosphere_layer,,%,time: mean,,,,,,real,longitude latitude alt40 time,clcalipso2  ,atmos,,area: areacella,,
 1.0,CloudSat Radar Reflectivity,1.0,CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  (40 levelsx15 bins) .,, cfadDbze94,histogram_of_equivalent_reflectivity_factor_over_height_above_reference_ellipsoid,,1.0,time: mean,,,,,,real,longitude latitude alt40 dbze time, cfadDbze94,atmos,,area: areacella,,

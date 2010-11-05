@@ -594,7 +594,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Air Temperature
 comment:           near-surface (usually, 2 meter) air temperature.
 !----------------------------------
@@ -620,7 +620,7 @@ modeling_realm:    atmos
 standard_name:     surface_temperature
 units:             K
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Temperature
 comment:           ""skin"" temperature (i.e., SST for open ocean)
 !----------------------------------
@@ -646,7 +646,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: minimum within days time: mean over days
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Daily Minimum Near-Surface Air Temperature
 comment:           monthly mean of the daily-minimum near-surface (usually, 2 meter) air temperature.
 !----------------------------------
@@ -672,7 +672,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: maximum within days time: mean over days
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Daily Maximum Near-Surface Air Temperature
 comment:           monthly mean of the daily-maximum near-surface (usually, 2 meter) air temperature.
 !----------------------------------
@@ -698,7 +698,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_sea_level
 units:             Pa
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Sea Level Pressure
 comment:           not, in general, the same as surface pressure
 !----------------------------------
@@ -724,7 +724,7 @@ modeling_realm:    atmos
 standard_name:     surface_air_pressure
 units:             Pa
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Air Pressure
 comment:           not, in general, the same as mean sea-level pressure
 !----------------------------------
@@ -821,7 +821,7 @@ modeling_realm:    atmos
 standard_name:     relative_humidity
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Relative Humidity
 comment:           near-surface (usually, 2meters) relative humidity expressed as a percentage.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
@@ -843,7 +843,7 @@ modeling_realm:    atmos
 standard_name:     specific_humidity
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Specific Humidity
 comment:           near-surface (usually, 2 meters) specific humidity.
 !----------------------------------
@@ -869,7 +869,7 @@ modeling_realm:    atmos
 standard_name:     precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Precipitation
 comment:           at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)
 !----------------------------------
@@ -895,7 +895,7 @@ modeling_realm:    atmos
 standard_name:     snowfall_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Snowfall Flux
 comment:           at surface; includes precipitation of all forms of water in the solid phase
 !----------------------------------
@@ -921,7 +921,7 @@ modeling_realm:    atmos
 standard_name:     convective_precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Precipitation
 comment:           at surface; includes both liquid and solid phases.
 !----------------------------------
@@ -947,7 +947,7 @@ modeling_realm:    atmos
 standard_name:     water_evaporation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Evaporation
 comment:           at surface; flux of water into the atmosphere due to conversion of both liquid and solid phases to vapor (from underlying surface and vegetation)
 !----------------------------------
@@ -969,7 +969,7 @@ modeling_realm:    atmos
 standard_name:     water_sublimation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Snow and Ice Sublimation Flux
 comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere. This differs from sbl appearing in table Limon in that the flux is averaged over the entire grid cell, not just the land portion.
 !----------------------------------
@@ -1045,7 +1045,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_latent_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Latent Heat Flux
 comment:           includes both evaporation and sublimation
 !----------------------------------
@@ -1072,7 +1072,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_sensible_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Sensible Heat Flux
 !----------------------------------
 ! Additional variable information:
@@ -1098,7 +1098,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1124,7 +1124,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1150,7 +1150,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1176,7 +1176,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1202,7 +1202,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1228,7 +1228,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1254,7 +1254,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1280,7 +1280,7 @@ modeling_realm:    atmos
 standard_name:     toa_incoming_shortwave_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Incident Shortwave Radiation
 comment:           incident shortwave at the top of the atmosphere
 !----------------------------------
@@ -1307,7 +1307,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_shortwave_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Shortwave Radiation
 comment:           at the top of the atmosphere
 !----------------------------------
@@ -1334,7 +1334,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_longwave_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Longwave Radiation
 comment:           at the top of the atmosphere (to be compared with satellite measurements)
 !----------------------------------
@@ -1361,7 +1361,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_longwave_flux_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1387,7 +1387,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_shortwave_flux_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1413,7 +1413,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_water_vapor_content
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Water Vapor Path
 comment:           vertically integrated through the atmospheric column
 !----------------------------------
@@ -1439,7 +1439,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Cloud Fraction
 comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.
 !----------------------------------
@@ -1465,7 +1465,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_cloud_condensed_water_content
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Condensed Water Path
 comment:           calculate mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1491,7 +1491,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_cloud_ice_content
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ice Water Path
 comment:           calculate mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1517,7 +1517,7 @@ modeling_realm:    atmos
 standard_name:     net_downward_radiative_flux_at_top_of_atmosphere_model
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Net Downward Flux at Top of Model
 comment:           i.e., at the top of that portion of the atmosphere where dynamics are explicitly treated by the model. Report only if this differs from the net downward radiative flux at the top of the atmosphere.
 !----------------------------------
@@ -1544,7 +1544,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_convective_cloud_base
 units:             Pa
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Pressure at Convective Cloud Base
 !----------------------------------
 ! Additional variable information:
@@ -1565,7 +1565,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_convective_cloud_top
 units:             Pa
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Pressure at Convective Cloud Top
 !----------------------------------
 ! Additional variable information:
@@ -1583,9 +1583,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     convection_time_fraction
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Fraction of Time Convection Occurs
 comment:           Fraction of time that convection occurs in the grid cell .
 !----------------------------------
@@ -1604,9 +1605,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     shallow_convection_time_fraction
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Fraction of Time Shallow Convection Occurs
 comment:           Fraction of time that shallow convection occurs in the grid cell. ( For models with a distinct shallow convection scheme only)
 !----------------------------------
@@ -1625,9 +1627,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_emission
 units:             kg  m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to All Anthropogenic Emissions of CO2
 comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Do not include natural fire sources, but include all anthropogenic sources, including fossil fuel use, cement production, agricultural burning, and sources associated with anthropogenic land use change excluding forest regrowth.
 !----------------------------------
@@ -1647,9 +1650,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fossil_fuel_combustion
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to Fossil Fuel Emissions of CO2
 comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Report the prescribed anthropogenic CO2 flux from fossil fuel use, including cement production, and flaring (but not from land-use changes, agricultural burning, forest regrowth, etc.)
 !----------------------------------
@@ -1669,9 +1673,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_sources
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Carbon Mass Flux into the Atmosphere Due to Natural Sources
 comment:           Report from all simulations (both emission-driven and concentration-driven) performed by models with fully interactive and responsive carbon cycles.  This is what the atmosphere sees (on its own grid).  This field should be equivalent to the combined natural fluxes of carbon (requested in the L_mon and O_mon tables) that account for natural exchanges between the atmosphere and land or ocean reservoirs (i.e., ""net ecosystem biospheric productivity"", for land, and ""air to sea CO2 flux"", for ocean.)
 !----------------------------------
@@ -1694,7 +1699,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Cloud Area Fraction
 comment:           Report on model layers (not standard pressures).  Include both large-scale and convective cloud.
 !----------------------------------
@@ -1720,7 +1725,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_cloud_liquid_water_in_air
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Cloud Liquid Water
 comment:           Report on model layers (not standard pressures).  Include both large-scale and convective cloud.  Calculate as the mass of cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cells. Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1742,7 +1747,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_cloud_ice_in_air
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Cloud Ice
 comment:           Report on model layers (not standard pressures).  Include both large-scale and convective cloud.  Calculate as the mass of cloud ice in the grid cell divided by the mass of air (including the water in all phases) in the grid cell. Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1764,7 +1769,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_net_upward_convective_mass_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Mass Flux
 comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).  The net mass flux should represent the difference between the updraft and downdraft components.  The flux is computed as the mass divided by the area of the grid cell.  
 !----------------------------------
@@ -1787,7 +1792,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Temperature
 !----------------------------------
 ! Additional variable information:
@@ -1860,7 +1865,7 @@ modeling_realm:    atmos
 standard_name:     specific_humidity
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Specific Humidity
 !----------------------------------
 ! Additional variable information:
@@ -1885,7 +1890,7 @@ modeling_realm:    atmos
 standard_name:     relative_humidity
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Relative Humidity
 comment:           This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
@@ -1911,7 +1916,7 @@ modeling_realm:    atmos
 standard_name:     lagrangian_tendency_of_air_pressure
 units:             Pa s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         omega (=dp/dt)
 comment:           commonly referred to as ""omega"", this represents the vertical component of velocity in pressure coordinates (positive down)
 !----------------------------------
@@ -1937,7 +1942,7 @@ modeling_realm:    atmos
 standard_name:     geopotential_height
 units:             m
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Geopotential Height
 !----------------------------------
 ! Additional variable information:
@@ -1962,7 +1967,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_ozone_in_air
 units:             1e-9
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of O3
 comment:           If this does not change over time (except possibly to vary identically over each annual cycle), report instead the variable described in the next table entry. 
 !----------------------------------
@@ -1988,7 +1993,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_ozone_in_air
 units:             1e-9
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of O3
 comment:           If O3 does not vary from one year to the next, report 12 months, starting with January.   (Note: include all 12 months even if the values don't vary seasonally.)  When calling CMOR, identify this variable as tro3Clim, not tro3. If the O3 varies from one year to the next,  then report instead the field described in the previous table entry.  
 !----------------------------------
@@ -2010,7 +2015,7 @@ modeling_realm:    atmos
 standard_name:     mole_fraction_of_carbon_dioxide_in_air
 units:             1e-6
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of CO2
 comment:           For some simulations (e.g., prescribed concentration pi-control run), this will not vary from one year to the next, and so report instead the variable described in the next table entry.  If spatially uniform, omit this field, but report Total Atmospheric Mass of CO2 (see the table entry after the next one). 
 !----------------------------------
@@ -2032,7 +2037,7 @@ modeling_realm:    atmos
 standard_name:     mole_fraction_of_carbon_dioxide_in_air
 units:             1e-6
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of CO2
 comment:           Report only for simulations (e.g., prescribed concentration pi-control run), in which the CO2 does not vary from one year to the next. Report 12 monthly values, starting with January, even if the values don't vary seasonally.  When calling CMOR, identify this variable as co2Clim, not co2.   If  CO2 is spatially uniform, omit this field, but report Total Atmospheric Mass of CO2 (see the table entry after the next).
 !----------------------------------
@@ -2051,6 +2056,7 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     atmosphere_mass_of_carbon_dioxide
 units:             kg
 cell_methods:      time: mean
 long_name:         Total Atmospheric Mass of CO2
@@ -2071,6 +2077,7 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     atmosphere_mass_of_carbon_dioxide
 units:             kg
 cell_methods:      time: mean within years time: mean over years
 long_name:         Total Atmospheric Mass of CO2
@@ -2094,7 +2101,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_methane_in_air
 units:             1e-9
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of CH4
 comment:           For some simulations (e.g., prescribed concentration pi-control run), this will not vary from one year to the next, and so report instead the variable described in the next table entry.  If CH4 is spatially uniform, omit this field, but report Global Mean Mole Fraction of CH4 (see the table entry after the next one). 
 !----------------------------------
@@ -2116,7 +2123,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_methane_in_air
 units:             1e-9
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of CH4
 comment:           Report only for simulations (e.g., prescribed concentration pi-control run), in which the CH4 does not vary from one year to the next. Report 12 monthly values, starting with January, even if the values don't vary seasonally.  When calling CMOR, identify this variable as ch4global, not ch4.   If  CH4 is spatially uniform, omit this field, but report Global Mean Mole Fraction of CH4 (see the table entry after the next).
 !----------------------------------
@@ -2180,7 +2187,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_nitrous_oxide_in_air
 units:             1e-9
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of N2O
 comment:           For some simulations (e.g., prescribed concentration pi-control run), this will not vary from one year to the next, and so report instead the variable described in the next table entry.  If N2O is spatially uniform, omit this field, but report Global Mean Mole Fraction of N2O (see the table entry after the next one). 
 !----------------------------------
@@ -2202,7 +2209,7 @@ modeling_realm:    atmos atmosChem
 standard_name:     mole_fraction_of_nitrous_oxide_in_air
 units:             1e-9
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of N2O
 comment:           Report only for simulations (e.g., prescribed concentration pi-control run), in which the N2O does not vary from one year to the next. Report 12 monthly values, starting with January, even if the values don't vary seasonally.  When calling CMOR, identify this variable as n2oglobal, not n2o.   If  N2O is spatially uniform, omit this field, but report Global Mean Mole Fraction of N2O (see the table entry after the next).
 !----------------------------------
@@ -2256,6 +2263,86 @@ type:              real
 !----------------------------------
 !
 
+!============
+variable_entry:    cfc11global
+!============
+modeling_realm:    atmos atmosChem
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     mole_fraction_of_cfc11_in_air
+units:             1e-12
+cell_methods:      time: mean
+long_name:         Global Mean Mole Fraction of CFC11
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        time
+out_name:          cfc11global
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    cfc12global
+!============
+modeling_realm:    atmos atmosChem
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     mole_fraction_of_cfc12_in_air
+units:             1e-12
+cell_methods:      time: mean
+long_name:         Global Mean Mole Fraction of CFC12
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        time
+out_name:          cfc12global
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    hcfc22global
+!============
+modeling_realm:    atmos atmosChem
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     mole_fraction_of_hcfc22_in_air
+units:             1e-12
+cell_methods:      time: mean
+long_name:         Global Mean Mole Fraction of HCFC22
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        time
+out_name:          hcfc22global
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    cfc113global
+!============
+modeling_realm:    atmos atmosChem
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     mole_fraction_of_cfc113_in_air
+units:             1e-12
+cell_methods:      time: mean
+long_name:         Global Mean Mole Fraction of CFC113
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        time
+out_name:          cfc113global
+type:              real
+!----------------------------------
+!
+
 
 !============
 variable_entry:    pfull
@@ -2267,7 +2354,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Pressure on Model Levels
 !----------------------------------
 ! Additional variable information:
@@ -2288,7 +2375,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: mean within years time: mean over years
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Pressure on Model Half-Levels
 !----------------------------------
 ! Additional variable information:

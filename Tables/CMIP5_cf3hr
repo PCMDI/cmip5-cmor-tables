@@ -943,7 +943,7 @@ standard_name:     longitude
 units:             degrees_east
 cell_methods:      time: point
 long_name:         Longitude
-comment:           function of time
+comment:           function of time.  Note that the CF convention and CMOR2 expect that this field will be included in each file that contains a variable that is a function of the ""location"" dimension, so it shouldn't be necessary to also save this field by itself.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -964,7 +964,7 @@ standard_name:     latitude
 units:             degrees_north
 cell_methods:      time: point
 long_name:         Latitude
-comment:           function of time
+comment:           the above comment also applies to latitude.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1004,7 +1004,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Air Temperature
 comment:           near-surface (usually, 2 meter) air temperature.
 !----------------------------------
@@ -1030,7 +1030,7 @@ modeling_realm:    atmos
 standard_name:     surface_temperature
 units:             K
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Temperature
 comment:           ""skin"" temperature (i.e., SST for open ocean)
 !----------------------------------
@@ -1056,7 +1056,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_sea_level
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Sea Level Pressure
 comment:           not, in general, the same as surface pressure
 !----------------------------------
@@ -1082,7 +1082,7 @@ modeling_realm:    atmos
 standard_name:     surface_air_pressure
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Air Pressure
 comment:           not, in general, the same as mean sea-level pressure
 !----------------------------------
@@ -1179,7 +1179,7 @@ modeling_realm:    atmos
 standard_name:     relative_humidity
 units:             %
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Relative Humidity
 comment:           near-surface (usually, 2meters) relative humidity expressed as a percentage.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
@@ -1201,7 +1201,7 @@ modeling_realm:    atmos
 standard_name:     specific_humidity
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Specific Humidity
 comment:           near-surface (usually, 2 meters) specific humidity.
 !----------------------------------
@@ -1227,7 +1227,7 @@ modeling_realm:    atmos
 standard_name:     precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Precipitation
 comment:           at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)
 !----------------------------------
@@ -1253,7 +1253,7 @@ modeling_realm:    atmos
 standard_name:     snowfall_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Snowfall Flux
 comment:           at surface; includes precipitation of all forms of water in the solid phase
 !----------------------------------
@@ -1279,7 +1279,7 @@ modeling_realm:    atmos
 standard_name:     convective_precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Precipitation
 comment:           at surface; includes both liquid and solid phases.
 !----------------------------------
@@ -1305,7 +1305,7 @@ modeling_realm:    atmos
 standard_name:     water_evaporation_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Evaporation
 comment:           at surface; flux of water into the atmosphere due to conversion of both liquid and solid phases to vapor (from underlying surface and vegetation)
 !----------------------------------
@@ -1327,7 +1327,7 @@ modeling_realm:    atmos
 standard_name:     water_sublimation_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Snow and Ice Sublimation Flux
 comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere. This differs from sbl appearing in table Limon in that the flux is averaged over the entire grid cell, not just the land portion.
 !----------------------------------
@@ -1403,7 +1403,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_latent_heat_flux
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Latent Heat Flux
 comment:           includes both evaporation and sublimation
 !----------------------------------
@@ -1430,7 +1430,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_sensible_heat_flux
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Sensible Heat Flux
 !----------------------------------
 ! Additional variable information:
@@ -1456,7 +1456,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1482,7 +1482,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1508,7 +1508,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1534,7 +1534,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1560,7 +1560,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1586,7 +1586,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1612,7 +1612,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1638,7 +1638,7 @@ modeling_realm:    atmos
 standard_name:     toa_incoming_shortwave_flux
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Incident Shortwave Radiation
 comment:           incident shortwave at the top of the atmosphere
 !----------------------------------
@@ -1665,7 +1665,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_shortwave_flux
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Shortwave Radiation
 comment:           at the top of the atmosphere
 !----------------------------------
@@ -1692,7 +1692,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_longwave_flux
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Longwave Radiation
 comment:           at the top of the atmosphere (to be compared with satellite measurements)
 !----------------------------------
@@ -1719,7 +1719,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_longwave_flux_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1745,7 +1745,7 @@ modeling_realm:    atmos
 standard_name:     toa_outgoing_shortwave_flux_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         TOA Outgoing Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
@@ -1771,7 +1771,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_water_vapor_content
 units:             kg m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Water Vapor Path
 comment:           vertically integrated through the atmospheric column
 !----------------------------------
@@ -1797,7 +1797,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction
 units:             %
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Cloud Fraction
 comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.
 !----------------------------------
@@ -1823,7 +1823,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_cloud_condensed_water_content
 units:             kg m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Condensed Water Path
 comment:           calculate mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1849,7 +1849,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_cloud_ice_content
 units:             kg m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ice Water Path
 comment:           calculate mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -1875,7 +1875,7 @@ modeling_realm:    atmos
 standard_name:     net_downward_radiative_flux_at_top_of_atmosphere_model
 units:             W m-2
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Net Downward Flux at Top of Model
 comment:           i.e., at the top of that portion of the atmosphere where dynamics are explicitly treated by the model. Report only if this differs from the net downward radiative flux at the top of the atmosphere.
 !----------------------------------
@@ -1902,7 +1902,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_convective_cloud_base
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Pressure at Convective Cloud Base
 !----------------------------------
 ! Additional variable information:
@@ -1923,7 +1923,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure_at_convective_cloud_top
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Pressure at Convective Cloud Top
 !----------------------------------
 ! Additional variable information:
@@ -1941,9 +1941,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     convection_time_fraction
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Fraction of Time Convection Occurs
 comment:           Fraction of time that convection occurs in the grid cell .
 !----------------------------------
@@ -1962,9 +1963,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     shallow_convection_time_fraction
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Fraction of Time Shallow Convection Occurs
 comment:           Fraction of time that shallow convection occurs in the grid cell. ( For models with a distinct shallow convection scheme only)
 !----------------------------------
@@ -1983,9 +1985,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_emission
 units:             kg  m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to All Anthropogenic Emissions of CO2
 comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Do not include natural fire sources, but include all anthropogenic sources, including fossil fuel use, cement production, agricultural burning, and sources associated with anthropogenic land use change excluding forest regrowth.
 !----------------------------------
@@ -2005,9 +2008,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fossil_fuel_combustion
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to Fossil Fuel Emissions of CO2
 comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Report the prescribed anthropogenic CO2 flux from fossil fuel use, including cement production, and flaring (but not from land-use changes, agricultural burning, forest regrowth, etc.)
 !----------------------------------
@@ -2027,9 +2031,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_sources
 units:             kg m-2 s-1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Carbon Mass Flux into the Atmosphere Due to Natural Sources
 comment:           Report from all simulations (both emission-driven and concentration-driven) performed by models with fully interactive and responsive carbon cycles.  This is what the atmosphere sees (on its own grid).  This field should be equivalent to the combined natural fluxes of carbon (requested in the L_mon and O_mon tables) that account for natural exchanges between the atmosphere and land or ocean reservoirs (i.e., ""net ecosystem biospheric productivity"", for land, and ""air to sea CO2 flux"", for ocean.)
 !----------------------------------
@@ -2052,7 +2057,7 @@ modeling_realm:    atmos
 standard_name:     convective_cloud_area_fraction
 units:             %
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Cloud Fraction
 comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include only convective cloud.  Besides the quantities from the Amon table, this is the only other 2-D field in this table.
 !----------------------------------
@@ -2076,7 +2081,7 @@ modeling_realm:    atmos
 standard_name:     height_above_reference_ellipsoid
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Altitude of Model Full-Levels
 comment:           This is actual height above mean sea level, not geopotential height
 !----------------------------------
@@ -2098,7 +2103,7 @@ modeling_realm:    atmos
 standard_name:     height_above_reference_ellipsoid
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Altitude of Model Half-Levels
 comment:           This is actual height above mean sea level, not geopotential height.  This is actual height above mean sea level, not geopotential height.  Include both the top of the model atmosphere and surface levels.
 !----------------------------------
@@ -2120,7 +2125,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Pressure at Model Full-Levels
 comment:           provide this field for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
@@ -2142,7 +2147,7 @@ modeling_realm:    atmos
 standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Pressure at Model Half-Levels
 comment:           provide this field for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
@@ -2164,7 +2169,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Temperature
 !----------------------------------
 ! Additional variable information:
@@ -2189,7 +2194,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_water_in_air
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Water
 comment:           include all phases of water
 !----------------------------------
@@ -2211,7 +2216,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_stratiform_cloud_liquid_water_in_air
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Stratiform Cloud Liquid Water
 comment:           Calculate as the mass of stratiform cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -2233,7 +2238,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_stratiform_cloud_ice_in_air
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Stratiform Cloud Ice
 comment:           Calculate as the mass of stratiform cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -2255,7 +2260,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_convective_cloud_liquid_water_in_air
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Convective Cloud Liquid Water
 comment:           Calculate as the mass of convective cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -2277,7 +2282,7 @@ modeling_realm:    atmos
 standard_name:     mass_fraction_of_convective_cloud_ice_in_air
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mass Fraction of Convective Cloud Ice
 comment:           Calculate as the mass of convective cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
@@ -2299,7 +2304,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_stratiform_cloud_liquid_water_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Stratiform Cloud Liquid Water 
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2321,7 +2326,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_stratiform_cloud_ice_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Stratiform Cloud Ice
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2343,7 +2348,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_convective_cloud_liquid_water_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Convective Cloud Liquid Water
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2365,7 +2370,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_convective_cloud_ice_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Convective Cloud Ice
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2387,7 +2392,7 @@ modeling_realm:    atmos
 standard_name:     large_scale_graupel_flux
 units:             kg m-2 s-1 
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Graupel Flux
 comment:           report on model half-levels
 !----------------------------------
@@ -2409,7 +2414,7 @@ modeling_realm:    atmos
 standard_name:     convective_rainfall_flux
 units:             kg m-2 s-1 
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Rainfall Flux
 comment:           report on model half-levels
 !----------------------------------
@@ -2431,7 +2436,7 @@ modeling_realm:    atmos
 standard_name:     large_scale_rainfall_flux
 units:             kg m-2 s-1 
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Rainfall Flux
 comment:           report on model half-levels
 !----------------------------------
@@ -2453,7 +2458,7 @@ modeling_realm:    atmos
 standard_name:     convective_snowfall_flux
 units:             kg m-2 s-1 
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Snowfall Flux
 comment:           report on model half-levels
 !----------------------------------
@@ -2475,7 +2480,7 @@ modeling_realm:    atmos
 standard_name:     large_scale_snowfall_flux
 units:             kg m-2 s-1 
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Snowfall Flux
 comment:           report on model half-levels
 !----------------------------------
@@ -2497,7 +2502,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_stratiform_cloud_graupel_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Stratiform Graupel
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2519,7 +2524,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_convective_cloud_rain_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Convective Rainfall
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2541,7 +2546,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_stratiform_cloud_rain_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Stratiform Rainfall
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2563,7 +2568,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_convective_cloud_snow_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Convective Snowfall
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2585,7 +2590,7 @@ modeling_realm:    atmos
 standard_name:     effective_radius_of_stratiform_cloud_snow_particle
 units:             m
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Hydrometeor Effective Radius of Stratiform Snowfall
 comment:           This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell). 
 !----------------------------------
@@ -2607,7 +2612,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_optical_thickness_due_to_stratiform_cloud
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Cloud Optical Depth
 comment:           This is the in-cloud optical depth obtained by considering only the cloudy portion of the grid cell.
 !----------------------------------
@@ -2629,7 +2634,7 @@ modeling_realm:    atmos
 standard_name:     atmosphere_optical_thickness_due_to_convective_cloud
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Cloud Optical Depth
 comment:           This is the in-cloud optical depth obtained by considering only the cloudy portion of the grid cell
 !----------------------------------
@@ -2651,7 +2656,7 @@ modeling_realm:    atmos
 standard_name:     stratiform_cloud_longwave_emissivity
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Cloud Emissivity
 comment:           This is the in-cloud emissivity obtained by considering only the cloudy portion of the grid cell.
 !----------------------------------
@@ -2673,7 +2678,7 @@ modeling_realm:    atmos
 standard_name:     convective_cloud_longwave_emissivity
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Cloud Emissivity
 comment:           This is the in-cloud emissivity obtained by considering only the cloudy portion of the grid cell.
 !----------------------------------
@@ -2695,7 +2700,7 @@ modeling_realm:    atmos
 standard_name:     convective_cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Cloud Area Fraction
 !----------------------------------
 ! Additional variable information:
@@ -2716,7 +2721,7 @@ modeling_realm:    atmos
 standard_name:     stratiform_cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Cloud Area Fraction
 !----------------------------------
 ! Additional variable information:

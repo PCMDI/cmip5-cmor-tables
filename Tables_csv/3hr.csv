@@ -12,7 +12,7 @@ The 3-hourly data should be collected only for the following experiments and yea
 ,,,"CO2 forcing (6.2b), anthropogenic aerosol forcing (6.4a), and sulfate aerosol forcing (6.4b)",all years,,,,,,,,,,,,,,,,,,
 ,,,abrupt 4XCO2 (6.3),first 5 years and last 30 years,,,,,,,,,,,,,,,,,,
 ,,,abrupt 4XCO2 ensemble (6.3-E),all years,,,,,,,,,,,,,,,,,,
-priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,ext_cell_measures,flag_values,flag_meanings
+priority,long name,units ,comment ,questions,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,Precipitation,kg m-2 s-1,at surface; includes both liquid and solid phases.  This is the 3-hour mean precipitation flux.,,pr,precipitation_flux,,kg m-2 s-1,time:mean,,,,,,real,longitude latitude time,pr,atmos,,area: areacella,,
 1.0,Air Temperature,K,"near-surface (usually, 2 meter) air temperature, sampled synoptically.",,tas,air_temperature,,K,time: point,,,,,,real,longitude latitude time1 height2m,tas,atmos,,area: areacella,,
 1.0,Surface Upward Latent Heat Flux,W m-2,This is the 3-hour mean flux.,,hfls,surface_upward_latent_heat_flux,,W m-2,time: mean,,,,,up,real,longitude latitude time,hfls,atmos,,area: areacella,,
@@ -36,6 +36,6 @@ priority,long name,units ,comment ,questions,output variable name ,standard name
 1.0,Surface Upwelling Clear-Sky Shortwave Radiation,W m-2,This is a 3-hour mean flux.,,rluscs,surface_upwelling_shortwave_flux_in_air_assuming_clear_sky,,W m-2,time: mean,,,,,up,real,longitude latitude time,rluscs,atmos,,area: areacella,,
 1.0,Surface Pressure,Pa,"sampled synoptically to diagnose atmospheric tides, this is better than mean sea level pressure.",,ps,surface_air_pressure,,Pa,time: point,,,,,,real,longitude latitude time1,ps,atmos,,area: areacella,,
 1.0,Total Cloud Fraction,%,"for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.  This is a 3-hour mean.",,clt,cloud_area_fraction,,%,time: mean,,,,,,real,longitude latitude time,clt,atmos,,area: areacella,,
-1.0,Surface Downward Diffuse Shortwave Radiation,W m-2,This is a 3-hour mean flux.,,rsdsdiff,,surface_diffuse_downwelling_shortwave_radiative_flux_in_air,W m-2,time: mean,,,,,,real,longitude latitude time,rsdsdiff,atmos,,area: areacella,,
+1.0,Surface Downward Diffuse Shortwave Radiation,W m-2,This is a 3-hour mean flux.,,rsdsdiff,surface_diffuse_downwelling_shortwave_flux_in_air,,W m-2,time: mean,,,,,,real,longitude latitude time,rsdsdiff,atmos,,area: areacella,,
 
 

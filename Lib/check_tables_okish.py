@@ -29,7 +29,10 @@ for t in tables.split():
         mn = float(A.get("valid_min",-1.e20))
         mx = float(A.get("valid_max",1.e20))
         val = (mn+mx)/2.
-        val = numpy.array([float(A.get("value",val)),])
+        try:
+            val = numpy.array([float(A.get("value",val)),])
+        except:
+            val = [A.get("value"),]
         if A.has_key("requested"):
             val=[]
             isnum=True

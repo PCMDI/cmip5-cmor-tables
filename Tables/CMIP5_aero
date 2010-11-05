@@ -517,7 +517,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_optical_thickness_due_to_ambient_aerosol
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ambient Aerosol Opitical Thickness at 550 nm
 comment:           AOD from the ambient aerosls (i.e., includes aerosol water).  Does not include AOD from stratospheric aerosols if these are prescribed but includes other possible background aerosol types.
 !----------------------------------
@@ -539,7 +539,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_optical_thickness_due_to_pm1_ambient_aerosol
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ambient Fine Aerosol Opitical Thickness at 550 nm
 comment:           od550 due to particles with wet diameter less than 1 um  (""ambient"" means ""wetted""). When models do not include explicit size information, it can be assumed that all anthropogenic aerosols and natural secondary aerosols have diameter less than 1 um. 
 !----------------------------------
@@ -561,7 +561,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_absorption_optical_thickness_due_to_ambient_aerosol
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ambient Aerosol Absorption Optical Thickness at 550 nm
 !----------------------------------
 ! Additional variable information:
@@ -582,7 +582,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_optical_thickness_due_to_ambient_aerosol
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ambient Aerosol Opitical Thickness at 870 nm
 comment:           AOD from the ambient aerosls (i.e., includes aerosol water).  Does not include AOD from stratospheric aerosols if these are prescribed but includes other possible background aerosol types.
 !----------------------------------
@@ -604,7 +604,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production_and_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Rate of Emission and Production of Dry Aerosol Total Organic Matter
 comment:           tendency of atmosphere mass content of organic matter dry aerosol due to net production and emission.  This is the sum of total emission of POA and total production of SOA (see next two entries), and it should only be reported if POA and SOA cannot be separately reported. ""Mass"" refers to the mass of organic matter, not mass of organic carbon alone. 
 !----------------------------------
@@ -626,7 +626,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Emission Rate of Dry Aerosol Primary Organic Matter
 comment:           tendency of atmosphere mass content of primary organic aerosol due to emission:  ""mass"" refers to the mass of primary organic matter, not mass of organic carbon alone.
 !----------------------------------
@@ -648,7 +648,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Production Rate of Dry Aerosol Secondary Organic Matter
 comment:           tendency of atmosphere mass content of secondary organic matter_dry aerosol due to net production:  If model lumps SOA emissions with POA, then report the sum of POA and SOA emissions as POA emissions.  ""mass"" refers to the mass of primary organic matter, not mass of organic carbon alone.
 !----------------------------------
@@ -670,7 +670,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Emission Rate of Black Carbon Aerosol Mass
 !----------------------------------
 ! Additional variable information:
@@ -691,7 +691,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Dry Aerosol Organic Matter
 comment:           tendency of atmosphere mass content of organic dry aerosol due to dry deposition: This is the sum of dry deposition of POA and dry deposition of SOA (see next two entries), and it should only be reported if POA and SOA cannot be separately reported. ""Mass"" refers to the mass of organic matter, not mass of organic carbon alone. 
 !----------------------------------
@@ -713,7 +713,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Dry Aerosol Primary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -734,7 +734,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Dry Aerosol Secondary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -755,7 +755,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Black Carbon Aerosol Mass
 !----------------------------------
 ! Additional variable information:
@@ -776,7 +776,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Dry Aerosol Organic Matter
 comment:           tendency of atmosphere mass content of organic matter dry aerosols due to wet deposition: This is the sum of wet deposition of POA and wet deposition of SOA (see next two entries), and it should only be reported if POA and SOA cannot be separately reported. ""Mass"" refers to the mass of organic matter, not mass of organic carbon alone. 
 !----------------------------------
@@ -798,7 +798,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Dry Aerosol Primary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -819,7 +819,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Dry Aerosol Secondary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -840,7 +840,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Black Carbon Aerosol Mass
 !----------------------------------
 ! Additional variable information:
@@ -861,7 +861,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission of Primary Aerosol from Biomass Burning
 comment:           tendency of atmosphere mass content of primary organic matter dry aerosol due to emission: This does not include sources of secondary aerosols from biomass burning aerosols, such as SO2 or SOA. 
 !----------------------------------
@@ -883,7 +883,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission Rate of SO2
 !----------------------------------
 ! Additional variable information:
@@ -901,11 +901,12 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Direct Emission Rate of SO4
-comment:           tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_net_production_and_emission: mass refers to SO4, not S
+comment:           expressed as a tendency of atmosphere mass content of SO4.  Direct emission does not include secondary sulfate production.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -925,7 +926,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dimethyl_sulfide_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission Rate of DMS
 !----------------------------------
 ! Additional variable information:
@@ -946,7 +947,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of SO2
 !----------------------------------
 ! Additional variable information:
@@ -967,7 +968,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of SO4
 !----------------------------------
 ! Additional variable information:
@@ -988,7 +989,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dimethyl_sulfide_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of DMS
 comment:           omit if DMS is not dry deposited in the model.
 !----------------------------------
@@ -1010,7 +1011,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of SO4
 !----------------------------------
 ! Additional variable information:
@@ -1031,7 +1032,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of SO2
 !----------------------------------
 ! Additional variable information:
@@ -1052,7 +1053,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dimethyl_sulfide_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of DMS
 comment:           omit if DMS is not wet deposited in the model.
 !----------------------------------
@@ -1074,7 +1075,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_ammonia_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission Rate of NH3
 !----------------------------------
 ! Additional variable information:
@@ -1095,7 +1096,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of NH3
 !----------------------------------
 ! Additional variable information:
@@ -1116,7 +1117,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of NH4
 !----------------------------------
 ! Additional variable information:
@@ -1137,7 +1138,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of NH4+NH3
 !----------------------------------
 ! Additional variable information:
@@ -1158,7 +1159,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission Rate of Seasalt
 !----------------------------------
 ! Additional variable information:
@@ -1179,7 +1180,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Seasalt
 !----------------------------------
 ! Additional variable information:
@@ -1200,7 +1201,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Seasalt
 !----------------------------------
 ! Additional variable information:
@@ -1221,7 +1222,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_emission
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Emission Rate of Dust
 !----------------------------------
 ! Additional variable information:
@@ -1242,7 +1243,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_dry_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Dry Deposition Rate of Dust
 !----------------------------------
 ! Additional variable information:
@@ -1263,7 +1264,7 @@ modeling_realm:    aerosol
 standard_name:     tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_wet_deposition
 units:             kg m-2 s-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Wet Deposition Rate of Dust
 !----------------------------------
 ! Additional variable information:
@@ -1284,7 +1285,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Dry Aerosol Organic Matter
 comment:           atmosphere dry organic content: This is the vertically integrated sum of atmosphere_primary_organic_content and atmosphere_secondary_organic_content (see next two table entries), and therefore should only be reported if those two components cannot be separately reported. 
 !----------------------------------
@@ -1306,7 +1307,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Dry Aerosol Primary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -1327,7 +1328,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Dry Aerosol Secondary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -1348,7 +1349,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_black_carbon_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Black Carbon Aerosol
 !----------------------------------
 ! Additional variable information:
@@ -1369,7 +1370,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_sulfate_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of SO4
 !----------------------------------
 ! Additional variable information:
@@ -1390,7 +1391,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_dust_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Dust
 !----------------------------------
 ! Additional variable information:
@@ -1411,7 +1412,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_seasalt_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of Seasalt
 !----------------------------------
 ! Additional variable information:
@@ -1432,7 +1433,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_nitrate_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of NO3
 !----------------------------------
 ! Additional variable information:
@@ -1453,7 +1454,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_mass_content_of_ammonium_dry_aerosol
 units:             kg m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Load of NH4
 !----------------------------------
 ! Additional variable information:
@@ -1474,7 +1475,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Dry Aerosol Organic Matter
 comment:           mass concentration of particulate organic matter dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  This is the sum of concentrations of primary and secondary organic aerosol (see next two table entries), and therefore should only be reported if those two components cannot be separately reported.
 !----------------------------------
@@ -1496,7 +1497,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_primary_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Dry Aerosol Primary Organic Matter
 comment:           mass concentration of primary particulate organic matter dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1518,7 +1519,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_secondary_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Dry Aerosol Secondary Organic Matter
 comment:           mass concentration of secondary particulate organic matter dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  If the model lumps SOA with POA, then report their sum as POA.
 !----------------------------------
@@ -1540,7 +1541,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_black_carbon_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Black Carbon Aerosol
 comment:           mass concentration of black carbon dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1562,7 +1563,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_sulfate_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of SO4
 comment:           mass concentration of sulfate dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1584,7 +1585,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_dust_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Dust
 comment:           mass concentration of dust dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1606,7 +1607,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_seasalt_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of Seasalt
 comment:           mass concentration of seasalt dry aerosol in air in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1628,7 +1629,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_nitrate_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of NO3
 comment:           Mass concentration in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1650,7 +1651,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_ammonium_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Concentration of NH4
 comment:           Mass concentration in model lowest layer (The location of the model's lowest layer should be recorded in the netCDF output file).  
 !----------------------------------
@@ -1669,9 +1670,10 @@ modeling_realm:    aerosol land
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     diffuse_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Diffuse Downward Shortwave Radiation
 comment:           downwelling_diffuse_shortwave_flux_in_air
 !----------------------------------
@@ -1690,9 +1692,10 @@ modeling_realm:    aerosol land
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     diffuse_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Diffuse Downward Clear Sky Shortwave Radiation
 comment:           downwelling_diffuse_shortwave_flux_in_air_assuming_clear_sky
 !----------------------------------
@@ -1711,9 +1714,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     effective_radius_of_cloud_liquid_water_particle_at_liquid_water_cloud_top
 units:             m
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Cloud-Top Effective Droplet Radius
 comment:           Droplets are liquid only.  Report effective radius ""as seen from space"" over liquid cloudy portion of grid cell.  This is the value from uppermost model layer with liquid cloud or, if available, it is better to sum over all liquid cloud tops, no matter where they occur, as long as they are seen from the top of the atmosphere. Weight by total liquid cloud top fraction of  (as seen from TOA) each time sample when computing monthly mean.
 !----------------------------------
@@ -1732,9 +1736,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Cloud Droplet Number Concentration of Cloud Tops
 comment:           Droplets are liquid only.  Report concentration ""as seen from space"" over liquid cloudy portion of grid cell.  This is the value from uppermost model layer with liquid cloud or, if available, it is better to sum over all liquid cloud tops, no matter where they occur, as long as they are seen from the top of the atmosphere. Weight by total liquid cloud top fraction of  (as seen from TOA) each time sample when computing monthly mean.
 !----------------------------------
@@ -1753,11 +1758,12 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_ice_crystals_in_air_at_ice_cloud_top
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ice Crystal Number Concentration of Cloud Tops
-comment:           Report concentration ""as seen from space"" over liquid cloudy portion of grid cell.  This is the value from uppermost model layer with ice cloud or, if available, it is better to sum over all ice cloud tops, no matter where they occur, as long as they are seen from the top of the atmosphere. Weight by total ice cloud top fraction (as seen from TOA) of each time sample when computing monthly mean.
+comment:           Report concentration ""as seen from space"" over ice-cloud portion of grid cell.  This is the value from uppermost model layer with ice cloud or, if available, it is better to sum over all ice cloud tops, no matter where they occur, as long as they are seen from the top of the atmosphere. Weight by total ice cloud top fraction (as seen from TOA) of each time sample when computing monthly mean.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1777,7 +1783,7 @@ modeling_realm:    aerosol
 standard_name:     atmosphere_number_content_of_cloud_droplets
 units:             m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Column Integrated Cloud Droplet Number
 comment:           Droplets are liquid only.  Weight by liquid cloud fraction in each layer when vertically integrating.  Weight by total liquid cloud fraction (as seen from TOA) when reporting monthly mean
 !----------------------------------
@@ -1798,8 +1804,8 @@ modeling_realm:    aerosol
 !----------------------------------
 units:             m-1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
-long_name:         Ambient Aerosol Extinction Optical Thickness at 550 nm
+cell_measures:     area: areacella
+long_name:         Ambient Aerosol Extinction at 550 nm
 comment:           "atmosphere_extinction_due_to_ambient_aerosol: ""ambient"" means ""wetted"".  This and other fields in this table are 3-D."
 !----------------------------------
 ! Additional variable information:
@@ -1819,7 +1825,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Dry Aerosol Organic Matter
 comment:           mass_concentration_of_organic_matter_dry_aerosol_in_air mass concentration of organic matter dry aerosol in air:  This is the sum of concentrations of primary and secondary organic aerosols (see next two table entries), and therefore should only be reported if those two components cannot be separately reported. 
 !----------------------------------
@@ -1840,7 +1846,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_primary_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Dry Aerosol Primary Organic Matter
 !----------------------------------
 ! Additional variable information:
@@ -1860,7 +1866,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_secondary_particulate_organic_matter_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Dry Aerosol Secondary Organic Matter
 comment:           mass concentration of secondary particulate organic matter dry aerosol in air:  If the model lumps SOA with POA, then report their sum as POA.
 !----------------------------------
@@ -1878,9 +1884,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     mass_concentration_of_biomass_burning_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Biomass Burning Aerosol
 comment:           mass_concentration_of_biomass_burning_dry_aerosol_in_air
 !----------------------------------
@@ -1901,7 +1908,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_black_carbon_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Black Carbon Aerosol
 !----------------------------------
 ! Additional variable information:
@@ -1921,7 +1928,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_water_in_ambient_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Aerosol Water 
 comment:           "mass concentration of water in ambient aerosol in air: ""ambient"" means ""wetted"""
 !----------------------------------
@@ -1942,7 +1949,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_sulfate_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of SO4
 !----------------------------------
 ! Additional variable information:
@@ -1962,7 +1969,7 @@ modeling_realm:    aerosol
 standard_name:     mole_fraction_of_sulfur_dioxide_in_air
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of SO2
 !----------------------------------
 ! Additional variable information:
@@ -1982,7 +1989,7 @@ modeling_realm:    aerosol
 standard_name:     mole_fraction_of_dimethyl_sulfide_in_air
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Mole Fraction of DMS
 !----------------------------------
 ! Additional variable information:
@@ -2002,7 +2009,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_nitrate_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of NO3 Aerosol
 !----------------------------------
 ! Additional variable information:
@@ -2022,7 +2029,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_ammonium_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of NH4 
 !----------------------------------
 ! Additional variable information:
@@ -2042,7 +2049,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_seasalt_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Seasalt 
 !----------------------------------
 ! Additional variable information:
@@ -2062,7 +2069,7 @@ modeling_realm:    aerosol
 standard_name:     mass_concentration_of_dust_dry_aerosol_in_air
 units:             kg m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Concentration of Dust 
 !----------------------------------
 ! Additional variable information:
@@ -2079,9 +2086,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_ambient_aerosol_in_air
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Aerosol Number Concentration
 comment:           number_concentration_of_ambient_aerosol_in_air
 !----------------------------------
@@ -2099,9 +2107,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_nucleation_mode_ambient_aerosol_in_air
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Number Concentration of Nucleation Mode Aerosol
 comment:           number_concentration_of_ambient_aerosol_in_nucleation_mode_in_air: include all particles with diameter smaller than 3 nm
 !----------------------------------
@@ -2119,9 +2128,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_coarse_mode_ambient_aerosol_in_air
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Number Concentration Coarse Mode Aerosol
 comment:           number_concentration_of_ambient_aerosol_in_coarse_mode_in_air: include all particles with diameter larger than 1 micron
 !----------------------------------
@@ -2142,7 +2152,7 @@ modeling_realm:    aerosol
 standard_name:     effective_radius_of_stratiform_cloud_liquid_water_particle
 units:             m
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Stratiform Cloud Droplet Effective Radius
 comment:           Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.
 !----------------------------------
@@ -2163,7 +2173,7 @@ modeling_realm:    aerosol
 standard_name:     effective_radius_of_convective_cloud_liquid_water_particle
 units:             m
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Cloud Droplet Effective Radius
 comment:           Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.
 !----------------------------------
@@ -2181,9 +2191,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_cloud_liquid_water_particles_in_air
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Cloud Droplet Number Concentration
 comment:           Cloud droplet number concentration in liquid clouds
 !----------------------------------
@@ -2201,9 +2212,10 @@ modeling_realm:    aerosol
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     number_concentration_of_ice_crystals_in_air
 units:             m-3
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Ice Crystal Number Concentration
 comment:           Ice Crystal number concentration in ice clouds
 !----------------------------------

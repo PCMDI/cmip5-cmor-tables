@@ -233,7 +233,7 @@ modeling_realm:    atmos
 standard_name:     precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Precipitation
 comment:           at surface; includes both liquid and solid phases.  This is the 3-hour mean precipitation flux.
 !----------------------------------
@@ -259,7 +259,7 @@ modeling_realm:    atmos
 standard_name:     air_temperature
 units:             K
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Temperature
 comment:           near-surface (usually, 2 meter) air temperature, sampled synoptically.
 !----------------------------------
@@ -285,7 +285,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_latent_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Latent Heat Flux
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -312,7 +312,7 @@ modeling_realm:    atmos
 standard_name:     surface_upward_sensible_heat_flux
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upward Sensible Heat Flux
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -339,7 +339,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Longwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -366,7 +366,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Longwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -393,7 +393,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Shortwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -420,7 +420,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Shortwave Radiation
 comment:           This is the 3-hour mean flux.
 !----------------------------------
@@ -497,7 +497,7 @@ modeling_realm:    atmos
 standard_name:     specific_humidity
 units:             1
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Near-Surface Specific Humidity
 comment:           near-surface (usually 2 m) specific humidity, sampled synoptically.
 !----------------------------------
@@ -523,7 +523,7 @@ modeling_realm:    land
 standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: point area: mean where land
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Moisture in Upper 0.1 m of Soil Column
 comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
 !----------------------------------
@@ -549,7 +549,7 @@ modeling_realm:    land
 standard_name:     surface_temperature
 units:             K
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:          Surface Temperature Where Land or Sea Ice
 comment:           ""skin"" temperature of all surfaces except open ocean, sampled synoptically.  
 !----------------------------------
@@ -571,7 +571,7 @@ modeling_realm:    ocean
 standard_name:     sea_surface_temperature
 units:             K
 cell_methods:      time: point area: mean where sea
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Sea Surface Temperature
 comment:           temperature of surface of open ocean, sampled synoptically.
 !----------------------------------
@@ -593,7 +593,7 @@ modeling_realm:    atmos
 standard_name:     convective_precipitation_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Convective Precipitation
 comment:           at surface.  This is a 3-hour mean convective precipitation flux.
 !----------------------------------
@@ -619,7 +619,7 @@ modeling_realm:    atmos
 standard_name:     snowfall_flux
 units:             kg m-2 s-1
 cell_methods:      time:mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Snowfall Flux
 comment:           at surface.  Includes all forms of precipitating solid phase of water.  This is the 3-hour mean snowfall flux.
 !----------------------------------
@@ -645,7 +645,7 @@ modeling_realm:    land
 standard_name:     runoff_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Runoff
 comment:           compute the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell, averaged over the 3-hour interval.
 !----------------------------------
@@ -671,7 +671,7 @@ modeling_realm:    atmos
 standard_name:     downwelling_longwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Longwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -698,7 +698,7 @@ modeling_realm:    atmos
 standard_name:     surface_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downwelling Clear-Sky Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -725,7 +725,7 @@ modeling_realm:    atmos
 standard_name:     surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Upwelling Clear-Sky Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
@@ -748,7 +748,7 @@ modeling_realm:    atmos
 standard_name:     surface_air_pressure
 units:             Pa
 cell_methods:      time: point
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Pressure
 comment:           sampled synoptically to diagnose atmospheric tides, this is better than mean sea level pressure.
 !----------------------------------
@@ -774,7 +774,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Total Cloud Fraction
 comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.  This is a 3-hour mean.
 !----------------------------------
@@ -797,9 +797,10 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
+standard_name:     surface_diffuse_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Downward Diffuse Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------

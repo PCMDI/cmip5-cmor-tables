@@ -305,7 +305,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction
 comment:           (40 height levels)
 !----------------------------------
@@ -327,7 +327,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction Undetected by CloudSat
 comment:           (40 height levels)  Clouds detected by CALIPSO but below the detectability threshold of CloudSat
 !----------------------------------
@@ -349,7 +349,7 @@ modeling_realm:    atmos
 standard_name:     histogram_of_equivalent_reflectivity_factor_over_height_above_reference_ellipsoid
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CloudSat Radar Reflectivity
 comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  (40 levelsx15 bins) .
 !----------------------------------
@@ -371,7 +371,7 @@ modeling_realm:    atmos
 standard_name:     histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Scattering Ratio
 comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  (40 levelsx15 bins) .
 !----------------------------------
@@ -393,7 +393,7 @@ modeling_realm:    atmos
 standard_name:     toa_bidirectional_reflectance
 units:             1
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         PARASOL Reflectance
 comment:           Simulated reflectance from PARASOL as seen at the top of the atmosphere for 5 solar zenith angles. Valid only over ocean and for one viewing direction (viewing zenith angle of 30 degrees and relative azimuth angle 320 degrees).
 !----------------------------------
@@ -415,7 +415,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Total Cloud Fraction 
 !----------------------------------
 ! Additional variable information:
@@ -436,7 +436,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Low Level Cloud Fraction 
 !----------------------------------
 ! Additional variable information:
@@ -457,7 +457,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO Mid Level Cloud Fraction 
 !----------------------------------
 ! Additional variable information:
@@ -478,7 +478,7 @@ modeling_realm:    atmos
 standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: mean
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         CALIPSO High Level Cloud Fraction 
 !----------------------------------
 ! Additional variable information:

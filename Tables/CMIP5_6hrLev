@@ -496,7 +496,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     air_temperature
 units:             K
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Temperature
 comment:           on all model levels
 !----------------------------------
@@ -569,7 +569,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     specific_humidity
 units:             1
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Specific Humidity
 comment:           on all model levels
 !----------------------------------
@@ -594,7 +594,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     surface_air_pressure
 units:             Pa
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Surface Air Pressure
 comment:           surface pressure, not mean sea level pressure
 !----------------------------------

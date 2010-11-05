@@ -168,8 +168,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          ua
 type:              real
-valid_min:         -90.0
-valid_max:         145.0
+valid_min:         -68.65
+valid_max:         136.6
 ok_min_mean_abs:   1.101
 ok_max_mean_abs:   22.42
 !----------------------------------
@@ -192,8 +192,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          va
 type:              real
-valid_min:         -80.0
-valid_max:         80.0
+valid_min:         -71.1
+valid_max:         69.93
 ok_min_mean_abs:   0.9886
 ok_max_mean_abs:   4.679
 !----------------------------------
@@ -208,7 +208,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     air_temperature
 units:             K
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Air Temperature
 comment:           on the following pressure levels: 850, 500, 250 hPa
 !----------------------------------
@@ -217,8 +217,8 @@ comment:           on the following pressure levels: 850, 500, 250 hPa
 dimensions:        longitude latitude plev3 time1
 out_name:          ta
 type:              real
-valid_min:         144.0
-valid_max:         330.0
+valid_min:         157.1
+valid_max:         326.4
 ok_min_mean_abs:   200.2
 ok_max_mean_abs:   289.9
 !----------------------------------
@@ -233,7 +233,7 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     air_pressure_at_sea_level
 units:             Pa
-ext_cell_measures: area: areacella
+cell_measures:     area: areacella
 long_name:         Sea Level Pressure
 !----------------------------------
 ! Additional variable information:
@@ -241,8 +241,8 @@ long_name:         Sea Level Pressure
 dimensions:        longitude latitude time1
 out_name:          psl
 type:              real
-valid_min:         92500.0
-valid_max:         113000.0
+valid_min:         9.477e+04
+valid_max:         1.124e+05
 ok_min_mean_abs:   1.003e+05
 ok_max_mean_abs:   1.017e+05
 !----------------------------------

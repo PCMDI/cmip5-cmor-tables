@@ -128,7 +128,7 @@ modeling_realm:    %(realm)
 standard_name:     %(standard name)
 units:             %(unformatted units)
 cell_methods:      %(cell_methods)
-ext_cell_measures: %(ext_cell_measures)
+cell_measures:     %(cell_measures)
 long_name:         %(long name)
 comment:           %(comment)
 !----------------------------------
