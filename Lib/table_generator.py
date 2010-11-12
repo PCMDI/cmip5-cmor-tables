@@ -3,7 +3,7 @@ import sys,time,os,genutil,numpy
 
 prefix = "CMIP5"
 
-general = """cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
+general = """cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   %s  ! project id
 table_date:   %s ! date this table was constructed
@@ -113,6 +113,7 @@ must_have_bounds: %(bounds?)
 index_only:       %(index axis?)
 climatology:      %(climatology)
 coords_attrib:    %(coords_attrib)
+must_call_cmor_grid: %(grid?)
 !----------------------------------
 !
 """
@@ -432,8 +433,8 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
         lns=lns.replace("zlevel",zlevel_name)
         if tbnm.find("Oclim")>-1:
             lns=lns.replace("dimensions:      longitude latitude time","dimensions:      longitude latitude time2")
- #       if tbnm.find("cfSite")>-1:
- #           lns=lns.replace("longitude latitude","site")
+        if tbnm.find("cfSite")>-1:
+            lns=lns.replace("longitude latitude","site")
         print >> fo, lns
 
     return fo
@@ -466,8 +467,8 @@ def create_table(table_file, dims_file,minmax={}):
                     ##     if sp[i2]=='tasmax' : print i2,sp[i2]
                     if len(sp)>15 and 'time' in sp[16]:
                         sp[16]=sp[16].replace('time','time1')
-#                        if table_file[-11:-4]=='cfSites':
-#                            sp[16]=sp[16].replace("longitude latitude","site")
+                    if table_file[-11:-4]=='cfSites':
+                        sp[16]=sp[16].replace("longitude latitude","site")
                     for i in range(len(sp)):
                         if sp[i].find(",")>-1:
                             sp[i]='"%s"' % sp[i]
@@ -494,8 +495,8 @@ def create_table(table_file, dims_file,minmax={}):
     dlines=dlines2
     for l in dlines:
         sp,iadd = process_a_line(l)
-#        if len(sp)>15 and table_file[-11:-4]=='cfSites':
-#                sp[16]=sp[16].replace("longitude latitude","site")
+        if len(sp)>15 and table_file[-11:-4]=='cfSites':
+            sp[16]=sp[16].replace("longitude latitude","site")
         if 0<=sp[0].find("CMOR Table")<=1 and foundnm == False: # line that will give us the table name
             i=1
             while sp[i].strip()=="":

@@ -8,10 +8,10 @@ modeling_realm: atmos
 
 frequency: subhr
 
-cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   05 November 2010 ! date this table was constructed
+table_date:   12 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -66,52 +66,6 @@ approx_interval:  0.017361     ! approximate spacing between successive time
                           !   coordinate.
 
 generic_levels:   alevel alevhalf
-
-!============
-axis_entry: longitude
-!============
-!----------------------------------
-! Axis attributes:
-!----------------------------------
-standard_name:    longitude
-units:            degrees_east
-axis:             X             ! X, Y, Z, T (default: undeclared)
-long_name:        longitude
-!----------------------------------
-! Additional axis information:
-!----------------------------------
-out_name:         lon
-valid_min:        0.0         
-valid_max:        360.0 
-stored_direction: increasing
-type:             double
-must_have_bounds: yes
-!----------------------------------
-!
-
-
-!============
-axis_entry: latitude
-!============
-!----------------------------------
-! Axis attributes:
-!----------------------------------
-standard_name:    latitude
-units:            degrees_north
-axis:             Y             ! X, Y, Z, T (default: undeclared)
-long_name:        latitude
-!----------------------------------
-! Additional axis information:
-!----------------------------------
-out_name:         lat
-valid_min:        -90.0         
-valid_max:        90.0 
-stored_direction: increasing
-type:             double
-must_have_bounds: yes
-!----------------------------------
-!
-
 
 !============
 axis_entry: time1
@@ -180,6 +134,27 @@ stored_direction: increasing
 type:             double
 value:            10.            ! of scalar (singleton) dimension 
 must_have_bounds: no
+!----------------------------------
+!
+
+
+!============
+axis_entry: site
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+units:            1
+long_name:        site index
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         site
+type:             integer
+must_have_bounds: no
+index_only:       ok
+must_call_cmor_grid: yes
+
 !----------------------------------
 !
 
@@ -389,7 +364,7 @@ comment:           height above the geoid; as defined here, ""the geoid"" is a s
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude
+dimensions:        site
 out_name:          orog
 type:              real
 valid_min:         -700
@@ -558,7 +533,7 @@ comment:           near-surface (usually, 2 meter) air temperature.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height2m
+dimensions:        site time1 height2m
 out_name:          tas
 type:              real
 valid_min:         180.6
@@ -584,7 +559,7 @@ comment:           ""skin"" temperature (i.e., SST for open ocean)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          ts
 type:              real
 valid_min:         176.8
@@ -610,7 +585,7 @@ comment:           not, in general, the same as surface pressure
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          psl
 type:              real
 valid_min:         9.477e+04
@@ -636,7 +611,7 @@ comment:           not, in general, the same as mean sea-level pressure
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          ps
 type:              real
 valid_min:         4.792e+04
@@ -661,7 +636,7 @@ comment:           near-surface (usually, 10 meters) eastward component of wind.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height10m
+dimensions:        site time1 height10m
 out_name:          uas
 type:              real
 valid_min:         -19.01
@@ -686,7 +661,7 @@ comment:           near-surface (usually, 10 meters) northward component of wind
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height10m
+dimensions:        site time1 height10m
 out_name:          vas
 type:              real
 valid_min:         -18.04
@@ -711,7 +686,7 @@ comment:           near-surface (usually, 10 meters) wind speed.  This is the me
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height10m
+dimensions:        site time1 height10m
 out_name:          sfcWind
 type:              real
 !----------------------------------
@@ -733,7 +708,7 @@ comment:           near-surface (usually, 2meters) relative humidity expressed a
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height2m
+dimensions:        site time1 height2m
 out_name:          hurs
 type:              real
 !----------------------------------
@@ -755,7 +730,7 @@ comment:           near-surface (usually, 2 meters) specific humidity.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height2m
+dimensions:        site time1 height2m
 out_name:          huss
 type:              real
 valid_min:         -7.21e-06
@@ -781,7 +756,7 @@ comment:           at surface; includes both liquid and solid phases from all ty
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          pr
 type:              real
 valid_min:         0
@@ -807,7 +782,7 @@ comment:           at surface; includes precipitation of all forms of water in t
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          prsn
 type:              real
 valid_min:         0
@@ -833,7 +808,7 @@ comment:           at surface; includes both liquid and solid phases.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          prc
 type:              real
 valid_min:         0
@@ -859,7 +834,7 @@ comment:           at surface; flux of water into the atmosphere due to conversi
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          evspsbl
 type:              real
 !----------------------------------
@@ -881,7 +856,7 @@ comment:           The snow and ice sublimation flux is the loss of snow and ice
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          sbl
 type:              real
 valid_min:         -0.004959
@@ -905,7 +880,7 @@ long_name:         Surface Downward Eastward Wind Stress
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          tauu
 type:              real
 positive:          down
@@ -930,7 +905,7 @@ long_name:         Surface Downward Northward Wind Stress
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          tauv
 type:              real
 positive:          down
@@ -957,7 +932,7 @@ comment:           includes both evaporation and sublimation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          hfls
 type:              real
 positive:          up
@@ -983,7 +958,7 @@ long_name:         Surface Upward Sensible Heat Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          hfss
 type:              real
 positive:          up
@@ -1009,7 +984,7 @@ long_name:         Surface Downwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rlds
 type:              real
 positive:          down
@@ -1035,7 +1010,7 @@ long_name:         Surface Upwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rlus
 type:              real
 positive:          up
@@ -1061,7 +1036,7 @@ long_name:         Surface Downwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsds
 type:              real
 positive:          down
@@ -1087,7 +1062,7 @@ long_name:         Surface Upwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsus
 type:              real
 positive:          up
@@ -1113,7 +1088,7 @@ long_name:         Surface Downwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsdscs
 type:              real
 positive:          down
@@ -1139,7 +1114,7 @@ long_name:         Surface Upwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsuscs
 type:              real
 positive:          up
@@ -1165,7 +1140,7 @@ long_name:         Surface Downwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rldscs
 type:              real
 positive:          down
@@ -1192,7 +1167,7 @@ comment:           incident shortwave at the top of the atmosphere
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsdt
 type:              real
 positive:          down
@@ -1219,7 +1194,7 @@ comment:           at the top of the atmosphere
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsut
 type:              real
 positive:          up
@@ -1246,7 +1221,7 @@ comment:           at the top of the atmosphere (to be compared with satellite m
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rlut
 type:              real
 positive:          up
@@ -1272,7 +1247,7 @@ long_name:         TOA Outgoing Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rlutcs
 type:              real
 positive:          up
@@ -1298,7 +1273,7 @@ long_name:         TOA Outgoing Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rsutcs
 type:              real
 positive:          up
@@ -1325,7 +1300,7 @@ comment:           vertically integrated through the atmospheric column
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          prw
 type:              real
 valid_min:         -0.0006775
@@ -1351,7 +1326,7 @@ comment:           for the whole atmospheric column, as seen from the surface or
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          clt
 type:              real
 valid_min:         -0.0001822
@@ -1377,7 +1352,7 @@ comment:           calculate mass of condensed (liquid + ice) water in the colum
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          clwvi
 type:              real
 valid_min:         -3.827e-06
@@ -1403,7 +1378,7 @@ comment:           calculate mass of ice water in the column divided by the area
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          clivi
 type:              real
 valid_min:         -1.872e-06
@@ -1429,7 +1404,7 @@ comment:           i.e., at the top of that portion of the atmosphere where dyna
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          rtmt
 type:              real
 positive:          down
@@ -1455,7 +1430,7 @@ long_name:         Air Pressure at Convective Cloud Base
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          ccb
 type:              real
 !----------------------------------
@@ -1476,7 +1451,7 @@ long_name:         Air Pressure at Convective Cloud Top
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          cct
 type:              real
 !----------------------------------
@@ -1498,7 +1473,7 @@ comment:           Fraction of time that convection occurs in the grid cell .
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          ci 
 type:              real
 !----------------------------------
@@ -1520,7 +1495,7 @@ comment:           Fraction of time that shallow convection occurs in the grid c
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          sci
 type:              real
 !----------------------------------
@@ -1542,7 +1517,7 @@ comment:           This is requested only for the emission-driven coupled carbon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          fco2antt
 type:              real
 positive:          up
@@ -1565,7 +1540,7 @@ comment:           This is requested only for the emission-driven coupled carbon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          fco2fos
 type:              real
 positive:          up
@@ -1588,7 +1563,7 @@ comment:           Report from all simulations (both emission-driven and concent
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1
+dimensions:        site time1
 out_name:          fco2nat
 type:              real
 positive:          up
@@ -1610,7 +1585,7 @@ comment:           Include both large-scale and convective cloud.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          cl
 type:              real
 valid_min:         0
@@ -1635,7 +1610,7 @@ comment:           Include both large-scale and convective cloud.  Calculate as 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          clw
 type:              real
 !----------------------------------
@@ -1656,7 +1631,7 @@ comment:           Include both large-scale and convective cloud. Calculate as t
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          cli
 type:              real
 !----------------------------------
@@ -1677,7 +1652,7 @@ comment:           Report on model half-levels (i.e., model layer bounds and not
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevhalf longitude latitude time1
+dimensions:        alevhalf site time1
 out_name:          mc
 type:              real
 positive:          up
@@ -1698,7 +1673,7 @@ long_name:         Air Temperature
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          ta
 type:              real
 valid_min:         157.1
@@ -1722,7 +1697,7 @@ long_name:         Eastward Wind
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          ua
 type:              real
 valid_min:         -68.65
@@ -1746,7 +1721,7 @@ long_name:         Northward Wind
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          va
 type:              real
 valid_min:         -71.1
@@ -1770,7 +1745,7 @@ long_name:         Specific Humidity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          hus
 type:              real
 valid_min:         -0.000299
@@ -1795,7 +1770,7 @@ comment:           This is the relative humidity with respect to liquid water fo
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          hur
 type:              real
 valid_min:         -2.642
@@ -1820,7 +1795,7 @@ comment:           commonly referred to as ""omega"", this represents the vertic
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          wap
 type:              real
 valid_min:         -1.126
@@ -1844,7 +1819,7 @@ long_name:         Geopotential Height
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          zg
 type:              real
 valid_min:         -719.7
@@ -1868,7 +1843,7 @@ long_name:         Upwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rlu
 type:              real
 positive:          up
@@ -1889,7 +1864,7 @@ long_name:         Upwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rsu
 type:              real
 positive:          up
@@ -1910,7 +1885,7 @@ long_name:         Downwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rld
 type:              real
 positive:          down
@@ -1931,7 +1906,7 @@ long_name:         Downwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rsd
 type:              real
 positive:          down
@@ -1952,7 +1927,7 @@ long_name:         Upwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rlucs
 type:              real
 positive:          up
@@ -1973,7 +1948,7 @@ long_name:         Upwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rsucs
 type:              real
 positive:          up
@@ -1994,7 +1969,7 @@ long_name:         Downwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rldcs
 type:              real
 positive:          down
@@ -2015,7 +1990,7 @@ long_name:         Downwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          rsdcs
 type:              real
 positive:          down
@@ -2036,7 +2011,7 @@ long_name:         Tendency of Air Temperature
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnt 
 type:              real
 !----------------------------------
@@ -2056,7 +2031,7 @@ long_name:         Tendency of Air Temperature due to Advection
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnta 
 type:              real
 !----------------------------------
@@ -2076,7 +2051,7 @@ long_name:         Tendency of Air Temperature due to Diabatic Processes
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tntmp
 type:              real
 !----------------------------------
@@ -2096,7 +2071,7 @@ long_name:         Tendency of Air Temperature due to Stratiform Cloud Condensat
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tntscpbl 
 type:              real
 !----------------------------------
@@ -2116,7 +2091,7 @@ long_name:         Tendency of Air Temperature due to Radiative Heating
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tntr 
 type:              real
 !----------------------------------
@@ -2136,7 +2111,7 @@ long_name:         Tendency of Air Temperature due to Moist Convection
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tntc
 type:              real
 !----------------------------------
@@ -2156,7 +2131,7 @@ long_name:         Tendency of Specific Humidity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhus
 type:              real
 !----------------------------------
@@ -2176,7 +2151,7 @@ long_name:         Tendency of Specific Humidity due to Advection
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhusa 
 type:              real
 !----------------------------------
@@ -2196,7 +2171,7 @@ long_name:         Tendency of Specific Humidity due to Convection
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhusc 
 type:              real
 !----------------------------------
@@ -2216,7 +2191,7 @@ long_name:         Tendency of Specific Humidity due to Diffusion
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhusd 
 type:              real
 !----------------------------------
@@ -2236,7 +2211,7 @@ long_name:         Tendency of Specific Humidity due to Stratiform Cloud Condens
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhusscpbl 
 type:              real
 !----------------------------------
@@ -2256,7 +2231,7 @@ long_name:         Tendency of Specific Humidity due to Model Physics
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          tnhusmp 
 type:              real
 !----------------------------------
@@ -2276,7 +2251,7 @@ long_name:         Eddy Viscosity Coefficient for Momentum Variables
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          evu
 type:              real
 !----------------------------------
@@ -2296,7 +2271,7 @@ long_name:         Eddy Diffusivity Coefficient for Temperature Variable
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          edt
 type:              real
 !----------------------------------
@@ -2317,7 +2292,7 @@ comment:           This field is needed only for models in which the pressure ca
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          pfull
 type:              real
 !----------------------------------
@@ -2338,9 +2313,53 @@ comment:           This field is needed only for models in which the pressure ca
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel longitude latitude time1
+dimensions:        alevel site time1
 out_name:          phalf
 type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    longitude
+!============
+modeling_realm:    atmos
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     longitude
+units:             degrees_east
+cell_methods:      0.0
+long_name:         Longitude
+comment:           Note that the CF convention and CMOR2 require that this field will be included in each file that contains a variable that is a function of the ""site"" dimension, so there is no need to save this field by itself.  It is included here simply to indicate that longitudes should be stored for the site grid in each file written.
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        site
+out_name:          lon
+type:              real
+valid_min:         360.0
+!----------------------------------
+!
+
+!============
+variable_entry:    latitude
+!============
+modeling_realm:    atmos
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     latitude
+units:             degrees_north
+cell_methods:      -90.0
+long_name:         Latitude
+comment:           the above comment also applies to latitude.
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        site
+out_name:          lat
+type:              real
+valid_min:         90.0
 !----------------------------------
 !
 

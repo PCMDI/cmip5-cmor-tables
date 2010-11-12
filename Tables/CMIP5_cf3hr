@@ -3,10 +3,10 @@ modeling_realm: atmos
 
 frequency: 3hr
 
-cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   05 November 2010 ! date this table was constructed
+table_date:   12 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -197,7 +197,6 @@ long_name:        altitude
 out_name:         alt40
 stored_direction: increasing
 tolerance:        0.001
-
 type:             double
 requested:        240. 720. 1200. 1680. 2160. 2640. 3120. 3600. 4080. 4560. 5040. 5520. 6000. 6480. 6960. 7440. 7920. 8400. 8880. 9360. 9840. 10320. 10800. 11280. 11760. 12240. 12720. 13200. 13680. 14160. 14640. 15120. 15600. 16080. 16560. 17040. 17520. 18000. 18480. 18960.        ! space-separated list of requested coordinates 
 requested_bounds: 0. 480. 480. 960. 960. 1440. 1440. 1920. 1920. 2400. 2400. 2880. 2880. 3360. 3360. 3840. 3840. 4320. 4320. 4800. 4800. 5280. 5280. 5760. 5760. 6240. 6240. 6720. 6720. 7200. 7200. 7680. 7680. 8160. 8160. 8640. 8640. 9120. 9120. 9600. 9600. 10080. 10080. 10560. 10560. 11040. 11040. 11520. 11520. 12000. 12000. 12480. 12480. 12960. 12960. 13440. 13440. 13920. 13920. 14400. 14400. 14880. 14880. 15360. 15360. 15840. 15840. 16320. 16320. 16800. 16800. 17280. 17280. 17760. 17760. 18240. 18240. 18720. 18720. 19200. ! space-separated list of requested coordinate bounds
@@ -313,7 +312,6 @@ long_name:        lidar backscattering ratio
 out_name:         scatratio
 stored_direction: increasing
 tolerance:        0.001
-
 type:             double
 requested:        0.0605 2.1 4. 6. 8.5 12.5 17.5 22.5 27.5 35. 45. 55. 70. 539.5 1004.        ! space-separated list of requested coordinates 
 requested_bounds: 0.01 1.2 1.2 3. 3. 5. 5. 7. 7. 10. 10. 15. 15. 20. 20. 25. 25. 30. 30. 40. 40. 50. 50. 60. 60. 80. 80. 999. 999. 1009. ! space-separated list of requested coordinate bounds
@@ -337,7 +335,6 @@ long_name:        CloudSat simulator equivalent radar reflectivity factor
 out_name:         dbze
 stored_direction: increasing
 tolerance:        0.001
-
 type:             double
 requested:        -47.5 -42.5 -37.5 -32.5 -27.5 -22.5 -17.5 -12.5 -7.5 -2.5 2.5 7.5 12.5 17.5 22.5        ! space-separated list of requested coordinates 
 requested_bounds: -50. -45. -45. -40. -40. -35. -35. -30. -30. -25. -25. -20. -20. -15. -15. -10. -10. -5. -5. 0. 0. 5. 5. 10. 10. 15. 15. 20. 20. 25. ! space-separated list of requested coordinate bounds
@@ -361,7 +358,6 @@ long_name:        solar zenith angle
 out_name:         sza
 stored_direction: increasing
 tolerance:        0.001
-
 type:             double
 requested:        0. 20. 40. 60. 80.        ! space-separated list of requested coordinates 
 must_have_bounds: no
@@ -385,6 +381,8 @@ stored_direction: increasing
 type:             integer
 must_have_bounds: no
 index_only:       ok
+must_call_cmor_grid: yes
+
 !----------------------------------
 !
 
@@ -933,7 +931,7 @@ type:              real
 !
 
 !============
-variable_entry:    lon
+variable_entry:    longitude
 !============
 modeling_realm:    atmos
 !----------------------------------
@@ -943,18 +941,20 @@ standard_name:     longitude
 units:             degrees_east
 cell_methods:      time: point
 long_name:         Longitude
-comment:           function of time.  Note that the CF convention and CMOR2 expect that this field will be included in each file that contains a variable that is a function of the ""location"" dimension, so it shouldn't be necessary to also save this field by itself.
+comment:           is a function of time.  Note that the CF convention and CMOR2 require that this field will be included in each file that contains a variable that is a function of the ""location"" dimension, so there is no need to save this field by itself.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        location time1
 out_name:          lon
 type:              real
+valid_min:         0.0
+valid_max:         360.0
 !----------------------------------
 !
 
 !============
-variable_entry:    lat
+variable_entry:    latitude
 !============
 modeling_realm:    atmos
 !----------------------------------
@@ -971,6 +971,8 @@ comment:           the above comment also applies to latitude.
 dimensions:        location time1
 out_name:          lat
 type:              real
+valid_min:         -90.0
+valid_max:         90.0
 !----------------------------------
 !
 

@@ -3,10 +3,10 @@ modeling_realm: atmos
 
 frequency: day
 
-cmor_version: 2.4.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   05 November 2010 ! date this table was constructed
+table_date:   12 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -123,7 +123,6 @@ long_name:        pressure
 out_name:         plev
 stored_direction: decreasing
 tolerance:        0.001
-
 type:             double
 requested:        100000. 85000. 70000. 50000. 25000. 10000. 5000. 1000.        ! space-separated list of requested coordinates 
 must_have_bounds: no

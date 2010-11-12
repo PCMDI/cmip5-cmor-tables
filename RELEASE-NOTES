@@ -1,3 +1,4 @@
+2010-11-12 : added site longitude latitude to cfSite, added must_call_cmor_grid attribute, need CMOR 2.5
 2010-10-25 : Fixed cfSites still had some lat/lon...
 2010-10-22 : Table replaced cell_measures with ext_cell_measures to be CF compliant
 2010-10-19 : added required attribute parent_experiment_rip
