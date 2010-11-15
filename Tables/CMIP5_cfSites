@@ -11,7 +11,7 @@ frequency: subhr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   15 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -2328,7 +2328,6 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     longitude
 units:             degrees_east
-cell_methods:      0.0
 long_name:         Longitude
 comment:           Note that the CF convention and CMOR2 require that this field will be included in each file that contains a variable that is a function of the ""site"" dimension, so there is no need to save this field by itself.  It is included here simply to indicate that longitudes should be stored for the site grid in each file written.
 !----------------------------------
@@ -2337,7 +2336,8 @@ comment:           Note that the CF convention and CMOR2 require that this field
 dimensions:        site
 out_name:          lon
 type:              real
-valid_min:         360.0
+valid_min:         0.0
+valid_max:         360.0
 !----------------------------------
 !
 
@@ -2350,7 +2350,6 @@ modeling_realm:    atmos
 !----------------------------------
 standard_name:     latitude
 units:             degrees_north
-cell_methods:      -90.0
 long_name:         Latitude
 comment:           the above comment also applies to latitude.
 !----------------------------------
@@ -2359,7 +2358,8 @@ comment:           the above comment also applies to latitude.
 dimensions:        site
 out_name:          lat
 type:              real
-valid_min:         90.0
+valid_min:         -90.0
+valid_max:         90.0
 !----------------------------------
 !
 
