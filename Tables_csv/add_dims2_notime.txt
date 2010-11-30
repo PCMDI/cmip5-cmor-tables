@@ -44,7 +44,7 @@ long_name:        ocean double sigma coordinate
 !----------------------------------	
 out_name:         lev
 must_have_bounds: yes
-formula:          for k <= k_c:\n z(k,j,i)= sigma(k)*f(j,i) \n for k > k_c:\n z(k,j,i)= f(j,i) + (sigma(k)-1)*(depth(j,i)-f(j,i)) \n f(j,i)= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth(j,i)-href))
+formula:          for k <= k_c:\n z= sigma*f \n for k > k_c:\n z= f + (sigma-1)*(depth-f) \n f= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth-href))
 z_factors:        sigma: sigma depth: depth z1: z1 z2: z2 a: a_coeff href: href k_c: k_c
 z_bounds_factors: sigma: sigma_bnds depth: depth z1: z1 z2: z2 a: a href: href k_c: k_c
 !----------------------------------	

@@ -44,7 +44,7 @@ long_name:        ocean double sigma coordinate
 !----------------------------------	
 out_name:         lev
 must_have_bounds: yes
-formula:          for k <= k_c:\n z(k,j,i)= sigma(k)*f(j,i) \n for k > k_c:\n z(k,j,i)= f(j,i) + (sigma(k)-1)*(depth(j,i)-f(j,i)) \n f(j,i)= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth(j,i)-href))
+formula:          for k <= k_c:\n z= sigma*f \n for k > k_c:\n z= f + (sigma-1)*(depth-f) \n f= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth-href))
 z_factors:        sigma: sigma depth: depth z1: z1 z2: z2 a: a_coeff href: href k_c: k_c
 z_bounds_factors: sigma: sigma_bnds depth: depth z1: z1 z2: z2 a: a href: href k_c: k_c
 !----------------------------------	
@@ -66,7 +66,7 @@ long_name:        ocean sigma over z coordinate
 !----------------------------------	
 out_name:         lev
 must_have_bounds: yes
-formula:          for k <= nsigma: z(n,k,j,i) = eta(n,j,i) + sigma(k)*(min(depth_c,depth(j,i))+eta(n,j,i)) ; for k > nsigma: z(n,k,j,i) = zlev(k)
+formula:          for k <= nsigma: z = eta + sigma*(min(depth_c,depth)+eta) ; for k > nsigma: z = zlev
 z_factors:        sigma: sigma eta: eta depth: depth depth_c: depth_c nsigma: nsigma zlev: zlev
 z_bounds_factors: sigma: sigma_bnds eta: eta depth: depth depth_c: depth_c nsigma: nsigma zlev: zlev_bnds
 !----------------------------------	
@@ -76,7 +76,7 @@ axis_entry: ocean_s
 !============
 !
 !  This coordinate is dimensionless and varies from 0 at the surface to -1. at the ocean floor.
-!  The values of s(k), which appears in the formula below, should be stored as ocean_s.  
+!  The values of s, which appears in the formula below, should be stored as ocean_s.  
 !  Note that in the netCDF file the variable will be named "lev", not ocean_s.
 !
 !------------
@@ -96,7 +96,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        -1.
 valid_max:        0.
-formula:          z(n,k,j,i) = eta(n,j,i)*(1+s(k)) + depth_c*s(k) + (depth(j,i)-depth_c)*C(k) \n where \n C(k)=(1-b)*sinh(a*s(k))/sinh(a) +\n           b*(tanh(a*(s(k)+0.5))/(2*tanh(0.5*a)) - 0.5)
+formula:          z = eta*(1+s) + depth_c*s + (depth-depth_c)*C \n where \n C=(1-b)*sinh(a*s)/sinh(a) +\n           b*(tanh(a*(s+0.5))/(2*tanh(0.5*a)) - 0.5)
 z_factors:        s: lev eta: eta depth: depth a: a_coeff b: b_coeff depth_c: depth_c
 z_bounds_factors: s: lev_bnds eta: eta depth: depth a: a b: b depth_c: depth_c
 !----------------------------------	
@@ -106,7 +106,7 @@ axis_entry: ocean_sigma
 !============
 !
 !  This coordinate is dimensionless and varies from 0 at the surface to -1. at the ocean floor.
-!  The values of sigma(k), which appears in the formula below, should be stored as ocean_sigma.  
+!  The values of sigma, which appears in the formula below, should be stored as ocean_sigma.  
 !  Note that in the netCDF file the variable will be named "lev", not ocean_sigma.
 !
 !------------
@@ -126,7 +126,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        -1.
 valid_max:        0.
-formula:          z(n,k,j,i) = eta(n,j,i) + sigma(k)*(depth(j,i)+eta(n,j,i))
+formula:          z = eta + sigma*(depth+eta)
 z_factors:        sigma: lev eta: eta depth: depth
 z_bounds_factors: sigma: lev_bnds eta: eta depth: depth
 !----------------------------------	
