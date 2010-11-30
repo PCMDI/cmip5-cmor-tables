@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -242,10 +243,6 @@ comment:           at surface; includes both liquid and solid phases.  This is t
 dimensions:        longitude latitude time
 out_name:          pr
 type:              real
-valid_min:         0
-valid_max:         0.001254
-ok_min_mean_abs:   2.156e-05
-ok_max_mean_abs:   3.215e-05
 !----------------------------------
 !
 
@@ -268,10 +265,6 @@ comment:           near-surface (usually, 2 meter) air temperature, sampled syno
 dimensions:        longitude latitude time1 height2m
 out_name:          tas
 type:              real
-valid_min:         180.6
-valid_max:         325.7
-ok_min_mean_abs:   273.5
-ok_max_mean_abs:   281.7
 !----------------------------------
 !
 
@@ -295,10 +288,6 @@ dimensions:        longitude latitude time
 out_name:          hfls
 type:              real
 positive:          up
-valid_min:         -76.77
-valid_max:         790.7
-ok_min_mean_abs:   50.39
-ok_max_mean_abs:   73.2
 !----------------------------------
 !
 
@@ -322,10 +311,6 @@ dimensions:        longitude latitude time
 out_name:          hfss
 type:              real
 positive:          up
-valid_min:         -264.5
-valid_max:         844.8
-ok_min_mean_abs:   10.7
-ok_max_mean_abs:   34.84
 !----------------------------------
 !
 
@@ -349,10 +334,6 @@ dimensions:        longitude latitude time
 out_name:          rlds
 type:              real
 positive:          down
-valid_min:         30.71
-valid_max:         520.5
-ok_min_mean_abs:   271.2
-ok_max_mean_abs:   323.6
 !----------------------------------
 !
 
@@ -376,10 +357,6 @@ dimensions:        longitude latitude time
 out_name:          rlus
 type:              real
 positive:          up
-valid_min:         43.75
-valid_max:         658
-ok_min_mean_abs:   331.1
-ok_max_mean_abs:   369.9
 !----------------------------------
 !
 
@@ -403,10 +380,6 @@ dimensions:        longitude latitude time
 out_name:          rsds
 type:              real
 positive:          down
-valid_min:         -0.002946
-valid_max:         524.4
-ok_min_mean_abs:   143.9
-ok_max_mean_abs:   181.6
 !----------------------------------
 !
 
@@ -430,10 +403,6 @@ dimensions:        longitude latitude time
 out_name:          rsus
 type:              real
 positive:          up
-valid_min:         -0.006589
-valid_max:         422.2
-ok_min_mean_abs:   26.22
-ok_max_mean_abs:   43.77
 !----------------------------------
 !
 
@@ -452,13 +421,9 @@ comment:           sampled synoptically.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height2m
+dimensions:        longitude latitude time1 height10m
 out_name:          uas
 type:              real
-valid_min:         -19.01
-valid_max:         18.68
-ok_min_mean_abs:   1.668
-ok_max_mean_abs:   4.106
 !----------------------------------
 !
 
@@ -477,13 +442,9 @@ comment:           sampled synoptically.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude time1 height2m
+dimensions:        longitude latitude time1 height10m
 out_name:          vas
 type:              real
-valid_min:         -18.04
-valid_max:         22.84
-ok_min_mean_abs:   1.065
-ok_max_mean_abs:   2.678
 !----------------------------------
 !
 
@@ -506,10 +467,6 @@ comment:           near-surface (usually 2 m) specific humidity, sampled synopti
 dimensions:        longitude latitude time1 height2m
 out_name:          huss
 type:              real
-valid_min:         -7.21e-06
-valid_max:         0.02992
-ok_min_mean_abs:   0.006391
-ok_max_mean_abs:   0.008749
 !----------------------------------
 !
 
@@ -532,10 +489,6 @@ comment:           Compute the mass of water in all phases in the upper 0.1 mete
 dimensions:        longitude latitude time1 sdepth1
 out_name:          mrsos
 type:              real
-valid_min:         -2.008
-valid_max:         146.5
-ok_min_mean_abs:   -35.89
-ok_max_mean_abs:   123.3
 !----------------------------------
 !
 
@@ -602,10 +555,6 @@ comment:           at surface.  This is a 3-hour mean convective precipitation f
 dimensions:        longitude latitude time
 out_name:          prc
 type:              real
-valid_min:         0
-valid_max:         0.0006323
-ok_min_mean_abs:   -2.528e-06
-ok_max_mean_abs:   3.209e-05
 !----------------------------------
 !
 
@@ -628,10 +577,6 @@ comment:           at surface.  Includes all forms of precipitating solid phase 
 dimensions:        longitude latitude time
 out_name:          prsn
 type:              real
-valid_min:         0
-valid_max:         0.0002987
-ok_min_mean_abs:   1.449e-06
-ok_max_mean_abs:   6.11e-06
 !----------------------------------
 !
 
@@ -654,10 +599,6 @@ comment:           compute the total runoff (including ""drainage"" through the 
 dimensions:        longitude latitude time
 out_name:          mrro
 type:              real
-valid_min:         -0.0002019
-valid_max:         0.001065
-ok_min_mean_abs:   -6.668e-06
-ok_max_mean_abs:   1.874e-05
 !----------------------------------
 !
 
@@ -681,10 +622,6 @@ dimensions:        longitude latitude time
 out_name:          rldscs
 type:              real
 positive:          down
-valid_min:         33.55
-valid_max:         543.6
-ok_min_mean_abs:   238.6
-ok_max_mean_abs:   293.8
 !----------------------------------
 !
 
@@ -708,15 +645,11 @@ dimensions:        longitude latitude time
 out_name:          rsdscs
 type:              real
 positive:          down
-valid_min:         -1.748e+30
-valid_max:         518
-ok_min_mean_abs:   206.9
-ok_max_mean_abs:   238.6
 !----------------------------------
 !
 
 !============
-variable_entry:    rluscs
+variable_entry:    rsuscs
 !============
 modeling_realm:    atmos
 !----------------------------------
@@ -732,7 +665,7 @@ comment:           This is a 3-hour mean flux.
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude time
-out_name:          rluscs
+out_name:          rsuscs
 type:              real
 positive:          up
 !----------------------------------
@@ -757,10 +690,6 @@ comment:           sampled synoptically to diagnose atmospheric tides, this is b
 dimensions:        longitude latitude time1
 out_name:          ps
 type:              real
-valid_min:         4.792e+04
-valid_max:         1.093e+05
-ok_min_mean_abs:   9.606e+04
-ok_max_mean_abs:   9.743e+04
 !----------------------------------
 !
 
@@ -783,10 +712,6 @@ comment:           for the whole atmospheric column, as seen from the surface or
 dimensions:        longitude latitude time
 out_name:          clt
 type:              real
-valid_min:         -0.0001822
-valid_max:         100.2
-ok_min_mean_abs:   39.37
-ok_max_mean_abs:   84.98
 !----------------------------------
 !
 
@@ -801,7 +726,7 @@ standard_name:     surface_diffuse_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
-long_name:         Surface Downward Diffuse Shortwave Radiation
+long_name:         Surface Diffuse Downwelling Shortwave Radiation
 comment:           This is a 3-hour mean flux.
 !----------------------------------
 ! Additional variable information:

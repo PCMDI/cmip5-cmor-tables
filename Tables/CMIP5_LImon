@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -170,7 +171,7 @@ dimensions:        longitude latitude time
 out_name:          snc
 type:              real
 valid_min:         0
-valid_max:         102.1
+valid_max:         105
 ok_min_mean_abs:   -29.01
 ok_max_mean_abs:   78.46
 !----------------------------------

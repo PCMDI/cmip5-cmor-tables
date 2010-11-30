@@ -1,3 +1,7 @@
+2010-11-30 : edited min/maxs to be added only for monthly tables
+2010-11-30 : min/max are adjusted with greater of 5% or 3*std instead of just 3*std
+2010-11-30 : typos fixed by Karl
+2010-11-30 : formulas do not have indices on coefficients anymore (because of unstructured grids)
 2010-11-15 : fixed typo in cfSite longitude/latitude had wrong min/max
 2010-11-12 : added site longitude latitude to cfSite, added must_call_cmor_grid attribute, need CMOR 2.5
 2010-10-25 : Fixed cfSites still had some lat/lon...

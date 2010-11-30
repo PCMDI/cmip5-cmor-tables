@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -251,7 +252,7 @@ must_have_bounds: yes
 stored_direction: increasing
 valid_min:        -200.
 valid_max:        800000.
-formula:          z(n,k,j,i) = a(k)*ztop + b1(k)*zsurf1(n,j,i) + b2(k)*zsurf2(n,j,i)
+formula:          z = a*ztop + b1*zsurf1 + b2*zsurf2
 z_factors:        a: a b1: b1 b2: b2 ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2
 z_bounds_factors: a: a_bnds b1: b1_bnds b2: b2_bnds ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2
 !----------------------------------	
@@ -281,7 +282,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        -1.
 valid_max:        20.
-formula:          p(k) = p0 * exp(-lev(k))
+formula:          p = p0 * exp(-lev)
 z_factors:        p0: p0 lev: lev
 z_bounds_factors: p0: p0 lev: lev_bnds
 !----------------------------------	
@@ -311,7 +312,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = ptop + sigma(k)*(ps(n,j,i) - ptop)
+formula:          p = ptop + sigma*(ps - ptop)
 z_factors:        ptop: ptop sigma: lev ps: ps
 z_bounds_factors: ptop: ptop sigma: lev_bnds ps: ps
 !----------------------------------	
@@ -322,7 +323,7 @@ axis_entry:  standard_hybrid_sigma
 !============
 !
 ! This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
-!  The values of a(k)+ b(k), which appear in the formula below, should be stored as standard_hybrid_sigma.  
+!  The values of a+ b, which appear in the formula below, should be stored as standard_hybrid_sigma.  
 !  Note that in the netCDF file the variable will be named "lev", not standard_hybrid_sigma.
 !
 !---------------------------------
@@ -341,7 +342,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = a(k)*p0 + b(k)*ps(n,j,i)
+formula:          p = a*p0 + b*ps
 z_factors:        p0: p0 a: a b: b ps: ps
 z_bounds_factors: p0: p0 a: a_bnds b: b_bnds ps: ps
 !----------------------------------		
@@ -352,7 +353,7 @@ axis_entry:  alternate_hybrid_sigma
 !============
 !
 ! This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
-!  The values of ap(k)/p0 + b(k), which appear in the formula below, should be stored as alternate_hybrid_sigma.  
+!  The values of ap/p0 + b, which appear in the formula below, should be stored as alternate_hybrid_sigma.  
 !  Note that in the netCDF file the variable will be named "lev", not alternate_hybrid_sigma.
 !
 !------------
@@ -373,7 +374,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = ap(k) + b(k)*ps(n,j,i)
+formula:          p = ap + b*ps
 z_factors:        ap: ap b: b ps: ps
 z_bounds_factors: ap: ap_bnds b: b_bnds ps: ps
 !----------------------------------		
@@ -384,7 +385,7 @@ axis_entry:  hybrid_height
 !============
 !
 ! This coordinate has dimension of meters (m) and increases upward.
-!  The values of a(k) which appear in the formula below, should be stored as hybrid_height.  
+!  The values of a which appear in the formula below, should be stored as hybrid_height.  
 !  Note that in the netCDF file the variable will be named "lev", not hybrid_height.
 !
 !------------
@@ -404,7 +405,7 @@ out_name:         lev
 must_have_bounds: yes
 stored_direction: increasing
 valid_min:        0.0
-formula:          z(k,j,i) = a(k) + b(k)*orog(j,i)
+formula:          z = a + b*orog
 z_factors:        a: lev b: b orog: orog
 z_bounds_factors: a: lev_bnds b: b_bnds orog: orog
 !----------------------------------		
@@ -603,9 +604,9 @@ dimensions:        longitude latitude time height2m
 out_name:          tas
 type:              real
 valid_min:         180.6
-valid_max:         325.7
-ok_min_mean_abs:   273.5
-ok_max_mean_abs:   281.7
+valid_max:         335.1
+ok_min_mean_abs:   262.4
+ok_max_mean_abs:   293
 !----------------------------------
 !
 
@@ -629,9 +630,9 @@ dimensions:        longitude latitude time
 out_name:          ts
 type:              real
 valid_min:         176.8
-valid_max:         331.8
-ok_min_mean_abs:   274.2
-ok_max_mean_abs:   281.8
+valid_max:         339.6
+ok_min_mean_abs:   262.8
+ok_max_mean_abs:   293.3
 !----------------------------------
 !
 
@@ -654,10 +655,10 @@ comment:           monthly mean of the daily-minimum near-surface (usually, 2 me
 dimensions:        longitude latitude time height2m
 out_name:          tasmin
 type:              real
-valid_min:         183.6
-valid_max:         309.8
-ok_min_mean_abs:   271.8
-ok_max_mean_abs:   279.6
+valid_min:         182.8
+valid_max:         323
+ok_min_mean_abs:   260.9
+ok_max_mean_abs:   290.6
 !----------------------------------
 !
 
@@ -681,9 +682,9 @@ dimensions:        longitude latitude time height2m
 out_name:          tasmax
 type:              real
 valid_min:         181.9
-valid_max:         330.6
-ok_min_mean_abs:   277.3
-ok_max_mean_abs:   281.4
+valid_max:         341.9
+ok_min_mean_abs:   264.9
+ok_max_mean_abs:   294
 !----------------------------------
 !
 
@@ -706,10 +707,10 @@ comment:           not, in general, the same as surface pressure
 dimensions:        longitude latitude time
 out_name:          psl
 type:              real
-valid_min:         9.477e+04
-valid_max:         1.124e+05
-ok_min_mean_abs:   1.003e+05
-ok_max_mean_abs:   1.017e+05
+valid_min:         9.122e+04
+valid_max:         1.137e+05
+ok_min_mean_abs:   9.57e+04
+ok_max_mean_abs:   1.063e+05
 !----------------------------------
 !
 
@@ -732,10 +733,10 @@ comment:           not, in general, the same as mean sea-level pressure
 dimensions:        longitude latitude time
 out_name:          ps
 type:              real
-valid_min:         4.792e+04
-valid_max:         1.093e+05
-ok_min_mean_abs:   9.606e+04
-ok_max_mean_abs:   9.743e+04
+valid_min:         4.791e+04
+valid_max:         1.119e+05
+ok_min_mean_abs:   9.165e+04
+ok_max_mean_abs:   1.019e+05
 !----------------------------------
 !
 
@@ -965,7 +966,7 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     water_sublimation_flux
+standard_name:     surface_snow_and_ice_sublimation_flux
 units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
@@ -1134,8 +1135,8 @@ type:              real
 positive:          up
 valid_min:         43.75
 valid_max:         658
-ok_min_mean_abs:   331.1
-ok_max_mean_abs:   369.9
+ok_min_mean_abs:   325.6
+ok_max_mean_abs:   376.3
 !----------------------------------
 !
 
@@ -1211,9 +1212,9 @@ out_name:          rsdscs
 type:              real
 positive:          down
 valid_min:         -1.748e+30
-valid_max:         518
+valid_max:         522.4
 ok_min_mean_abs:   206.9
-ok_max_mean_abs:   238.6
+ok_max_mean_abs:   239
 !----------------------------------
 !
 
@@ -1290,9 +1291,9 @@ out_name:          rsdt
 type:              real
 positive:          down
 valid_min:         0
-valid_max:         555.5
-ok_min_mean_abs:   294.4
-ok_max_mean_abs:   303.8
+valid_max:         580.4
+ok_min_mean_abs:   282.6
+ok_max_mean_abs:   315.8
 !----------------------------------
 !
 
@@ -1317,7 +1318,7 @@ out_name:          rsut
 type:              real
 positive:          up
 valid_min:         -0.02689
-valid_max:         416.9
+valid_max:         421.9
 ok_min_mean_abs:   96.72
 ok_max_mean_abs:   114.1
 !----------------------------------
@@ -1345,8 +1346,8 @@ type:              real
 positive:          up
 valid_min:         67.48
 valid_max:         383.2
-ok_min_mean_abs:   214.1
-ok_max_mean_abs:   227.5
+ok_min_mean_abs:   207.4
+ok_max_mean_abs:   234.4
 !----------------------------------
 !
 
@@ -1370,9 +1371,9 @@ out_name:          rlutcs
 type:              real
 positive:          up
 valid_min:         70.59
-valid_max:         372.3
-ok_min_mean_abs:   235.1
-ok_max_mean_abs:   253.8
+valid_max:         377.5
+ok_min_mean_abs:   228.9
+ok_max_mean_abs:   260.4
 !----------------------------------
 !
 
@@ -1448,7 +1449,7 @@ dimensions:        longitude latitude time
 out_name:          clt
 type:              real
 valid_min:         -0.0001822
-valid_max:         100.2
+valid_max:         105
 ok_min_mean_abs:   39.37
 ok_max_mean_abs:   84.98
 !----------------------------------
@@ -1528,8 +1529,8 @@ type:              real
 positive:          down
 valid_min:         -232.8
 valid_max:         218.7
-ok_min_mean_abs:   77.62
-ok_max_mean_abs:   88.34
+ok_min_mean_abs:   76.91
+ok_max_mean_abs:   89.25
 !----------------------------------
 !
 
@@ -1708,9 +1709,9 @@ dimensions:        longitude latitude alevel time
 out_name:          cl
 type:              real
 valid_min:         0
-valid_max:         100.2
+valid_max:         105
 ok_min_mean_abs:   -0.04479
-ok_max_mean_abs:   24.87
+ok_max_mean_abs:   26.07
 !----------------------------------
 !
 
@@ -1800,9 +1801,9 @@ dimensions:        longitude latitude plevs time
 out_name:          ta
 type:              real
 valid_min:         157.1
-valid_max:         326.4
-ok_min_mean_abs:   200.2
-ok_max_mean_abs:   289.9
+valid_max:         336.3
+ok_min_mean_abs:   194.3
+ok_max_mean_abs:   299.8
 !----------------------------------
 !
 
@@ -1873,9 +1874,9 @@ dimensions:        longitude latitude plevs time
 out_name:          hus
 type:              real
 valid_min:         -0.000299
-valid_max:         0.02812
+valid_max:         0.02841
 ok_min_mean_abs:   -0.0003539
-ok_max_mean_abs:   0.01027
+ok_max_mean_abs:   0.01041
 !----------------------------------
 !
 
@@ -1950,9 +1951,9 @@ dimensions:        longitude latitude plevs time
 out_name:          zg
 type:              real
 valid_min:         -719.7
-valid_max:         3.306e+04
+valid_max:         3.437e+04
 ok_min_mean_abs:   -113.4
-ok_max_mean_abs:   3.164e+04
+ok_max_mean_abs:   3.299e+04
 !----------------------------------
 !
 
@@ -1978,7 +1979,7 @@ type:              real
 valid_min:         -419.2
 valid_max:         1.162e+04
 ok_min_mean_abs:   -149.1
-ok_max_mean_abs:   7363
+ok_max_mean_abs:   7558
 !----------------------------------
 !
 

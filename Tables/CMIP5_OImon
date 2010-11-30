@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -608,8 +609,8 @@ standard_name:     surface_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
-long_name:         Downward Shortwave over Sea Ice
-comment:           Compute the downward shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+long_name:         Downwelling Shortwave over Sea Ice
+comment:           Compute the downwelling shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -654,8 +655,8 @@ standard_name:     surface_downwelling_longwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
-long_name:         Downward Long Wave over Sea Ice
-comment:           Compute the downward longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+long_name:         Downwelling Long Wave over Sea Ice
+comment:           Compute the downwelling longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

@@ -238,7 +238,8 @@ def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
             std/=len(mnmx.keys())
             if numpy.allclose(std,0.):
                 std=val*pmean
-            setattr(F,"valid min","%.4g" % (val-nstd*std))
+            delta=max(nstd*std,abs(val*.05))
+            setattr(F,"valid min","%.4g" % (val-delta))
             keys.remove("valid min")
         if 'valid max' in keys:
         #ok let's see if we can figure this one out
@@ -252,7 +253,8 @@ def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
             std/=len(mnmx.keys())
             if numpy.allclose(std,0.):
                 std=val*pmean
-            setattr(F,"valid max","%.4g" % (val+nstd*std))
+            delta=max(nstd*std,abs(val*.05))
+            setattr(F,"valid max","%.4g" % (val+delta))
             keys.remove("valid max")
         if "mean absolute min" in keys:
             mnmx = minmax[ve]
@@ -265,7 +267,8 @@ def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
             std/=len(mnmx.keys())
             if numpy.allclose(std,0.):
                 std=val*pmean
-            setattr(F,"mean absolute min","%.4g" % (val-nstd*std))
+            delta=max(nstd*std,abs(val*.05))
+            setattr(F,"mean absolute min","%.4g" % (val-delta))
             keys.remove("mean absolute min")
         if "mean absolute max" in keys:
             mnmx = minmax[ve]
@@ -278,7 +281,8 @@ def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
             std/=len(mnmx.keys())
             if numpy.allclose(std,0.):
                 std=val*pmean
-            setattr(F,"mean absolute max","%.4g" % (val+nstd*std))
+            delta=max(nstd*std,abs(val*.05))
+            setattr(F,"mean absolute max","%.4g" % (val+delta))
             keys.remove("mean absolute max")
 
         ### Need to add lines for absolute mean min/max
@@ -312,6 +316,30 @@ def process_template(tmpl,cnames,cols,voids={},minmax={},iadd=-1):
                 out = ""
     return out
 
+def get_interval(tbnm):
+    if tbnm.lower().find("mon")>-1:
+        interval = 30.
+    elif tbnm.lower().find('clim')>-1:
+        interval = 30.
+    elif tbnm.lower().find('aero')>-1:
+        interval = 30.
+    elif tbnm.lower().find('yr')>-1:
+        interval = 365.
+    elif tbnm.lower().find('da')>-1:
+        interval = 1.
+    elif tbnm.lower().find("hr")>-1:
+        indx = tbnm.lower().find("hr")
+        interval = float(tbnm[indx-1])/24.
+    elif tbnm.lower().find("cfoff")>-1:
+        interval = 30.
+    elif tbnm.lower().find("cfsites")>-1:
+        interval = 25./(24.*60.)
+    elif tbnm.lower().find("min")>-1:
+        interval = float(tbnm[2:tbnm.find("min")])/1440.
+    else:
+        interval = 0.
+    return interval
+
 def create_table_header(tbnm, table_file, dims_file, fqcy):
     #First of All create the header
     fnm = "Tables/" + prefix + '_'+tbnm
@@ -336,27 +364,7 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
 
     # looking for approx interval, ASSUMING UNITS ARE IN DAYS SINCE
     print 'Table nm:',tbnm,'__________________________________________'
-    if tbnm.lower().find("mon")>-1:
-        interval = 30.
-    elif tbnm.lower().find('clim')>-1:
-        interval = 30.
-    elif tbnm.lower().find('aero')>-1:
-        interval = 30.
-    elif tbnm.lower().find('yr')>-1:
-        interval = 365.
-    elif tbnm.lower().find('da')>-1:
-        interval = 1.
-    elif tbnm.lower().find("hr")>-1:
-        indx = tbnm.lower().find("hr")
-        interval = float(tbnm[indx-1])/24.
-    elif tbnm.lower().find("cfoff")>-1:
-        interval = 30.
-    elif tbnm.lower().find("cfsites")>-1:
-        interval = 25./(24.*60.)
-    elif tbnm.lower().find("min")>-1:
-        interval = float(tbnm[2:tbnm.find("min")])/1440.
-    else:
-        interval = 0.
+    interval = get_interval(tbnm)
     #print 'Interval:',interval,'________________________'
     print >> fo, """approx_interval:  %f     ! approximate spacing between successive time
                           !   samples (in units of the output time 
@@ -518,7 +526,12 @@ def create_table(table_file, dims_file,minmax={}):
                 print 'Creating table:',tbnm
                 fo = create_table_header(tbnm,table_file,dims_file,fqcy)
                 tables[tbnm]=fo
-            print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmax,iadd=iadd)
+            if get_interval(tbnm)!=30.:
+                print 'Interval is:',get_interval(tbnm)
+                minmaxpassed={}
+            else:
+                minmaxpassed=minmax
+            print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmaxpassed,iadd=iadd)
     print 'Created tables:',tables.keys()
                 
         

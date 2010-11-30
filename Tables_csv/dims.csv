@@ -29,7 +29,7 @@ aero,alev1,lev,atmospheric model's lowest level,,lowest atmospheric model level,
 "cfMon, cfOff, cfDay, cf3hr",sza5,sza,5 solar zenith angles for PARASOL reflectances,solar_zenith_angle,solar zenith angle,,degree,,,no,increasing,,,double,,,,0. 20. 40. 60. 80.,,0.001,
 cfSites,site,site,an integer assigned to each of 119 stations (standard) and 73 stations (aquaplanet),,site index,,1.0,ok,,no,,,,integer,,,,,,,yes
 Omon,basin,basin,,region,ocean basin,,1.0,,region,no,,,,character,,,,atlantic_arctic_ocean indian_pacific_ocean global_ocean,,,
-Omon,rho,rho,density?  Potential density++++? Check units,,density++++?,Z,kg m-3,,,yes,decreasing,,,double,down,,, ,,,
+Omon,rho,rho,potential density referenced to 2000 dbar,,potential density referenced to 2000 dbar,Z,kg m-3,,,yes,increasing,,,double,down,,, ,,,
 "fx, Oclim, Oyr, Omon",olevel,lev,generic ocean model vertical coordinate (nondimensional or dimensional),,ocean model level,Z,,ok,,yes,,,,double,down,,,,,,
 Omon,oline,line,"opening, passage, strait, channel, etc. ",region,ocean passage ,,1.0,,passage,no,,,,character,,,,barents_opening bering_strait canadian_archipelago denmark_strait drake_passage english_channel pacific_equatorial_undercurrent faroe_scotland_channel florida_bahamas_strait fram_strait iceland_faroe_channel indonesian_thoughflow mozambique_channel taiwan_luzon_straits windward_passage,,,
 cf3hr,location,loc,COSP profile in instantaneous curtain mode,,location index,,1.0,ok,,no,increasing,,,integer,,,,,,,yes

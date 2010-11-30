@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -155,7 +156,7 @@ must_have_bounds: yes
 stored_direction: increasing
 valid_min:        -200.
 valid_max:        800000.
-formula:          z(n,k,j,i) = a(k)*ztop + b1(k)*zsurf1(n,j,i) + b2(k)*zsurf2(n,j,i)
+formula:          z = a*ztop + b1*zsurf1 + b2*zsurf2
 z_factors:        a: a b1: b1 b2: b2 ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2
 z_bounds_factors: a: a_bnds b1: b1_bnds b2: b2_bnds ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2
 !----------------------------------	
@@ -185,7 +186,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        -1.
 valid_max:        20.
-formula:          p(k) = p0 * exp(-lev(k))
+formula:          p = p0 * exp(-lev)
 z_factors:        p0: p0 lev: lev
 z_bounds_factors: p0: p0 lev: lev_bnds
 !----------------------------------	
@@ -215,7 +216,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = ptop + sigma(k)*(ps(n,j,i) - ptop)
+formula:          p = ptop + sigma*(ps - ptop)
 z_factors:        ptop: ptop sigma: lev ps: ps
 z_bounds_factors: ptop: ptop sigma: lev_bnds ps: ps
 !----------------------------------	
@@ -226,7 +227,7 @@ axis_entry:  standard_hybrid_sigma
 !============
 !
 ! This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
-!  The values of a(k)+ b(k), which appear in the formula below, should be stored as standard_hybrid_sigma.  
+!  The values of a+ b, which appear in the formula below, should be stored as standard_hybrid_sigma.  
 !  Note that in the netCDF file the variable will be named "lev", not standard_hybrid_sigma.
 !
 !---------------------------------
@@ -245,7 +246,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = a(k)*p0 + b(k)*ps(n,j,i)
+formula:          p = a*p0 + b*ps
 z_factors:        p0: p0 a: a b: b ps: ps
 z_bounds_factors: p0: p0 a: a_bnds b: b_bnds ps: ps
 !----------------------------------		
@@ -256,7 +257,7 @@ axis_entry:  alternate_hybrid_sigma
 !============
 !
 ! This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
-!  The values of ap(k)/p0 + b(k), which appear in the formula below, should be stored as alternate_hybrid_sigma.  
+!  The values of ap/p0 + b, which appear in the formula below, should be stored as alternate_hybrid_sigma.  
 !  Note that in the netCDF file the variable will be named "lev", not alternate_hybrid_sigma.
 !
 !------------
@@ -277,7 +278,7 @@ must_have_bounds: yes
 stored_direction: decreasing
 valid_min:        0.0
 valid_max:        1.0
-formula:          p(n,k,j,i) = ap(k) + b(k)*ps(n,j,i)
+formula:          p = ap + b*ps
 z_factors:        ap: ap b: b ps: ps
 z_bounds_factors: ap: ap_bnds b: b_bnds ps: ps
 !----------------------------------		
@@ -288,7 +289,7 @@ axis_entry:  hybrid_height
 !============
 !
 ! This coordinate has dimension of meters (m) and increases upward.
-!  The values of a(k) which appear in the formula below, should be stored as hybrid_height.  
+!  The values of a which appear in the formula below, should be stored as hybrid_height.  
 !  Note that in the netCDF file the variable will be named "lev", not hybrid_height.
 !
 !------------
@@ -308,7 +309,7 @@ out_name:         lev
 must_have_bounds: yes
 stored_direction: increasing
 valid_min:        0.0
-formula:          z(k,j,i) = a(k) + b(k)*orog(j,i)
+formula:          z = a + b*orog
 z_factors:        a: lev b: b orog: orog
 z_bounds_factors: a: lev_bnds b: b_bnds orog: orog
 !----------------------------------		
@@ -1670,11 +1671,11 @@ modeling_realm:    aerosol land
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     diffuse_downwelling_shortwave_flux_in_air
+standard_name:     surface_diffuse_downwelling_shortwave_flux_in_air
 units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
-long_name:         Surface Diffuse Downward Shortwave Radiation
+long_name:         Surface Diffuse Dowwelling Shortwave Radiation
 comment:           downwelling_diffuse_shortwave_flux_in_air
 !----------------------------------
 ! Additional variable information:
@@ -1696,7 +1697,7 @@ standard_name:     diffuse_downwelling_shortwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
-long_name:         Surface Diffuse Downward Clear Sky Shortwave Radiation
+long_name:         Surface Diffuse Downwelling Clear Sky Shortwave Radiation
 comment:           downwelling_diffuse_shortwave_flux_in_air_assuming_clear_sky
 !----------------------------------
 ! Additional variable information:

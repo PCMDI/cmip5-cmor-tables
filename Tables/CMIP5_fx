@@ -6,7 +6,7 @@ frequency: fx
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 November 2010 ! date this table was constructed
+table_date:   30 November 2010 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -24,6 +24,7 @@ expt_id_ok: 'volcano-free hindcast initialized in year XXXX' 'noVolcXXXX'
 expt_id_ok: 'prediction with 2010 volcano' 'volcIn2010'
 expt_id_ok: 'pre-industrial control' 'piControl'
 expt_id_ok: 'historical' 'historical'
+expt_id_ok: 'historical extension' 'historicalExt'
 expt_id_ok: 'mid-Holocene' 'midHolocene'
 expt_id_ok: 'last glacial maximum' 'lgm'
 expt_id_ok: 'last millennium' 'past1000'
@@ -153,7 +154,7 @@ long_name:        ocean double sigma coordinate
 !----------------------------------	
 out_name:         lev
 must_have_bounds: yes
-formula:          for k <= k_c:\n z(k,j,i)= sigma(k)*f(j,i) \n for k > k_c:\n z(k,j,i)= f(j,i) + (sigma(k)-1)*(depth(j,i)-f(j,i)) \n f(j,i)= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth(j,i)-href))
+formula:          for k <= k_c:\n z= sigma*f \n for k > k_c:\n z= f + (sigma-1)*(depth-f) \n f= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth-href))
 z_factors:        sigma: sigma depth: depth z1: z1 z2: z2 a: a_coeff href: href k_c: k_c
 z_bounds_factors: sigma: sigma_bnds depth: depth z1: z1 z2: z2 a: a href: href k_c: k_c
 !----------------------------------	
@@ -439,8 +440,6 @@ out_name:          orog
 type:              real
 valid_min:         -700.0
 valid_max:         10000.0
-ok_min_mean_abs:   327.9
-ok_max_mean_abs:   431.3
 !----------------------------------
 !
 
@@ -464,8 +463,6 @@ out_name:          sftlf
 type:              real
 valid_min:         0.0
 valid_max:         100.0
-ok_min_mean_abs:   30.58
-ok_max_mean_abs:   37.07
 !----------------------------------
 !
 
@@ -489,8 +486,6 @@ out_name:          sftgif
 type:              real
 valid_min:         0.0
 valid_max:         100.0
-ok_min_mean_abs:   7.328
-ok_max_mean_abs:   14.93
 !----------------------------------
 !
 
@@ -512,10 +507,6 @@ comment:           """where land"": divide the total water holding capacity of a
 dimensions:        longitude latitude
 out_name:          mrsofc
 type:              real
-valid_min:         -52.65
-valid_max:         4910
-ok_min_mean_abs:   -865
-ok_max_mean_abs:   2220
 !----------------------------------
 !
 
@@ -539,8 +530,6 @@ out_name:          rootd
 type:              real
 valid_min:         0.0
 valid_max:         30.0
-ok_min_mean_abs:   0.8
-ok_max_mean_abs:   3.2
 !----------------------------------
 !
 
