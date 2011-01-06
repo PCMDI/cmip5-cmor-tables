@@ -6,7 +6,7 @@ frequency: monClim
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -779,7 +779,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer Bolus Laplacian Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -801,7 +800,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer Bolus Biharmonic Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -823,7 +821,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer Epineutral Laplacian Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -845,7 +842,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer Epineutral Biharmonic Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -867,7 +863,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer XY Laplacian Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -889,7 +884,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Tracer XY Biharmonic Diffusivity 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -911,7 +905,6 @@ units:             W m-2
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Tendency of Ocean Eddy Kinetic Energy Content due to Bolus Transport 
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -933,7 +926,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Momentum XY Laplacian Diffusivity
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -955,7 +947,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Momentum XY Biharmonic Diffusivity
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -977,7 +968,6 @@ units:             W m-2
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello volume: volcello
 long_name:         Ocean Kinetic Energy Dissipation Per Unit Area due to XY Friction
-comment:           3-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -999,7 +989,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer Bolus Laplacian Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1021,7 +1010,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer Bolus Biharmonic Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1043,7 +1031,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer Epineutral Laplacian Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1065,7 +1052,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer Epineutral Biharmonic Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1087,7 +1073,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer XY Laplacian Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1109,7 +1094,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Tracer XY Biharmonic Diffusivity 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1131,7 +1115,6 @@ units:             W m-2
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Tendency of Ocean Eddy Kinetic Energy Content due to Bolus Transport 
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1153,7 +1136,6 @@ units:             m2 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Momentum XY Laplacian Diffusivity
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1175,7 +1157,6 @@ units:             m4 s-1
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Momentum XY Biharmonic Diffusivity
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1197,12 +1178,53 @@ units:             W m-2
 cell_methods:      time: mean within years time: mean over years
 cell_measures:     area: areacello 
 long_name:         Ocean Kinetic Energy Dissipation Per Unit Area due to XY Friction
-comment:           2-d time dependent field
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude olevel time2
 out_name:          dispkexyfo
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    zfull
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean within years time: mean over years
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Ocean Layer
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time2
+out_name:          zfull
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    zhalf
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean within years time: mean over years
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Interfaces Between Ocean Layers
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time2
+out_name:          zhalf
 type:              real
 !----------------------------------
 !

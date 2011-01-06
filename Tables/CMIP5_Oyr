@@ -6,7 +6,7 @@ frequency: yr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -548,7 +548,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Organic Carbon Concentration
-comment:           Dissolved organic carbon concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -922,7 +921,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolve Oxygen Concentration
-comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -944,7 +942,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Nitrate Concentration
-comment:           dissolved nitrate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -966,7 +963,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Ammonium Concentration
-comment:           dissolved ammonium concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -988,7 +984,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Phosphate Concentration
-comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1032,7 +1027,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Silicate Concentration
-comment:           dissolved silicate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1362,7 +1356,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dimethyl Sulphide Concentration
-comment:           dimethyl sulphide concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1384,7 +1377,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water
-comment:           carbonate ion concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1406,7 +1398,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation
-comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1428,7 +1419,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation
-comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1494,7 +1484,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Biogenic Iron Production
-comment:           Biogenic iron production
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1516,7 +1505,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Biogenic Silica Production
-comment:           Biogenic silica production
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1538,7 +1526,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Calcite Production
-comment:           calcite production
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1560,7 +1547,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Aragonite Production
-comment:           aragonite production
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1582,7 +1568,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Sinking Particulate Organic Carbon Flux
-comment:           sinking flux of organic carbon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1605,7 +1590,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Sinking Particulate Organic Nitrogen Flux
-comment:           sinking flux of organic nitrogen
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1627,7 +1611,6 @@ standard_name:     sinking_mole_flux_of_particulate_organic_phosphorus_in_sea_wa
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 long_name:         Sinking Particulate Organic Phosphorus Flux
-comment:           sinking flux of organic phosphorus
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1649,7 +1632,6 @@ standard_name:     sinking_mole_flux_of_particulate_iron_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 long_name:         Sinking Particulate Iron Flux
-comment:           sinking flux of iron
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1672,7 +1654,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Sinking Particulate Silica Flux
-comment:           sinking flux of silica
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1695,7 +1676,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Sinking Calcite Flux
-comment:           sinking flux of calcite
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1718,7 +1698,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Sinking Aragonite Flux
-comment:           sinking flux of aragonite
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1741,7 +1720,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Calcite Dissolution
-comment:           calcite dissolution
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1763,7 +1741,6 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Aragonite Dissolution
-comment:           aragonite dissolution
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2071,12 +2048,53 @@ units:             mol m-3 s-1
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Total Grazing of Phytoplankton by Zooplankton
-comment:           Total grazing of phytoplankton by zooplankton
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude olevel time
 out_name:          graz
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    zfull
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Ocean Layer
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time
+out_name:          zfull
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    zhalf
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Interfaces Between Ocean Layers
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time
+out_name:          zhalf
 type:              real
 !----------------------------------
 !

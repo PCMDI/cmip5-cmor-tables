@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -137,7 +137,6 @@ axis_entry: basin
 ! Axis attributes:
 !----------------------------------
 standard_name:    region
-units:            1
 long_name:        ocean basin
 !----------------------------------
 ! Additional axis information:
@@ -157,6 +156,7 @@ axis_entry: rho
 !----------------------------------
 ! Axis attributes:
 !----------------------------------
+standard_name:    sea_water_potential_density
 units:            kg m-3
 axis:             Z             ! X, Y, Z, T (default: undeclared)
 positive:         down         ! up or down (default: undeclared)
@@ -179,14 +179,13 @@ axis_entry: oline
 ! Axis attributes:
 !----------------------------------
 standard_name:    region
-units:            1
 long_name:        ocean passage 
 !----------------------------------
 ! Additional axis information:
 !----------------------------------
 out_name:         line
 type:             character
-requested:        barents_opening bering_strait canadian_archipelago denmark_strait drake_passage english_channel pacific_equatorial_undercurrent faroe_scotland_channel florida_bahamas_strait fram_strait iceland_faroe_channel indonesian_thoughflow mozambique_channel taiwan_luzon_straits windward_passage        ! space-separated list of requested coordinates 
+requested:        barents_opening bering_strait canadian_archipelago denmark_strait drake_passage english_channel pacific_equatorial_undercurrent faroe_scotland_channel florida_bahamas_strait fram_strait iceland_faroe_channel indonesian_throughflow mozambique_channel taiwan_luzon_straits windward_passage        ! space-separated list of requested coordinates 
 must_have_bounds: no
 coords_attrib:    passage
 !----------------------------------
@@ -687,7 +686,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Organic Carbon Concentration at Surface
-comment:           Dissolved organic carbon concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1061,7 +1059,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolve Oxygen Concentration at Surface
-comment:           dissolved oxygen gas concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1083,7 +1080,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Nitrate Concentration at Surface
-comment:           dissolved nitrate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1105,7 +1101,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Ammonium Concentration at Surface
-comment:           dissolved ammonium concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1127,7 +1122,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Phosphate Concentration at Surface
-comment:           dissolved Phosphate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1171,7 +1165,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dissolved Silicate Concentration at Surface
-comment:           dissolved silicate concentration in sea water
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1501,7 +1494,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Dimethyl Sulphide Concentration at Surface
-comment:           dimethyl sulphide concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1523,7 +1515,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Carbonate expressed as Carbon in Sea Water at Surface
-comment:           carbonate ion concentration
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1545,7 +1536,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Calcite expressed as Carbon in Sea Water at Saturation at Surface
-comment:           carbonate ion concentration at calcite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1567,7 +1557,6 @@ units:             mol m-3
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacello volume: volcello
 long_name:         Mole Concentration of Aragonite expressed as Carbon in Sea Water at Saturation at Surface
-comment:           carbonate ion concentration at aragonite solution saturation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1827,8 +1816,7 @@ standard_name:     sinking_mole_flux_of_particulate_organic_matter_expressed_as_
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Downward Flux of Particle Organic Carbon at 100M
-comment:           sinking flux of organic carbon at 100m
+long_name:         Downward Flux of Particle Organic Carbon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1850,8 +1838,7 @@ standard_name:     sinking_mole_flux_of_particulate_iron_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Downward Flux of Particulate Iron at 100M
-comment:           sinking flux of biogenic and scavenged iron at 100m
+long_name:         Downward Flux of Particulate Iron
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1873,8 +1860,7 @@ standard_name:     sinking_mole_flux_of_particulate_silicon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Downward Flux of Particulate Silica at 100M
-comment:           sinking flux of biogenic silica at 100m
+long_name:         Downward Flux of Particulate Silica
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1896,8 +1882,7 @@ standard_name:     sinking_mole_flux_of_calcite_expressed_as_carbon_in_sea_water
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Downward Flux of Calcite at 100M
-comment:           sinking flux of calcite at 100m
+long_name:         Downward Flux of Calcite
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1919,8 +1904,7 @@ standard_name:     sinking_mole_flux_of_aragonite_expressed_as_carbon_in_sea_wat
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Downward Flux of Aragonite at 100M
-comment:           sinking flux of aragonite at 100m
+long_name:         Downward Flux of Aragonite
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1965,7 +1949,6 @@ units:             Pa
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Surface Aqueous Partial Pressure of CO2
-comment:           Surface aqueous partial pressure of CO2
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1987,7 +1970,6 @@ units:             Pa
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
 long_name:         Delta PCO2
-comment:           Difference between atmospheric and oceanic partial pressure of CO2 (positive meaning ocean > atmosphere)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2009,7 +1991,6 @@ units:             Pa
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Delta PO2
-comment:           Difference between atmospheric and oceanic partial pressure of O2 (positive meaning ocean > atmosphere)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2167,7 +2148,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
 long_name:         Surface Downward Net Flux of Nitrogen
-comment:           N supply through deposition flux onto sea surface, nitrogen fixation, and runoff
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2190,7 +2170,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Nitrogen Loss to Sediments and through Denitrification
-comment:           N loss to sediment and water column denitrification
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2235,7 +2214,6 @@ units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Iron Loss to Sediments
-comment:           Iron loss to sediments
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2257,7 +2235,6 @@ units:             mol m-3
 cell_methods:      time: mean area: where sea depth: minimum
 cell_measures:     area: areacello
 long_name:         Oxygen Minimum Concentration
-comment:           Vertical minimum concentration of dissolved oxygen gas
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2344,8 +2321,7 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Carbon
-comment:           Net time rate of change of dissolved inorganic carbon in upper 100m
+long_name:         Rate of Change of Net Dissolved Inorganic Carbon
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2366,8 +2342,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_nitroge
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Nitrogen
-comment:           Net time rate of change of nitrogen nutrients (e.g. NO3+NH4) in upper 100m
+long_name:         Rate of Change of Net Dissolved Inorganic Nitrogen
+comment:           Net time rate of change of nitrogen nutrients (e.g. NO3+NH4) 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2388,8 +2364,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_phospho
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Phosphate
-comment:           vertical integral of net  time rate of change of phosphate in upper 100m
+long_name:         Rate of Change of Net Dissolved Inorganic Phosphate
+comment:           vertical integral of net  time rate of change of phosphate 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2410,8 +2386,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_iron
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Iron
-comment:           vertical integral of net time rate of change of dissolved inorganic iron in upper 100m
+long_name:         Rate of Change of Net Dissolved Inorganic Iron
+comment:           vertical integral of net time rate of change of dissolved inorganic iron 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2432,8 +2408,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Net Dissolved Inorganic Silicate
-comment:           vertical integral of net time rate of change of dissolved inorganic silicate in upper 100m
+long_name:         Rate of Change of Net Dissolved Inorganic Silicate
+comment:           vertical integral of net time rate of change of dissolved inorganic silicate 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2454,8 +2430,8 @@ standard_name:     integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expres
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Alkalinity
-comment:           vertical integral of net time rate of change of alkalinity in upper 100m
+long_name:         Rate of Change of Alkalinity
+comment:           vertical integral of net time rate of change of alkalinity 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2476,8 +2452,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon_
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Carbon due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic carbon in upper 100m
+long_name:         Rate of Change of Dissolved Inorganic Carbon due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic carbon 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2498,8 +2474,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_nitroge
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Nitrogen due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of nitrogen nutrients (e.g. NO3+NH4) in upper 100m
+long_name:         Rate of Change of Dissolved Inorganic Nitrogen due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of nitrogen nutrients (e.g. NO3+NH4) 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2520,8 +2496,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_phospho
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Phosphate due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of phosphate in upper 100m
+long_name:         Rate of Change of Dissolved Inorganic Phosphate due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of phosphate 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2542,8 +2518,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_iron_du
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Iron due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic iron in upper 100m
+long_name:         Rate of Change of Dissolved Inorganic Iron due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic iron 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2564,8 +2540,8 @@ standard_name:     tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon
 units:             mol m-2 s-1
 cell_methods:      time: mean area: where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Dissolved Inorganic Silicate due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic silicate in upper 100m
+long_name:         Rate of Change of Dissolved Inorganic Silicate due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of dissolved inorganic silicate 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2586,8 +2562,8 @@ standard_name:     integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expres
 units:             mol m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
-long_name:         Rate of Change in Upper 100 m of Biological Alkalinity due to Biological Activity
-comment:           vertical integral of net biological terms in time rate of change of alkalinity in upper 100m
+long_name:         Rate of Change of Biological Alkalinity due to Biological Activity
+comment:           vertical integral of net biological terms in time rate of change of alkalinity 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3308,7 +3284,7 @@ standard_name:     ocean_meridional_overturning_mass_streamfunction
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Meridional Overturning Mass Streamfunction 
-comment:           function of latitude, Z, basin. differs from CMIP3 because it includes mass.  For a model with a cartesian latxlon grid, this is the same as the ""Ocean Y Overturning Mass Streamfunction"", listed a few lines down, which should in this case be omitted.  For other models, this transport should be approximated as the transport along zig-zag paths corresponding to latitudes with spacing between latitudes appropriate to the model's resolution.
+comment:           differs from CMIP3 because it includes mass.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3329,7 +3305,6 @@ standard_name:     ocean_meridional_overturning_mass_streamfunction
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Meridional Overturning Mass Streamfunction 
-comment:           function of of latitude, rho, basin.  Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3350,7 +3325,6 @@ standard_name:     ocean_y_overturning_mass_streamfunction
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Y Overturning Mass Streamfunction 
-comment:           function of Y, Z, basin.   Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3371,7 +3345,6 @@ standard_name:     ocean_y_overturning_mass_streamfunction
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Y Overturning Mass Streamfunction 
-comment:           function of Y, rho, basin.  Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3392,7 +3365,6 @@ standard_name:     ocean_meridional_overturning_mass_streamfunction_due_to_bolus
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Meridional Overturning Mass Streamfunction due to Bolus Advection 
-comment:           function of latitude, Z, basin.   Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3413,7 +3385,6 @@ standard_name:     ocean_meridional_overturning_mass_streamfunction_due_to_bolus
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Meridional Overturning Mass Streamfunction due to Bolus Advection 
-comment:           function of latitude, rho, basin.  Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3434,7 +3405,6 @@ standard_name:     ocean_y_overturning_mass_streamfunction_due_to_bolus_advectio
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Y Overturning Mass Streamfunction due to Bolus Advection 
-comment:           function of Y, Z, basin.  Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3455,7 +3425,6 @@ standard_name:     ocean_y_overturning_mass_streamfunction_due_to_bolus_advectio
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Ocean Y Overturning Mass Streamfunction due to Bolus Advection 
-comment:           function of Y, rho, basin.  Also see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3476,7 +3445,6 @@ standard_name:     northward_ocean_heat_transport
 units:             W 
 cell_methods:      time: mean
 long_name:         Northward Ocean Heat Transport 
-comment:           For a model with a cartesian latxlon grid, this is the same as the ""Ocean Heat Y Transport"", listed a few lines down, which should in this case be omitted.  For other models, this transport should be approximated as the transport along zig-zag paths corresponding to latitudes with spacing between latitudes appropriate to the model's resolution.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3497,7 +3465,6 @@ standard_name:     northward_ocean_heat_transport_due_to_bolus_advection
 units:             W 
 cell_methods:      time: mean
 long_name:         Northward Ocean Heat Transport due to Bolus Advection 
-comment:           see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3518,7 +3485,6 @@ standard_name:     northward_ocean_heat_transport_due_to_diffusion
 units:             W 
 cell_methods:      time: mean
 long_name:         Northward Ocean Heat Transport due to Diffusion 
-comment:           see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3559,7 +3525,6 @@ standard_name:     ocean_heat_y_transport
 units:             W 
 cell_methods:      time: mean
 long_name:         Ocean Heat Y Transport 
-comment:           For a model with a cartesian latxlon grid, this is the same as the ""Northward Ocean Heat Transport"", listed a few lines above, which should be saved instead of this.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3580,7 +3545,6 @@ standard_name:     ocean_heat_y_transport_due_to_bolus_advection
 units:             W 
 cell_methods:      time: mean
 long_name:         Ocean Heat Y Transport due to Bolus Advection 
-comment:           see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3601,7 +3565,6 @@ standard_name:     ocean_heat_y_transport_due_to_diffusion
 units:             W 
 cell_methods:      time: mean
 long_name:         Ocean Heat Y Transport due to Diffussion
-comment:           see note above.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3662,7 +3625,6 @@ standard_name:     northward_ocean_heat_transport
 units:             W
 cell_methods:      time: mean longitude: mean
 long_name:         Northward Ocean Heat Transport
-comment:           This differs from a similar, previous entry in that northward transport across individual basins is called for, rather than the fully gridded fields.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3723,7 +3685,6 @@ standard_name:     northward_ocean_heat_transport_due_to_gyre
 units:             W 
 cell_methods:      time: mean longitude: mean
 long_name:         Northward Ocean Heat Transport due to Gyre 
-comment:           function of latitude, basin
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3748,7 +3709,6 @@ standard_name:     northward_ocean_heat_transport_due_to_overturning
 units:             W 
 cell_methods:      time: mean longitude: mean
 long_name:         Northward Ocean Heat Transport due to Overturning 
-comment:           function of latitude, basin
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3773,7 +3733,6 @@ standard_name:     northward_ocean_salt_transport_due_to_gyre
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Northward Ocean Salt Transport due to Gyre 
-comment:           function of latitude, basin
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3798,7 +3757,6 @@ standard_name:     northward_ocean_salt_transport_due_to_overturning
 units:             kg s-1
 cell_methods:      time: mean longitude: mean
 long_name:         Northward Ocean Salt Transport due to Overturning 
-comment:           function of latitude, basin
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3844,7 +3802,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
 cell_measures:     area: areacello
 long_name:         Rainfall Flux where Ice Free Ocean over Sea
-comment:           compute as the total mass of liquid water falling as liquid rain  into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the total mass of liquid water falling as liquid rain  into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3870,7 +3828,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
 cell_measures:     area: areacello
 long_name:         Snowfall Flux where Ice Free Ocean over Sea
-comment:           compute as the total mass of ice directly falling as snow into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the total mass of ice directly falling as snow into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3896,7 +3854,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
 cell_measures:     area: areacello
 long_name:         Water Evaporation Flux Where Ice Free Ocean over Sea
-comment:           compute as the total mass of water vapor evaporating from the ice-free portion of the ocean  divided by the area of the ocean portion of the grid cell.
+comment:           computed as the total mass of water vapor evaporating from the ice-free portion of the ocean  divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3918,7 +3876,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Water Flux into Sea Water From Rivers 
-comment:           compute as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the river flux of water into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3940,7 +3898,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Water Flux into Sea Water From Icebergs 
-comment:           compute as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3962,7 +3920,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Water Flux into Sea Water due to Sea Ice Thermodynamics 
-comment:           compute as the sea ice thermodynamic water flux into the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the sea ice thermodynamic water flux into the ocean divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -3984,7 +3942,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Water Flux into Sea Water 
-comment:           compute as the water  flux into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the next two variables in this table.
+comment:           computed as the water  flux into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the next two variables in this table.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4010,7 +3968,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Water Flux into Sea Water Without Flux Correction 
-comment:           compute as the water  flux (without flux correction) into the ocean divided by the area of the ocean portion of the grid cell.  This is the sum of the first 6 variables in this table?
+comment:           computed as the water  flux (without flux correction) into the ocean divided by the area of the ocean portion of the grid cell.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4032,7 +3990,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Water Flux Correction 
-comment:           If this does not vary from one year to the next, report only a single year.  Positive flux implies correction adds water to ocean.
+comment:           Positive flux implies correction adds water to ocean.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4140,7 +4098,6 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Virtual Salt Flux into Sea Water 
-comment:           If this does not vary from one year to the next, report only a single year.  Positive flux implies correction increases salinity of water.  This includes all virtual salt flux, including that due to a salt flux correction.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4223,7 +4180,7 @@ modeling_realm:    ocean
 !----------------------------------
 standard_name:     upward_geothermal_heat_flux_at_sea_floor
 units:             W m-2
-cell_methods:      time: mean area: whre sea
+cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Upward Geothermal Heat Flux at Sea Floor 
 !----------------------------------
@@ -4248,7 +4205,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where ice_free_sea over sea
 cell_measures:     area: areacello
 long_name:         Temperature Flux due to Rainfall Expressed as Heat Flux into Sea Water 
-comment:           This is defined as ""where ice_free_sea over sea""; i.e., compute the total flux (considered here) entering the ice-free portion of the grid cell divided by the area of the ocean portion of the grid cell.
+comment:           This is defined as ""where ice_free_sea over sea""; i.e., the total flux (considered here) entering the ice-free portion of the grid cell divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4294,7 +4251,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water 
-comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4316,7 +4272,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Snow Thermodynamics 
-comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4338,7 +4293,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Frazil Ice Formation 
-comment:           As of May 2010, the WGOMD document recommends that this field should be saved instead of the field listed immediately below.  In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4360,7 +4314,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Sea Ice Thermodynamics 
-comment:           As of May 2010, the WGOMD document recommends that instead of saving this field, the field listed immediately above should be saved instead.  In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4382,7 +4335,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Heat Flux into Sea Water due to Iceberg Thermodynamics 
-comment:           In general this should be reported as a function of depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4508,7 +4460,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello volume: volcello
 long_name:         Downwelling Shortwave Radiation in Sea Water 
-comment:           In general the shortwave flux should be reported as a function of ocean depth, (i.e.,  it will be a function of the generic ""XYZ"" dimensions).  Include enough depth levels to represent  the non-zero values of this field everywhere on the globe. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4535,7 +4486,6 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Heat Flux Correction 
-comment:           If this does not vary from one year to the next, report only a single year.  Positive indicates correction adds heat to ocean.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4624,7 +4574,7 @@ standard_name:     surface_downward_x_stress_correction
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
 long_name:         Surface Downward X Stress Correction 
-comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.  If this does not vary from one year to the next, report only a single year.
+comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4646,7 +4596,7 @@ standard_name:     surface_downward_y_stress_correction
 units:             N m-2
 cell_methods:      time: mean area: mean where sea
 long_name:         Surface Downward Y Stress Correction 
-comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.  If this does not vary from one year to the next, report only a single year.
+comment:           This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -4654,6 +4604,48 @@ dimensions:        longitude latitude time
 out_name:          tauvcorr 
 type:              real
 positive:          down
+!----------------------------------
+!
+
+!============
+variable_entry:    zfull
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Ocean Layer
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time
+out_name:          zfull
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    zhalf
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     depth_below_geoid
+units:             m
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello 
+long_name:         Depth Below Geoid of Interfaces Between Ocean Layers
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude olevel time
+out_name:          zhalf
+type:              real
 !----------------------------------
 !
 

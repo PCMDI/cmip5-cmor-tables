@@ -11,7 +11,7 @@ frequency: subhr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -145,7 +145,6 @@ axis_entry: site
 !----------------------------------
 ! Axis attributes:
 !----------------------------------
-units:            1
 long_name:        site index
 !----------------------------------
 ! Additional axis information:
@@ -530,7 +529,6 @@ units:             K
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Near-Surface Air Temperature
-comment:           near-surface (usually, 2 meter) air temperature.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -617,7 +615,6 @@ standard_name:     eastward_wind
 units:             m s-1
 cell_methods:      time: point
 long_name:         Eastward Near-Surface Wind
-comment:           near-surface (usually, 10 meters) eastward component of wind.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -638,7 +635,6 @@ standard_name:     northward_wind
 units:             m s-1
 cell_methods:      time: point
 long_name:         Northward Near-Surface Wind
-comment:           near-surface (usually, 10 meters) northward component of wind.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -659,7 +655,7 @@ standard_name:     wind_speed
 units:             m s-1
 cell_methods:      time: point
 long_name:         Near-Surface Wind Speed
-comment:           near-surface (usually, 10 meters) wind speed.  This is the mean of the speed, not the speed computed from the mean u and v components of wind
+comment:           This is the mean of the speed, not the speed computed from the mean u and v components of wind
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -681,7 +677,7 @@ units:             %
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Near-Surface Relative Humidity
-comment:           near-surface (usually, 2meters) relative humidity expressed as a percentage.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
+comment:           This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -703,7 +699,6 @@ units:             1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Near-Surface Specific Humidity
-comment:           near-surface (usually, 2 meters) specific humidity.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -813,7 +808,7 @@ units:             kg m-2 s-1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Surface Snow and Ice Sublimation Flux
-comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere. This differs from sbl appearing in table Limon in that the flux is averaged over the entire grid cell, not just the land portion.
+comment:           The snow and ice sublimation flux is the loss of snow and ice mass from the surface resulting from their conversion to water vapor that enters the atmosphere. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1076,7 +1071,7 @@ units:             W m-2
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         TOA Incident Shortwave Radiation
-comment:           incident shortwave at the top of the atmosphere
+comment:           at the top of the atmosphere
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1233,7 +1228,7 @@ units:             kg m-2
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Condensed Water Path
-comment:           calculate mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Includes precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1255,7 +1250,7 @@ units:             kg m-2
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Ice Water Path
-comment:           calculate mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Includes precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1277,7 +1272,7 @@ units:             W m-2
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Net Downward Flux at Top of Model
-comment:           i.e., at the top of that portion of the atmosphere where dynamics are explicitly treated by the model. Report only if this differs from the net downward radiative flux at the top of the atmosphere.
+comment:           i.e., at the top of that portion of the atmosphere where dynamics are explicitly treated by the model. This is reported only if it differs from the net downward radiative flux at the top of the atmosphere.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1364,7 +1359,7 @@ units:             1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Fraction of Time Shallow Convection Occurs
-comment:           Fraction of time that shallow convection occurs in the grid cell. ( For models with a distinct shallow convection scheme only)
+comment:           Fraction of time that shallow convection occurs in the grid cell. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1386,7 +1381,7 @@ units:             kg  m-2 s-1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to All Anthropogenic Emissions of CO2
-comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Do not include natural fire sources, but include all anthropogenic sources, including fossil fuel use, cement production, agricultural burning, and sources associated with anthropogenic land use change excluding forest regrowth.
+comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Does not include natural fire sources but, includes all anthropogenic sources, including fossil fuel use, cement production, agricultural burning, and sources associated with anthropogenic land use change excluding forest regrowth.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1409,7 +1404,7 @@ units:             kg m-2 s-1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere Due to Fossil Fuel Emissions of CO2
-comment:           This is requested only for the emission-driven coupled carbon climate model runs.  Report the prescribed anthropogenic CO2 flux from fossil fuel use, including cement production, and flaring (but not from land-use changes, agricultural burning, forest regrowth, etc.)
+comment:           This is the prescribed anthropogenic CO2 flux from fossil fuel use, including cement production, and flaring (but not from land-use changes, agricultural burning, forest regrowth, etc.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1432,7 +1427,7 @@ units:             kg m-2 s-1
 cell_methods:      time: point
 cell_measures:     area: areacella
 long_name:         Surface Carbon Mass Flux into the Atmosphere Due to Natural Sources
-comment:           Report from all simulations (both emission-driven and concentration-driven) performed by models with fully interactive and responsive carbon cycles.  This is what the atmosphere sees (on its own grid).  This field should be equivalent to the combined natural fluxes of carbon (requested in the L_mon and O_mon tables) that account for natural exchanges between the atmosphere and land or ocean reservoirs (i.e., ""net ecosystem biospheric productivity"", for land, and ""air to sea CO2 flux"", for ocean.)
+comment:            This is what the atmosphere sees (on its own grid).  This field should be equivalent to the combined natural fluxes of carbon (requested in the L_mon and O_mon tables) that account for natural exchanges between the atmosphere and land or ocean reservoirs (i.e., ""net ecosystem biospheric productivity"", for land, and ""air to sea CO2 flux"", for ocean.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1454,7 +1449,7 @@ standard_name:     cloud_area_fraction_in_atmosphere_layer
 units:             %
 cell_methods:      time: point
 long_name:         Cloud Area Fraction
-comment:           Include both large-scale and convective cloud.
+comment:           Includes both large-scale and convective cloud.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1475,7 +1470,7 @@ standard_name:     mass_fraction_of_cloud_liquid_water_in_air
 units:             1
 cell_methods:      time: point
 long_name:         Mass Fraction of Cloud Liquid Water
-comment:           Include both large-scale and convective cloud.  Calculate as the mass of  cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Includes both large-scale and convective cloud.  This is the mass of  cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1496,7 +1491,7 @@ standard_name:     mass_fraction_of_cloud_ice_in_air
 units:             1
 cell_methods:      time: point
 long_name:         Mass Fraction of Cloud Ice
-comment:           Include both large-scale and convective cloud. Calculate as the mass of  cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Includes both large-scale and convective cloud. This is the mass of  cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1517,7 +1512,7 @@ standard_name:     atmosphere_net_upward_convective_mass_flux
 units:             kg m-2 s-1
 cell_methods:      time: point
 long_name:         Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).  The net mass flux should represent the difference between the updraft and downdraft components.  Calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the updrafts).
+comment:           The net mass flux should represent the difference between the updraft and downdraft components.  This is calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the updrafts).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2129,7 +2124,6 @@ standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: point
 long_name:         Pressure on Model Levels
-comment:           This field is needed only for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2150,7 +2144,6 @@ standard_name:     air_pressure
 units:             Pa
 cell_methods:      time: point
 long_name:         Pressure on Model Half-Levels
-comment:           This field is needed only for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2170,7 +2163,6 @@ modeling_realm:    atmos
 standard_name:     longitude
 units:             degrees_east
 long_name:         Longitude
-comment:           Note that the CF convention and CMOR2 require that this field will be included in each file that contains a variable that is a function of the ""site"" dimension, so there is no need to save this field by itself.  It is included here simply to indicate that longitudes should be stored for the site grid in each file written.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2192,7 +2184,6 @@ modeling_realm:    atmos
 standard_name:     latitude
 units:             degrees_north
 long_name:         Latitude
-comment:           the above comment also applies to latitude.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

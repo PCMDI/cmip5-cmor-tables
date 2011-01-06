@@ -6,7 +6,7 @@ frequency: 6hr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -161,13 +161,14 @@ modeling_realm:    atmos
 standard_name:     eastward_wind
 units:             m s-1
 long_name:         Eastward Wind
-comment:           on the following pressure levels: 850, 500, 250 hPa
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude plev3 time1
 out_name:          ua
 type:              real
+valid_min:         -90.0
+valid_max:         145.0
 !----------------------------------
 !
 
@@ -181,13 +182,14 @@ modeling_realm:    atmos
 standard_name:     northward_wind
 units:             m s-1
 long_name:         Northward Wind
-comment:           on the following pressure levels: 850, 500, 250 hPa
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude plev3 time1
 out_name:          va
 type:              real
+valid_min:         -80.0
+valid_max:         80.0
 !----------------------------------
 !
 
@@ -202,13 +204,14 @@ standard_name:     air_temperature
 units:             K
 cell_measures:     area: areacella
 long_name:         Air Temperature
-comment:           on the following pressure levels: 850, 500, 250 hPa
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude plev3 time1
 out_name:          ta
 type:              real
+valid_min:         144.0
+valid_max:         330.0
 !----------------------------------
 !
 
@@ -229,6 +232,8 @@ long_name:         Sea Level Pressure
 dimensions:        longitude latitude time1
 out_name:          psl
 type:              real
+valid_min:         92500.0
+valid_max:         113000.0
 !----------------------------------
 !
 

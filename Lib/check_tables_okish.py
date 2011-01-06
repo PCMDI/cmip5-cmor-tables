@@ -2,7 +2,7 @@ import cmor,numpy
 from cmor.check_CMOR_compliant import readTable
 
 tables = """CMIP5_3hr     CMIP5_6hrPlev CMIP5_LImon   CMIP5_OImon   CMIP5_Omon    CMIP5_aero    CMIP5_cfDay   CMIP5_cfOff   CMIP5_day     CMIP5_grids CMIP5_6hrLev  CMIP5_Amon    CMIP5_Lmon    CMIP5_Oclim   CMIP5_Oyr     CMIP5_cf3hr   CMIP5_cfMon   CMIP5_cfSites CMIP5_fx"""
-tables = """CMIP5_3hr     CMIP5_6hrPlev CMIP5_LImon   CMIP5_OImon   CMIP5_Omon    CMIP5_aero    CMIP5_cfDay   CMIP5_cfOff   CMIP5_day      CMIP5_6hrLev  CMIP5_Amon    CMIP5_Lmon    CMIP5_Oclim   CMIP5_Oyr     CMIP5_cf3hr   CMIP5_cfMon    CMIP5_fx"""
+tables = """CMIP5_3hr     CMIP5_6hrPlev CMIP5_LImon   CMIP5_OImon   CMIP5_Omon    CMIP5_aero    CMIP5_cfDay   CMIP5_cfOff   CMIP5_day      CMIP5_6hrLev  CMIP5_Amon    CMIP5_Lmon    CMIP5_Oclim   CMIP5_Oyr    CMIP5_cfMon    CMIP5_fx"""
 
 for t in tables.split():
     print 'Table:',t

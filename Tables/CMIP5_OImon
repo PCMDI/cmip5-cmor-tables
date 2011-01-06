@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -165,7 +165,7 @@ units:             m
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Sea Ice Thickness
-comment:           Compute the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Report as 0.0 in regions free of sea ice.
+comment:           the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -191,7 +191,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Sea Ice Plus Surface Snow Amount
-comment:           Compute the  mass per unit area of sea ice plus snow in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Report as 0.0 in regions free of sea ice.
+comment:           the  mass per unit area of sea ice plus snow in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -213,7 +213,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Water Evaporation Flux from Sea Ice
-comment:           Compute the average rate that water mass evaporates (or sublimates) from the sea ice surface (i.e., kg/s) divided by the area of the ocean (i.e., open ocean + sea ice) portion of the grid cell. This quantity multiplied both by the oean area of the grid cell and by the length of the month should yield the total mass of water evaporated (or sublimated) from the sea ice.  Report as 0.0 in regions free of sea ice.  [This was computed differently in CMIP3
+comment:           the average rate that water mass evaporates (or sublimates) from the sea ice surface (i.e., kg/s) divided by the area of the ocean (i.e., open ocean + sea ice) portion of the grid cell. This quantity, multiplied both by the oean area of the grid cell and by the length of the month, should yield the total mass of water evaporated (or sublimated) from the sea ice.  Reported as 0.0 in regions free of sea ice.  [This was computed differently in CMIP3.]
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -236,7 +236,7 @@ units:             m
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Snow Depth
-comment:           Compute the mean thickness of snow in the ocean portion of the grid cell (averaging over the entire ocean portion, including the snow-free ocean fraction).  Report as 0.0 in regions free of snow-covered sea ice.
+comment:           the mean thickness of snow in the ocean portion of the grid cell (averaging over the entire ocean portion, including the snow-free ocean fraction).  Reported as 0.0 in regions free of snow-covered sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -280,7 +280,7 @@ units:             1
 cell_methods:      time: mean area: mean where sea_ice
 cell_measures:     area: areacello
 long_name:         Sea Ice Albedo
-comment:           "Report as ""missing"" if there is no sunlight or if a region is free of sea ice. "
+comment:           "Reported as ""missing"" if there is no sunlight or if a region is free of sea ice. "
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -302,7 +302,7 @@ units:             psu
 cell_methods:      time: mean (weighted by mass of sea ice)
 cell_measures:     area: areacello
 long_name:         Sea Ice Salinity
-comment:           When computing the time-mean here, the time-samples, weighted by the mass of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time-samples, weighted by the mass of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -324,7 +324,7 @@ units:             K
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Surface Temperature of Sea Ice
-comment:           When computing the time-mean here, the time-samples, weighted by the area of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Report as ""missing"" in regions free of sea ice.  Note this will be the surface snow temperature in regions where snow covers the sea ice.
+comment:           When computing the time-mean here, the time-samples, weighted by the area of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as ""missing"" in regions free of sea ice.  Note this will be the surface snow temperature in regions where snow covers the sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -346,7 +346,7 @@ units:             K
 cell_methods:      time: mean (weighted by area of snow-covered sea ice)
 cell_measures:     area: areacello
 long_name:         Temperature at Interface Between Sea Ice and Snow
-comment:           When computing the time-mean here, the time-samples, weighted by the area of snow-covered sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Report as ""missing"" in regions free of snow-covered sea ice. 
+comment:           When computing the time-mean here, the time-samples, weighted by the area of snow-covered sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as ""missing"" in regions free of snow-covered sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -368,7 +368,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Surface Rainfall Rate into the Sea Ice Portion of the Grid Cell
-comment:           where sea ice over sea: compute the the water mass per unit time falling as rain onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Report as 0. in regions free of sea ice.
+comment:           where sea ice over sea: this is the the water mass per unit time falling as rain onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -390,7 +390,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Surface Snowfall Rate into the Sea Ice Portion of the Grid Cell
-comment:           where sea ice over sea: compute the the water mass per unit time falling as snow onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Report as 0. in regions free of sea ice.
+comment:           where sea ice over sea: this is computed as the the water mass per unit time falling as snow onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -412,7 +412,7 @@ units:             years
 cell_methods:      time: mean (weighted b mass of sea ice)
 cell_measures:     area: areacello
 long_name:         Age of Sea Ice
-comment:           When computing the time-mean here, the time samples, weighted by the mass of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the mass of sea ice in the grid cell, are accumulated and then divided by the sum of the weights.  Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -434,7 +434,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Frazil Sea Ice Growth (Leads) Rate
-comment:           Compute the rate of change of sea ice mass due to frazil sea ice formation divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice.
+comment:           the rate of change of sea ice mass due to frazil sea ice formation divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -456,7 +456,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Congelation Sea Ice Growth Rate
-comment:           Compute the rate of change of sea ice mass due to congelation sea ice divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice.
+comment:           the rate of change of sea ice mass due to congelation sea ice divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -478,7 +478,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Lateral Sea Ice Growth Rate
-comment:           Compute the rate of change of sea ice mass due to lateral growth alone of the sea ice divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice.
+comment:           the rate of change of sea ice mass due to lateral growth alone of the sea ice divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -500,7 +500,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Snow-Ice Formation Rate
-comment:           Compute the rate of change of sea ice mass due to transformation of snow to sea ice, divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of snow-covered sea ice.
+comment:           the rate of change of sea ice mass due to transformation of snow to sea ice, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of snow-covered sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -522,7 +522,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Snow Melt Rate
-comment:           Compute the rate of change of snow mass  due to melting, divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice.  Include falling snow that melts on impact with the surface. 
+comment:           the rate of change of snow mass  due to melting, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice.  Includes falling snow that melts on impact with the surface. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -544,7 +544,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Rate of Melt at Upper Surface of Sea Ice
-comment:           Compute the rate of change of sea ice mass due to melting at its upper surface, divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice. Do not include rate of change of snow mass.
+comment:           the rate of change of sea ice mass due to melting at its upper surface, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice. Does not include rate of change of snow mass.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -566,7 +566,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea
 cell_measures:     area: areacello
 long_name:         Rate of Melt at Sea Ice Base
-comment:           Compute the rate of change of sea ice mass due to melting at its lower surface, divided by the area of the ocean portion of the grid cell.  Report as 0.0 in regions free of sea ice. 
+comment:           the rate of change of sea ice mass due to melting at its lower surface, divided by the area of the ocean portion of the grid cell.  Reported as 0.0 in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -588,7 +588,7 @@ units:             J m-2
 cell_methods:      time: mean (weighted by mass of sea ice)
 cell_measures:     area: areacello
 long_name:         Sea Ice Heat Content
-comment:           Ice at 0 Celsius is assumed taken to have a heat content of 0 J.  When averaging over time, this quantity is weighted by the mass of sea ice.   Report as ""missing in regions free of sea ice.  Do not include heat content of snow.
+comment:           Ice at 0 Celsius is assumed taken to have a heat content of 0 J.  When averaging over time, this quantity is weighted by the mass of sea ice.   Reported as ""missing in regions free of sea ice.  Does not include heat content of snow.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -610,7 +610,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Downwelling Shortwave over Sea Ice
-comment:           Compute the downwelling shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the downwelling shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -633,7 +633,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Upward Shortwave over Sea Ice
-comment:           Compute the upward shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the upward shortwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -656,7 +656,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Downwelling Long Wave over Sea Ice
-comment:           Compute the downwelling longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the downwelling longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -679,7 +679,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Upward Long Wave over Sea Ice
-comment:           Compute the upward longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the upward longwave flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -702,7 +702,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Surface Upward Sensible Heat Flux over Sea Ice
-comment:           Compute the upward sensible heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the upward sensible heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -725,7 +725,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Surface Upward Latent Heat Flux over Sea Ice
-comment:           Compute the upward latent heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the upward latent heat flux in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -748,7 +748,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Sublimation over Sea Ice
-comment:           Compute the upward flux of water vapor to the atmosphere due to sublimation of snow and sea  ice in regions of sea ice divided by the area of the ocean portion of the grid cell.
+comment:           the upward flux of water vapor to the atmosphere due to sublimation of snow and sea  ice in regions of sea ice divided by the area of the ocean portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -770,7 +770,7 @@ standard_name:     sea_ice_x_transport
 units:             kg s-1
 cell_methods:      time: mean
 long_name:         X-Component of Sea Ice Mass Transport
-comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Include snow in calculation of mass.
+comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Snow is included in calculation of mass.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -791,7 +791,7 @@ standard_name:     sea_ice_y_transport
 units:             kg s-1
 cell_methods:      time: mean
 long_name:         Y-Component of Sea Ice Mass Transport
-comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Include snow in calculation of mass.
+comment:           The sea ice mass transport is 0.0 in ice-free regions of the ocean.  Snow is included in calculation of mass.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -832,7 +832,7 @@ standard_name:     surface_downward_x_stress
 units:             N m-2
 cell_methods:      time: mean (weighted by area of sea ice)
 long_name:         X-Component of Atmospheric Stress On Sea Ice
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -854,7 +854,7 @@ standard_name:     surface_downward_y_stress
 units:             N m-2
 cell_methods:      time: mean (weighted by area of sea ice)
 long_name:         Y-Component of Atmospheric Stress On Sea Ice
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -897,7 +897,7 @@ standard_name:     upward_y_stress_at_sea_ice_base
 units:             N m-2
 cell_methods:      time: mean (weighted by area of sea ice)
 long_name:         Y-Component of Ocean Stress On Sea Ice
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -919,7 +919,7 @@ units:             N m-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Compressive Sea Ice Strength
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -941,7 +941,7 @@ units:             s-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Strain Rate Divergence of Sea Ice
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -963,7 +963,7 @@ units:             s-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Eastward Derivative of Northward Sea Ice Velocity
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -985,7 +985,7 @@ units:             s-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Northward Derivative of Eastward Sea Ice Velocity
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1007,7 +1007,7 @@ units:             s-1
 cell_methods:      time: mean (weighted by area of sea ice)
 cell_measures:     area: areacello
 long_name:         Sea Ice Ridging Rate
-comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Report as ""missing"" in regions free of sea ice. 
+comment:           When computing the time-mean here, the time samples, weighted by the area of sea ice, are accumulated and then divided by the sum of the weights.   Reported as ""missing"" in regions free of sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

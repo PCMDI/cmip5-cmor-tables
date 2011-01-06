@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -189,7 +189,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Surface Snow Amount
-comment:           Compute as the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; report as 0.0 where the land fraction is 0; exclude snow on vegetation canopy or on sea ice.
+comment:           Computed as the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as 0.0 where the land fraction is 0; excluded is snow on vegetation canopy or on sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -215,7 +215,7 @@ units:             m
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Snow Depth
-comment:           where land over land.  Compute the mean thickness of snow in the land portion of the grid cell (averaging over the entire land portion, including the snow-free fraction.  Report as 0.0 where the land fraction is 0.
+comment:           where land over land, this is computed as the mean thickness of snow in the land portion of the grid cell (averaging over the entire land portion, including the snow-free fraction).  Reported as 0.0 where the land fraction is 0.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -241,7 +241,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Liquid Water Content of Snow Layer
-comment:           where land over land: compute the total mass of liquid water contained interstitially within the snow layer of the land portion of a grid cell divided by the area of the land portion of the cell.
+comment:           where land over land: this is computed as the total mass of liquid water contained interstitially within the snow layer of the land portion of a grid cell divided by the area of the land portion of the cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -263,7 +263,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Snow Soot Content
-comment:           Consider the entire land portion of the grid cell, with snow soot content set to 0.0 in regions free of snow.
+comment:           the entire land portion of the grid cell is considered, with snow soot content set to 0.0 in regions free of snow.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -285,7 +285,7 @@ units:             day
 cell_methods:      time: mean (with samples weighted by snow mass) area: mean where land
 cell_measures:     area: areacella
 long_name:         Snow Age
-comment:           When computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.  Report as ""missing in regions free of snow on land.
+comment:           When computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.  Reported as ""missing in regions free of snow on land.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -307,7 +307,7 @@ units:             K
 cell_methods:      time: mean (with samples weighted by snow mass) area: mean where land
 cell_measures:     area: areacella
 long_name:         Snow Internal Temperature
-comment:           This temperature is averaged over all the snow in the grid cell that rests on land or land ice.  When computing the time-mean here, the time samples, the weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.   Report as ""missing in regions free of snow on land.
+comment:           This temperature is averaged over all the snow in the grid cell that rests on land or land ice.  When computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.   Reported as ""missing in regions free of snow on land.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -329,7 +329,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Surface Snow Melt
-comment:           Compute as the total surface melt water on the land portion of the grid cell divided by the land area in the grid cell; report as 0.0 for snow-free land regions; report as 0.0 where the land fraction is 0.
+comment:           Computed as the total surface melt water on the land portion of the grid cell divided by the land area in the grid cell; report as 0.0 for snow-free land regions; report as 0.0 where the land fraction is 0.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -355,7 +355,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Surface Snow and Ice Sublimation Flux
-comment:           The snow and ice sublimation flux is the loss of snow and ice mass resulting from their conversion to water vapor.  Compute as the total sublimation on the land portion of the grid cell divided by the land area in the grid cell; report as 0.0 for snow-free land regions; report as 0.0 where the land fraction is 0.
+comment:           The snow and ice sublimation flux is the loss of snow and ice mass resulting from their conversion to water vapor.  Computed as the total sublimation on the land portion of the grid cell divided by the land area in the grid cell; reported as 0.0 for snow-free land regions; reported as 0.0 where the land fraction is 0.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -381,7 +381,7 @@ units:             W m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Downward Heat Flux into Snow Where Land over Land
-comment:           Compute the net downward heat flux from the atmosphere into the snow that lies on land divided by the land area in the grid cell; report as 0.0 for snow-free land regions or where the land fraction is 0.
+comment:           the net downward heat flux from the atmosphere into the snow that lies on land divided by the land area in the grid cell; reported as 0.0 for snow-free land regions or where the land fraction is 0.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -404,7 +404,7 @@ units:             m
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Permafrost Layer Thickness
-comment:           where land over land. Compute the mean thickness of the permafrost layer in the land portion of the grid cell.  Report as 0.0 in permafrost-free regions.
+comment:           where land over land: This is the mean thickness of the permafrost layer in the land portion of the grid cell.  Reported as 0.0 in permafrost-free regions.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

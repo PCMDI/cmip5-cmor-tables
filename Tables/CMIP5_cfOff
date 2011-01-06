@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -241,8 +241,8 @@ out_name:         scatratio
 stored_direction: increasing
 tolerance:        0.001
 type:             double
-requested:        0.0605 2.1 4. 6. 8.5 12.5 17.5 22.5 27.5 35. 45. 55. 70. 539.5 1004.        ! space-separated list of requested coordinates 
-requested_bounds: 0.01 1.2 1.2 3. 3. 5. 5. 7. 7. 10. 10. 15. 15. 20. 20. 25. 25. 30. 30. 40. 40. 50. 50. 60. 60. 80. 80. 999. 999. 1009. ! space-separated list of requested coordinate bounds
+requested:        0.005 0.605 2.1 4. 6. 8.5 12.5 17.5 22.5 27.5 35. 45. 55. 70. 50040.        ! space-separated list of requested coordinates 
+requested_bounds: 0. 0.01 0.01 1.2 1.2 3. 3. 5. 5. 7. 7. 10. 10. 15. 15. 20. 20. 25. 25. 30. 30. 40. 40. 50. 50. 60. 60. 80. 80. 100000. ! space-separated list of requested coordinate bounds
 must_have_bounds: yes
 !----------------------------------
 !
@@ -304,7 +304,6 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction
-comment:           (40 height levels)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -326,7 +325,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction Undetected by CloudSat
-comment:           (40 height levels)  Clouds detected by CALIPSO but below the detectability threshold of CloudSat
+comment:           Clouds detected by CALIPSO but below the detectability threshold of CloudSat
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -348,7 +347,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CloudSat Radar Reflectivity
-comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  (40 levelsx15 bins) .
+comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  .
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -370,7 +369,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CALIPSO Scattering Ratio
-comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions  (40 levelsx15 bins) .
+comment:           CFADs (Cloud Frequency Altitude Diagrams) are joint height - radar reflectivity (or lidar scattering ratio) distributions.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

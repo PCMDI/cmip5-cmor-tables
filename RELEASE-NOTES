@@ -1,3 +1,41 @@
+2011-01-06 : Changes include the following (note that for all tables, some information formerly appearing in the "comment" column has been moved to the "questions & notes" column, but these changes have not usually been highlighted by shading, which shows the other changes that have been recently made):
+
+dims:
+1) units corrected for character string type coordinates.
+2) potential density dimension attributes corrected
+3) requested coordinate values and bounds corrected for scatratio
+4) typo corrected in "requested values of oline strings.
+
+fx:
+1) standard_name corrected for Amon surface_snow_and_ice_sublimation_flux
+2)  the upward geothermal heat flux has been added to this table, because it normally is independent of time.  Models where it depends on time, should see table Omon.
+
+Oclim, Oyr, and Omon:
+1) added request for depth of ocean layers, but only from models where this field cannot be calculated from the vertical coordinate information.
+
+Amon:
+1) standard name corrected for surface_snow_and_ice_sublimation_flux
+2) cell_methods added to hfgeou
+3) added request for 4 new bias-corrected fields, but only from decadal hindcast/prediction experiments.
+
+Lmon:
+1) LAI definition corrected
+
+OImon:
+1) long_names slightly modified for for rsdssi and rldssi
+
+aero:
+1) longname and standard_name modified for sdsdiff and rsdscsdiff
+2) standard_name defined for ec550aer
+
+3hr:
+1) CMOR dimensions corrected for uas and vas
+2) variable name corrected for surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
+3) longname modified for rsdsdiff
+
+cfMon:
+1) relative_humidity added to this table
+2) cell_methods removed from lon and lat fields
 2010-11-30 : edited min/maxs to be added only for monthly tables
 2010-11-30 : min/max are adjusted with greater of 5% or 3*std instead of just 3*std
 2010-11-30 : typos fixed by Karl

@@ -6,7 +6,7 @@ frequency: day
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -816,7 +816,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Total Cloud Fraction
-comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.
+comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -838,7 +838,7 @@ units:             kg m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Condensed Water Path
-comment:           calculate mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           calculate mass of condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -860,7 +860,7 @@ units:             kg m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Ice Water Path
-comment:           calculate mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). Include precipitating frozen hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           calculate mass of ice water in the column divided by the area of the column (not just the area of the cloudy portion of the column). This includes precipitating frozen hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -904,7 +904,6 @@ units:             K
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Air Temperature
-comment:           at 700 hPa level
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1164,7 +1163,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Mean Cloud Albedo
-comment:           When computing time-means, weight by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
+comment:           time-means are weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1186,7 +1185,7 @@ units:             Pa
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Mean Cloud Top Pressure
-comment:           When computing time-means, weight by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
+comment:           time-means are weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1482,7 +1481,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Cloud Liquid Water
-comment:           Calculate as the mass of  cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of  cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1504,7 +1503,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Cloud Ice
-comment:           Calculate as the mass of cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1526,7 +1525,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).  The net mass flux should represent the difference between the updraft and downdraft components.  Calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
+comment:           The net mass flux should represent the difference between the updraft and downdraft components.  This is calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1549,7 +1548,6 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction
-comment:           40 levels
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1571,7 +1569,6 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Cloud Area Fraction
-comment:           7 levels x 7 tau
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1593,7 +1590,6 @@ units:             Pa
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Pressure on Model Levels
-comment:           This field is needed only for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1615,7 +1611,6 @@ units:             Pa
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Pressure on Model Half-Levels
-comment:           This field is needed only for models in which the pressure can't be calculated from the vertical coordinate information stored already for each variable.  Thus, the pressures are needed for height or theta-coordinate models, for example, but not sigma- or eta-coordinate models.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

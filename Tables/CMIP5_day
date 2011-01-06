@@ -6,7 +6,7 @@ frequency: day
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -239,7 +239,6 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Near-Surface Specific Humidity
-comment:           near-surface (usually, 2 meter) specific humidity.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -261,7 +260,6 @@ units:             K
 cell_methods:      time: minimum
 cell_measures:     area: areacella
 long_name:         Daily Minimum Near-Surface Air Temperature
-comment:           daily-minimum near-surface (usually, 2 meter) air temperature.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -283,7 +281,6 @@ units:             K
 cell_methods:      time: maximum
 cell_measures:     area: areacella
 long_name:         Daily Maximum Near-Surface Air Temperature
-comment:           daily-maximum near-surface (usually, 2 meter) air temperature.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -305,7 +302,6 @@ units:             K
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Near-Surface Air Temperature
-comment:           daily-mean near-surface (usually, 2 meter) air temperature.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -369,7 +365,6 @@ standard_name:     wind_speed
 units:             m s-1
 cell_methods:      time: mean
 long_name:         Daily-Mean Near-Surface Wind Speed
-comment:           near-surface (usually, 10 meters) wind speed.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -391,7 +386,7 @@ units:             K2
 cell_methods:      time:mean
 cell_measures:     area: areacello
 long_name:         Square of Sea Surface Temperature
-comment:           square of temperature of liquid ocean, averaged over the day. Report on the ocean grid.  This variable appears in WGOMD Table 2.2 
+comment:           square of temperature of liquid ocean, averaged over the day. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -413,7 +408,7 @@ units:             K
 cell_methods:      time: mean
 cell_measures:     area: areacello
 long_name:         Sea Surface Temperature
-comment:           temperature of liquid ocean. Report on the ocean grid.  This variable appears in WGOMD Table 2.2 
+comment:           temperature of liquid ocean. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -435,7 +430,6 @@ units:             m
 cell_methods:      time: maximum
 cell_measures:     area: areacello
 long_name:         Daily Maximum Ocean Mixed Layer Thickness Defined by Mixing Scheme 
-comment:           Report on the ocean grid.  This variable appears in WGOMD Table 2.2 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -456,8 +450,8 @@ standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: mean area: mean where land 
 cell_measures:     area: areacella
-long_name:         Moisture in Upper 0.1 m of Soil Column
-comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
+long_name:         Moisture in Upper Portion of Soil Column
+comment:           the mass of water in all phases in a thin surface soil layer.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -479,7 +473,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Near-Surface Relative Humidity
-comment:           near-surface (usually, 2 meter) relative humidity.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
+comment:           This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -501,7 +495,7 @@ units:             %
 cell_methods:      time: minimum
 cell_measures:     area: areacella
 long_name:         Surface Daily Minimum Relative Humidity
-comment:           near-surface (usually, 2 meter) minimum  relative humidity.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
+comment:           This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -523,7 +517,7 @@ units:             %
 cell_methods:      time: maximum
 cell_measures:     area: areacella
 long_name:         Surface Daily Maximum Relative Humidity
-comment:           near-surface (usually, 2 meter) maximum  relative humidity.  This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
+comment:           This is the relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -566,7 +560,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Total Cloud Fraction
-comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Include both large-scale and convective cloud.
+comment:           for the whole atmospheric column, as seen from the surface or the top of the atmosphere. Includes both large-scale and convective cloud.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -610,7 +604,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Surface Snow Amount
-comment:           Compute as the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; report 0.0 where the land fraction is 0; exclude snow on vegetation canopy or on sea ice.
+comment:           the mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as 0.0 where the land fraction is 0; excludes snow on vegetation canopy or on sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -676,7 +670,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land 
 cell_measures:     area: areacella
 long_name:         Total Runoff
-comment:           "compute as the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell."
+comment:           "computed as the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell divided by the land area in the grid cell."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -697,7 +691,6 @@ standard_name:     eastward_wind
 units:             m s-1
 cell_methods:      time: mean
 long_name:         Eastward Near-Surface Wind
-comment:           near-surface (usually, 10 meters) eastward component of wind.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -718,7 +711,6 @@ standard_name:     northward_wind
 units:             m s-1
 cell_methods:      time: mean
 long_name:         Northward Near-Surface Wind
-comment:           near-surface (usually, 10 meters) northward component of wind.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -739,7 +731,6 @@ standard_name:     wind_speed
 units:             m s-1
 cell_methods:      time: maximum
 long_name:         Daily Maximum Near-Surface Wind Speed
-comment:           near-surface (usually, 10 meters) wind speed.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -915,7 +906,7 @@ standard_name:     sea_ice_x_velocity
 units:             m s-1
 cell_methods:      time: mean
 long_name:         X-Component of Sea Ice Velocity
-comment:           "Report on ocean's grid.  Report as ""missing"" in regions free of sea ice."
+comment:           "Reported as ""missing"" in regions free of sea ice."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -936,7 +927,7 @@ standard_name:     sea_ice_y_velocity
 units:             m s-1
 cell_methods:      time: mean
 long_name:         Y-Component of Sea Ice Velocity
-comment:           "Report on ocean's grid.  Report as ""missing"" in regions free of sea ice."
+comment:           "Reported as ""missing"" in regions free of sea ice."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -958,7 +949,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Sea Ice Area Fraction
-comment:           fraction of grid cell covered by sea ice. Report on ocean's grid. 
+comment:           fraction of grid cell covered by sea ice. 
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -980,7 +971,7 @@ units:             m
 cell_methods:      time: mean area: mean where sea 
 cell_measures:     area: areacella
 long_name:         Sea Ice Thickness
-comment:           Report on ocean's grid.  Compute the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Report as 0.0 in regions free of sea ice.
+comment:           the mean thickness of sea ice in the ocean portion of the grid cell (averaging over the entire ocean portion, including the ice-free fraction).  Reported as 0.0 in regions free of sea ice.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

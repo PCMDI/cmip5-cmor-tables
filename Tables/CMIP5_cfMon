@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -687,7 +687,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Upwelling Longwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -710,7 +710,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Upwelling Shortwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -733,7 +733,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Downwelling Longwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -756,7 +756,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Downwelling Shortwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -779,7 +779,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Upwelling Clear-Sky Longwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -802,7 +802,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Upwelling Clear-Sky Shortwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -825,7 +825,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Downwelling Clear-Sky Longwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -848,7 +848,7 @@ units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Downwelling Clear-Sky Shortwave Radiation
-comment:           Include also the fluxes at the surface and TOA.
+comment:           Includes also the fluxes at the surface and TOA.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1011,6 +1011,31 @@ type:              real
 !
 
 !============
+variable_entry:    hur
+!============
+modeling_realm:    atmos
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     relative_humidity
+units:             %
+cell_methods:      time: mean
+cell_measures:     area: areacella
+long_name:         Relative Humidity
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude alevel time
+out_name:          hur
+type:              real
+valid_min:         -2.642
+valid_max:         135.7
+ok_min_mean_abs:   -10.31
+ok_max_mean_abs:   97
+!----------------------------------
+!
+
+!============
 variable_entry:    hus
 !============
 modeling_realm:    atmos
@@ -1152,7 +1177,7 @@ units:             s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Tendency of Specific Humidity due to Model Physics
-comment:           This should include sources and sinks from parametrized physics (e.g. convection, stratiform condensation/evaporation, etc.) and should exclude sources and sinks from resolved dynamics and diffusion.
+comment:           This includes sources and sinks from parametrized physics (e.g. convection, stratiform condensation/evaporation, etc.) and excludes sources and sinks from resolved dynamics and diffusion.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1237,7 +1262,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Convective Cloud Liquid Water 
-comment:           Calculate as the mass of convective cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of convective cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1259,7 +1284,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Convective Cloud Ice
-comment:           Calculate as the mass of convective cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of convective cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1302,7 +1327,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Stratiform Cloud Liquid Water
-comment:           Calculate as the mass of stratiform cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of stratiform cloud liquid water in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1324,7 +1349,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Mass Fraction of Stratiform Cloud Ice
-comment:           Calculate as the mass of stratiform cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  Include precipitating hydrometeors ONLY if the precipitating hydrometeor affects the calculation of radiative transfer in model.  
+comment:           Calculated as the mass of stratiform cloud ice  in the grid cell divided by the mass of air (including the water in all phases) in the grid cell.  This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1346,7 +1371,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Updraft Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).   Calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
+comment:           Calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1369,7 +1394,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Downdraft Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).  Calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
+comment:           Calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1392,7 +1417,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Shallow Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).   The net mass flux should represent the difference between the updraft and downdraft components.  For models with a distinct shallow convection scheme, calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
+comment:           The net mass flux represents the difference between the updraft and downdraft components.  For models with a distinct shallow convection scheme, this is calculated as convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1415,7 +1440,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Deep Convective Mass Flux
-comment:           Report on model half-levels (i.e., model layer bounds and not standard pressures).  The net mass flux should represent the difference between the updraft and downdraft components.   Calculate as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
+comment:           The net mass flux  represents the difference between the updraft and downdraft components.   This is calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1816,7 +1841,6 @@ units:             s-1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Tendency of Mass Fraction of Stratiform Cloud Ice Due Convective Detrainment
-comment:           Tendency of Mass Fraction of Stratiform Cloud Ice Due to Convective Detrainment
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2569,7 +2593,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Mean Cloud Albedo
-comment:           When computing time-means, weight by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
+comment:           time-means weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2591,7 +2615,7 @@ units:             Pa
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Mean Cloud Top Pressure
-comment:           When computing time-means, weight by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
+comment:           time-means weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2613,7 +2637,6 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         ISCCP Cloud Area Fraction
-comment:            7 levels x 7 tau
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2723,7 +2746,6 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         CALIPSO Cloud Fraction 
-comment:            40 height levels
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -2745,7 +2767,7 @@ units:             1
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         PARASOL Reflectance 
-comment:            5 bins of solar zenith angle.  This is reflectance as seen at the top of the atmosphere.
+comment:           This is reflectance as seen at the top of the atmosphere.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

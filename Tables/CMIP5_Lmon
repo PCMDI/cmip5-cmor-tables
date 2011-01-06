@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   30 November 2010 ! date this table was constructed
+table_date:   06 January 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -185,7 +185,6 @@ axis_entry: vegtype
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        plant functional type
 !----------------------------------
 ! Additional axis information:
@@ -205,7 +204,6 @@ axis_entry: typebare
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -226,7 +224,6 @@ axis_entry: typepdec
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -247,7 +244,6 @@ axis_entry: typepever
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -268,7 +264,6 @@ axis_entry: typesdec
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -289,7 +284,6 @@ axis_entry: typesever
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -310,7 +304,6 @@ axis_entry: typec3pft
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -331,7 +324,6 @@ axis_entry: typec4pft
 ! Axis attributes:
 !----------------------------------
 standard_name:    area_type
-units:            1
 long_name:        surface type
 !----------------------------------
 ! Additional axis information:
@@ -355,8 +347,8 @@ standard_name:     moisture_content_of_soil_layer
 units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
-long_name:         Moisture in Upper 0.1 m of Soil Column
-comment:           Compute the mass of water in all phases in the upper 0.1 meters of soil.
+long_name:         Moisture in Upper Portion of Soil Column
+comment:           the mass of water in all phases in a thin surface soil layer.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -382,7 +374,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Total Soil Moisture Content
-comment:           Compute the mass per unit area  (summed over all soil layers) of water in all phases.
+comment:           the mass per unit area  (summed over all soil layers) of water in all phases.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -408,7 +400,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Soil Frozen Water Content 
-comment:           Compute the mass (summed over all all layers) of frozen water.
+comment:           the mass (summed over all all layers) of frozen water.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -434,7 +426,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Surface Runoff
-comment:           Compute the total surface runoff leaving the land portion of the grid cell.
+comment:           the total surface runoff leaving the land portion of the grid cell.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -460,7 +452,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Total Runoff
-comment:           "compute the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell."
+comment:           "the total runoff (including ""drainage"" through the base of the soil model) leaving the land portion of the grid cell."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -486,7 +478,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Precipitation onto Canopy
-comment:           Report the precipitation flux that is intercepted by the vegetation canopy (if present in model) before reaching the ground.
+comment:           the precipitation flux that is intercepted by the vegetation canopy (if present in model) before reaching the ground.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -508,7 +500,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Evaporation from Canopy
-comment:           Report the canopy evaporation+sublimation (if present in model).
+comment:           the canopy evaporation+sublimation (if present in model).
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -576,7 +568,7 @@ units:             kg m-2
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:          Water Content of Soil Layer
-comment:           in each soil layer, the mass of water in all phases, including ice.
+comment:           in each soil layer, the mass of water in all phases, including ice.  Reported as ""missing"" for grid cells occupied entirely by ""sea""
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -598,7 +590,7 @@ units:             K
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Temperature of Soil
-comment:           "Temperature of each soil layer.  Report as ""missing"" for grid cells occupied entirely by ""sea""."
+comment:           "Temperature of each soil layer.  Reported as ""missing"" for grid cells occupied entirely by ""sea""."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -880,7 +872,7 @@ units:             1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Leaf Area Index
-comment:           projected leaf area per unit of ground area (i.e., only the land portion of the grid cell), expressed as a proper fraction (not a percentage)
+comment:           a ratio obtained by dividing the total upper leaf surface area of vegetation by the (horizontal) surface area of the land on which it grows.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -946,7 +938,6 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Carbon Mass Flux out of Atmosphere due to Net Primary Production on Land
-comment:           needed for models that do not compute GPP (if any)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1384,7 +1375,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Plant Functional Type Grid Fraction
-comment:           using each individual ESM PFT definition.   This includes natural PFTs, anthropogenic PFTs, bare soil, lakes, urban areas, etc.   Sum of all should equal the fraction of the grid-cell that is land.  Note that the ""types"" will be model dependent and for each type there should be a full description of the PFT (plant functional type).   To facilitate model comparison, it is also requested that the aggregated land cover types called for in lines 28 to 35 be archived (but not in this variable).
+comment:           The categories may differ from model to model, depending on their  PFT definitions.   This may include natural PFTs, anthropogenic PFTs, bare soil, lakes, urban areas, etc.   Sum of all should equal the fraction of the grid-cell that is land.     
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1406,7 +1397,7 @@ units:             %
 cell_methods:      time: mean
 cell_measures:     area: areacella
 long_name:         Total Primary Deciduous Tree Fraction
-comment:           "Agregation of model PFTs as defined in 1st priority to aid model intercomparison.  This is the fraction of the entire grid cell  that is covered by ""total primary deciduous trees.""    "
+comment:           "This is the fraction of the entire grid cell  that is covered by ""total primary deciduous trees."""
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1538,7 +1529,6 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Growth Autotrophic Respiration on Land
-comment:           "This flux and the one in the following row provide a breakdown of the higher priority ""Autotrophic (Plant) Respiration"" in an earlier row of this table; thus the sum should be identical to that."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -1561,7 +1551,6 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where land
 cell_measures:     area: areacella
 long_name:         Carbon Mass Flux into Atmosphere due to Maintenance Autotrophic Respiration on Land
-comment:           "This flux and the one in the previous row provide a breakdown of the higher priority ""Autotrophic (Plant) Respiration"" in an earlier row of this table; thus the sum should be identical to that."
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
