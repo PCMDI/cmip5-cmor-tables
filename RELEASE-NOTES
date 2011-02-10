@@ -1,6 +1,7 @@
-2011-01-31: fixed "depth" stored direction
-2011-01-31: added an experiment
-2011-01-31: new set of Tables from Karl 
+2011-02-10 : replaced arecella with areacello for sic and sit
+2011-01-31 : fixed "depth" stored direction
+2011-01-31 : added an experiment
+2011-01-31 : new set of Tables from Karl 
 2011-01-06 : Changes include the following (note that for all tables, some information formerly appearing in the "comment" column has been moved to the "questions & notes" column, but these changes have not usually been highlighted by shading, which shows the other changes that have been recently made):
 
 dims:
