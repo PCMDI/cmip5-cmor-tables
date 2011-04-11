@@ -532,6 +532,12 @@ def create_table(table_file, dims_file,minmax={}):
                 minmaxpassed={}
             else:
                 minmaxpassed=minmax
+                for v in ["sltovovrt","sltovgyre"]:
+                    try:
+                        del(minmaxpassed[v])
+                    except:
+                        pass
+                
             print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmaxpassed,iadd=iadd)
     print 'Created tables:',tables.keys()
                 

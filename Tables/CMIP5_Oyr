@@ -6,7 +6,7 @@ frequency: yr
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   28 March 2011 ! date this table was constructed
+table_date:   11 April 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -157,6 +157,24 @@ stored_direction: increasing
 valid_min:        0.
 valid_max:        12000.
 !----------------------------------	
+!
+!============
+axis_entry: olev
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+axis:             Z             ! X, Y, Z, T (default: undeclared)
+positive:         down         ! up or down (default: undeclared)
+long_name:        generic ocean level
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         lev
+stored_direction: increasing
+type:             double
+must_have_bounds: no
+!----------------------------------
 !
 !============
 axis_entry: ocean_double_sigma

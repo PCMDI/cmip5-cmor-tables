@@ -1,3 +1,8 @@
+2011-04-11 : added olev axis_entry as vertical coordinate
+2011-04-11 : changed min and valid_abs_min on areacello and volcello 
+2011-04-11 : changed min and abs_valid_min of sltovgyre and sltovovrt
+2011-03-28 : a couple of "realm" specifications in the cmor "day" table 
+2011-03-28 : some grid coordinate specifications were removed because they were wrong
 2011-02-10 : replaced arecella with areacello for sic and sit
 2011-01-31 : fixed "depth" stored direction
 2011-01-31 : added an experiment

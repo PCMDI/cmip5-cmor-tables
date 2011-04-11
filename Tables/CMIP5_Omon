@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   28 March 2011 ! date this table was constructed
+table_date:   11 April 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -295,6 +295,24 @@ stored_direction: increasing
 valid_min:        0.
 valid_max:        12000.
 !----------------------------------	
+!
+!============
+axis_entry: olev
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+axis:             Z             ! X, Y, Z, T (default: undeclared)
+positive:         down         ! up or down (default: undeclared)
+long_name:        generic ocean level
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         lev
+stored_direction: increasing
+type:             double
+must_have_bounds: no
+!----------------------------------
 !
 !============
 axis_entry: ocean_double_sigma
@@ -3740,10 +3758,6 @@ long_name:         Northward Ocean Salt Transport due to Gyre
 dimensions:        latitude basin time
 out_name:          sltovgyre
 type:              real
-valid_min:         -5.596e+10
-valid_max:         5.333e+10
-ok_min_mean_abs:   1.503e+09
-ok_max_mean_abs:   6.01e+09
 !----------------------------------
 !
 
@@ -3764,10 +3778,6 @@ long_name:         Northward Ocean Salt Transport due to Overturning
 dimensions:        latitude basin time
 out_name:          sltovovrt
 type:              real
-valid_min:         -4.334e+11
-valid_max:         7.307e+11
-ok_min_mean_abs:   1.069e+10
-ok_max_mean_abs:   4.276e+10
 !----------------------------------
 !
 

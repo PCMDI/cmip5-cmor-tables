@@ -116,7 +116,7 @@ CMOR Table Amon: Monthly Mean Atmospheric Fields and Some Surface Fields,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
-"These fields are derived from fields in the first table above.  They have been ""bias-corrected"" to remove some of the unrealistic behavior caused by the initialization procedure.  See recommendations for how this should be done at http://www.wcrp-climate.org/decadal/index.shtml.  These fields should be reported only for decadal hindcast/forecast experiments. ",,,,,,,,,,,,,,,,,,,,,,
+"These fields are derived from fields in the first table above.  They have been ""bias-corrected"" to remove some of the unrealistic behavior caused by the initialization procedure.  See recommendations for how this should be done at http://eprints.soton.ac.uk/171975/1/150_Bias_Correction.pdf   (Also see http://www.wcrp-climate.org/decadal/ .)  These fields should be reported only for decadal hindcast/forecast experiments. ",,,,,,,,,,,,,,,,,,,,,,
 priority,long name,units ,comment ,questions & notes,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,Bias-Corrected Near-Surface Air Temperature,K,,"normally, the temperature should be reported at the 2 meter height",tasAdjust,air_temperature,,K,time: mean,,,,,,real,longitude latitude time height2m,tasAdjust,atmos,,area: areacella,,
 1.0,Bias-Corrected Surface Temperature,K,"""skin"" temperature (i.e., SST for open ocean)",,tsAdjust,surface_temperature,,K,time: mean,,,,,,real,longitude latitude time,tsAdjust,atmos,,area: areacella,,

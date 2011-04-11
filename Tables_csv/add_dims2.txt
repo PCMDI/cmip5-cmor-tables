@@ -27,6 +27,24 @@ valid_max:        12000.
 !----------------------------------	
 !
 !============
+axis_entry: olev
+!============
+!----------------------------------
+! Axis attributes:
+!----------------------------------
+axis:             Z             ! X, Y, Z, T (default: undeclared)
+positive:         down         ! up or down (default: undeclared)
+long_name:        generic ocean level
+!----------------------------------
+! Additional axis information:
+!----------------------------------
+out_name:         lev
+stored_direction: increasing
+type:             double
+must_have_bounds: no
+!----------------------------------
+!
+!============
 axis_entry: ocean_double_sigma
 !============
 !
