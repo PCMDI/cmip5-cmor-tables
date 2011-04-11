@@ -36,7 +36,7 @@ def fetchATable(table,commit):
     r=H.getresponse()
     return r.read()
     
-def fetchTable(table,date=None,md5=None):
+def fetchTable(table,date=None):
     table,date,md5 = preprocess(table,date)
     checkTable(table,date)
     # Ok now fetch the history
