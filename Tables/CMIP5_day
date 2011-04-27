@@ -6,7 +6,7 @@ frequency: day
 cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   11 April 2011 ! date this table was constructed
+table_date:   27 April 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -409,7 +409,7 @@ units:             K
 cell_methods:      time: mean
 cell_measures:     area: areacello
 long_name:         Sea Surface Temperature
-comment:           temperature of liquid ocean. 
+comment:           temperature of liquid ocean.  Note that the correct standard_name for this variable is ""sea_surface_temperature"", not ""surface_temperature"", but this was discovered too late to correct.  To maintain consistency across CMIP5 models, the wrong standard_name will continue to be used.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

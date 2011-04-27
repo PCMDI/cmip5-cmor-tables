@@ -1,3 +1,5 @@
+2011-04-27 : day table has updated comment on wrong standard name
+2011-04-27 : fx table has corrected depth axis entry and a bunch of axes that depend on eta
 2011-04-11 : added olev axis_entry as vertical coordinate
 2011-04-11 : changed min and valid_abs_min on areacello and volcello 
 2011-04-11 : changed min and abs_valid_min of sltovgyre and sltovovrt
