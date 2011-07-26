@@ -1,3 +1,8 @@
+2011-07-24 : 1.  table fx: added thkcello (which also appears in table Omon), which is included in this table to accommodate  models where thkcello is independent of time.  [You are not required to rewrite any files already written that contain "thkcello".]  Alternatively, you may elect to record only 12 monthly-mean values as part of your Omon output if thkcello is independent of time (and in this case all 12 values would be identical).  If you do this, indicate with a comment in the file that the field is actually time-independent for your model.
+2011-07-24 : 2.  table Oclim:  In the CMOR dimensions column, removed "olevel" from the list in lines 41-50, which are variables that are independent of ocean level. 
+2011-07-04 : 3.  table Omon:  Added 2-d versions of ficeberg, hfrunoffds, hfsnthermds, hfsifrazil, hfsithermds, and hfibtherds for models in which only the vertically integrated amounts are available.
+2011-07-24 : 4.  table 3hr:  changed the time-period requested from the abrupt 4xCO2 experiment to be "first 5 years and years 121-150". [The "CFMIP output" spread sheet was modified to be consistent with this.]
+2011-07-24 : 5.  table cfDay: for clisccp, changed the order of the dimensions from "longitude latitude tau plev7 time" to "longitude latitude plev7 tau time" to be consistent with the monthly-mean clisccp ordering.  If you have already written the daily clisccp output field, there is no reason to rewrite it.
 2011-04-27 : day table has updated comment on wrong standard name
 2011-04-27 : fx table has corrected depth axis entry and a bunch of axes that depend on eta
 2011-04-11 : added olev axis_entry as vertical coordinate
