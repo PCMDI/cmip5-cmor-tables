@@ -77,7 +77,7 @@ ESM feedback 2,"carbon cycle ""sees"" control CO2, but radiatation sees historic
 1 percent per year CO2,imposed 1%/yr increase in CO2 to quadrupling,6.1,,all*,all,all**,all,all,all,all,,,,all,,,last 30
 control SST climatology,An atmosphere-only run driven by prescribed climatological SST and sea ice.,6.2a,,,all,,,all,all,all,all,,,all,,,all
 CO2 forcing,"as in expt. 6.2a, but with 4XCO2 imposed",6.2b,,,all,,,all,all,all,,,,all,,,all
-abrupt 4XCO2,"impose an instantaneous quadrupling of CO2, then hold fixed",6.3,,,all,all**,all,all,all,all,,,,all,,,first 20 years and years 121-140
+abrupt 4XCO2,"impose an instantaneous quadrupling of CO2, then hold fixed",6.3,,,all,all**,all,all,all,all,,,,all,,,first 5 years and years 121-150
 abrupt 4XCO2,"generate an ensemble of runs like expt. 6.3, initialized in different months, and terminated after 5 years",6.3-E,,,all,all**,all,all,all,all,,,,all,,,all
 anthropogenic aerosol forcing,"as in expt. 6.2a, but with anthropogenic aerosols from year 2000 of expt. 3.2",6.4a,,,all,,,all,all,all,all,,,all,,,all
 sulfate aerosol forcing,"as in expt. 6.2a, but with sulfate aerosols from year 2000 of expt. 3.2",6.4b,,,all,,,all,all,all,all,,,all,,,all

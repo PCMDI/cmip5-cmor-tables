@@ -3,10 +3,10 @@ modeling_realm: ocean
 
 frequency: monClim
 
-cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   27 April 2011 ! date this table was constructed
+table_date:   26 July 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -1011,7 +1011,7 @@ long_name:         Ocean Tracer Bolus Laplacian Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrblo
 type:              real
 !----------------------------------
@@ -1032,7 +1032,7 @@ long_name:         Ocean Tracer Bolus Biharmonic Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrbbo
 type:              real
 !----------------------------------
@@ -1053,7 +1053,7 @@ long_name:         Ocean Tracer Epineutral Laplacian Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrelo
 type:              real
 !----------------------------------
@@ -1074,7 +1074,7 @@ long_name:         Ocean Tracer Epineutral Biharmonic Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrebo
 type:              real
 !----------------------------------
@@ -1095,7 +1095,7 @@ long_name:         Ocean Tracer XY Laplacian Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrxylo
 type:              real
 !----------------------------------
@@ -1116,7 +1116,7 @@ long_name:         Ocean Tracer XY Biharmonic Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          diftrxybo
 type:              real
 !----------------------------------
@@ -1137,7 +1137,7 @@ long_name:         Tendency of Ocean Eddy Kinetic Energy Content due to Bolus Tr
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          tnkebto
 type:              real
 !----------------------------------
@@ -1158,7 +1158,7 @@ long_name:         Ocean Momentum XY Laplacian Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          difmxylo
 type:              real
 !----------------------------------
@@ -1179,7 +1179,7 @@ long_name:         Ocean Momentum XY Biharmonic Diffusivity
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          difmxybo
 type:              real
 !----------------------------------
@@ -1200,7 +1200,7 @@ long_name:         Ocean Kinetic Energy Dissipation Per Unit Area due to XY Fric
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude olevel time2
+dimensions:        longitude latitude time2
 out_name:          dispkexyfo
 type:              real
 !----------------------------------

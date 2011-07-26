@@ -10,7 +10,7 @@ The 3-hourly data should be collected only for the following experiments and yea
 ,,,1 percent per year CO2,last 30 years,,,,,,,,,,,,,,,,,,
 ,,,control SST climatology (6.2a),all years,,,,,,,,,,,,,,,,,,
 ,,,"CO2 forcing (6.2b), anthropogenic aerosol forcing (6.4a), and sulfate aerosol forcing (6.4b)",all years,,,,,,,,,,,,,,,,,,
-,,,abrupt 4XCO2 (6.3),first 5 years and last 30 years,,,,,,,,,,,,,,,,,,
+,,,abrupt 4XCO2 (6.3),first 5 years and years 121-150 years,,,,,,,,,,,,,,,,,,
 ,,,abrupt 4XCO2 ensemble (6.3-E),all years,,,,,,,,,,,,,,,,,,
 priority,long name,units ,comment ,questions & notes,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,Precipitation,kg m-2 s-1,at surface; includes both liquid and solid phases.  This is the 3-hour mean precipitation flux.,,pr,precipitation_flux,,kg m-2 s-1,time:mean,,,,,,real,longitude latitude time,pr,atmos,,area: areacella,,

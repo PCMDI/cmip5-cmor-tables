@@ -8,10 +8,10 @@ modeling_realm: atmos
 
 frequency: subhr
 
-cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   27 April 2011 ! date this table was constructed
+table_date:   26 July 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -66,6 +66,8 @@ expt_id_ok: 'AMIP plus 4K anomaly' 'amip4K'
 approx_interval:  0.017361     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.
+approx_interval_warning:  0.25 ! Level at which a warning is issued because the time axis values are too far appart from the official interval
+approx_interval_error:  0.75 ! Level at which an error is issued because the time axis values are too far appart from the official interval
 
 generic_levels:   alevel alevhalf
 

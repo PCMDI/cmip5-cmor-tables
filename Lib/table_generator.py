@@ -3,7 +3,7 @@ import sys,time,os,genutil,numpy
 
 prefix = "CMIP5"
 
-general = """cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
+general = """cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   %s  ! project id
 table_date:   %s ! date this table was constructed
@@ -370,6 +370,10 @@ def create_table_header(tbnm, table_file, dims_file, fqcy):
     print >> fo, """approx_interval:  %f     ! approximate spacing between successive time
                           !   samples (in units of the output time 
                           !   coordinate.""" % interval
+    if tbnm == "cfSites":
+        print >> fo,"""approx_interval_warning:  0.25 ! Level at which a warning is issued because the time axis values are too far appart from the official interval
+approx_interval_error:  0.75 ! Level at which an error is issued because the time axis values are too far appart from the official interval"""
+
 
     D = open(dims_file)
     dlines = D.readlines()[2:]

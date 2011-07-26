@@ -27,11 +27,10 @@ class CMORTables:
 
     def preprocess(self,table,date=None,md5=None):
         if date is None and md5 is None:
-            table,date,md5 = splitTableString(table)
+            table,date,md5 = self.splitTableString(table)
         return table,date,md5
 
     def fetchLatestTable(self,table):
-        table,data,md5 = self.preprocess(table)
         self.H.request("GET","/gitweb/?p=%s.git;a=blob_plain;f=Tables/%s_%s;hb=HEAD" % (self.repo_name,self.repo_prefix,table))
         r = self.H.getresponse()
         return r.read()
@@ -45,6 +44,13 @@ class CMORTables:
     def fetchTable(self,table,date=None):
         table,date,md5 = self.preprocess(table,date)
         self.checkTable(table,date)
+        #First check if it is the latest table
+        t=self.fetchLatestTable(table)
+        j=t.find("\ntable_date:")
+        tdate = t[j+12:j+100]
+        tdate = tdate.split("\n")[0].split("!")[0].strip()
+        if tdate == date:
+            return t
         # Ok now fetch the history
         self.H.request("GET","/gitweb/?p=%s.git;a=history;f=Tables/%s_%s;hb=HEAD" % (self.repo_name,self.repo_prefix,table))
         r = self.H.getresponse().read()
@@ -80,7 +86,8 @@ if __name__=="__main__":
     repo_url = "uv-cdat.llnl.gov"
     repo_prefix="CMIP5"
     Tables = CMORTables(repo_name,repo_prefix,repo_url)
-    t = Tables.fetchTable("Oclim","12 May 2010")
+    t = Tables.fetchTable("cfSites","27 April 2011")
+    #t=Tables.fetchLatestTable("cfSites")
     print t
 
 

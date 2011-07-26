@@ -3,10 +3,10 @@ modeling_realm: ocean
 
 frequency: mon
 
-cmor_version: 2.5.0 ! minimum version of CMOR that can read this table
+cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   27 April 2011 ! date this table was constructed
+table_date:   26 July 2011 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -3920,6 +3920,28 @@ type:              real
 !
 
 !============
+variable_entry:    ficeberg2d
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     water_flux_into_sea_water_from_icebergs
+units:             kg m-2 s-1
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Water Flux into Sea Water From Icebergs 
+comment:           computed as the iceberg melt water  flux into the ocean divided by the area of the ocean portion of the grid cell.
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
+out_name:          ficeberg
+type:              real
+!----------------------------------
+!
+
+!============
 variable_entry:    fsitherm
 !============
 modeling_realm:    ocean seaIce
@@ -4272,6 +4294,27 @@ type:              real
 !
 
 !============
+variable_entry:    hfrunoffds2d
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     temperature_flux_due_to_runoff_expressed_as_heat_flux_into_sea_water
+units:             W m-2
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Temperature Flux due to Runoff Expressed as Heat Flux into Sea Water 
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
+out_name:          hfrunoffds
+type:              real
+!----------------------------------
+!
+
+!============
 variable_entry:    hfsnthermds
 !============
 modeling_realm:    ocean
@@ -4287,6 +4330,27 @@ long_name:         Heat Flux into Sea Water due to Snow Thermodynamics
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude olevel time
+out_name:          hfsnthermds
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    hfsnthermds2d
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     heat_flux_into_sea_water_due_to_snow_thermodynamics
+units:             W m-2
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Heat Flux into Sea Water due to Snow Thermodynamics 
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
 out_name:          hfsnthermds
 type:              real
 !----------------------------------
@@ -4314,6 +4378,27 @@ type:              real
 !
 
 !============
+variable_entry:    hfsifrazil2d
+!============
+modeling_realm:    ocean seaIce
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     heat_flux_into_sea_water_due_to_freezing_of_frazil_ice
+units:             W m-2
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Heat Flux into Sea Water due to Frazil Ice Formation 
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
+out_name:          hfsifrazil
+type:              real
+!----------------------------------
+!
+
+!============
 variable_entry:    hfsithermds
 !============
 modeling_realm:    ocean seaIce
@@ -4335,6 +4420,27 @@ type:              real
 !
 
 !============
+variable_entry:    hfsithermds2d
+!============
+modeling_realm:    ocean seaIce
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     heat_flux_into_sea_water_due_to_sea_ice_thermodynamics
+units:             W m-2
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Heat Flux into Sea Water due to Sea Ice Thermodynamics 
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
+out_name:          hfsithermds
+type:              real
+!----------------------------------
+!
+
+!============
 variable_entry:    hfibthermds
 !============
 modeling_realm:    ocean
@@ -4350,6 +4456,27 @@ long_name:         Heat Flux into Sea Water due to Iceberg Thermodynamics
 ! Additional variable information:
 !----------------------------------
 dimensions:        longitude latitude olevel time
+out_name:          hfibthermds
+type:              real
+!----------------------------------
+!
+
+!============
+variable_entry:    hfibthermds2d
+!============
+modeling_realm:    ocean
+!----------------------------------
+! Variable attributes:
+!----------------------------------
+standard_name:     heat_flux_into_sea_water_due_to_iceberg_thermodynamics
+units:             W m-2
+cell_methods:      time: mean area: mean where sea
+cell_measures:     area: areacello
+long_name:         Heat Flux into Sea Water due to Iceberg Thermodynamics 
+!----------------------------------
+! Additional variable information:
+!----------------------------------
+dimensions:        longitude latitude time
 out_name:          hfibthermds
 type:              real
 !----------------------------------
