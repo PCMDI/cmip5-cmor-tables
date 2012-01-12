@@ -1,7 +1,7 @@
 CMOR Table 6hrPlev: Fields (Sampled Every 6 Hours) for Storm-Track Analysis and other Advanced Diagnostic Applications,,,,,6hrPlev,6hr,,,,,,,,,,,,,,,,
 "The 6-hourly data on pressure levels should be sampled as ""snapshots"" (not as 6-hour means) at 0Z, 6Z, 12Z, and 18Z and should be collected only for the following experiments and years.",,,,,,,,,,,,,,,,,,,,,,
 ,,,experiment,time-period requested,,,,,,,,,,,,,,,,,,
-,,,decadal hindcasts/forecasts,all years,,,,,,,,,,,,,,,,,,
+,,,decadal hindcasts/forecasts (but very low priority),all years,,,,,,,,,,,,,,,,,,
 ,,,historical,Jan 1950 - Dec 2005,,,,,,,,,,,,,,,,,,
 ,,,AMIP & 2030 time-slice,all years,,,,,,,,,,,,,,,,,,
 ,,,RCP4.5 and RCP8.5,Jan 2006 - Dec 2100,,,,,,,,,,,,,,,,,,

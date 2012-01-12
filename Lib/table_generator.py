@@ -145,8 +145,8 @@ valid_min:         %(valid min)
 valid_max:         %(valid max)
 ok_min_mean_abs:   %(mean absolute min)
 ok_max_mean_abs:   %(mean absolute max)
-flag_values:       %(flag values)
-flag_meanings:     %(flag meaning)
+flag_values:       %(flag_values)
+flag_meanings:     %(flag_meanings)
 !----------------------------------
 !
 """
@@ -541,7 +541,8 @@ def create_table(table_file, dims_file,minmax={}):
                         del(minmaxpassed[v])
                     except:
                         pass
-                
+
+            print "Sending columns: ",cnms
             print >> fo, process_template(var_tmpl,cnms,sp,{'CMOR variable name':['?','0','0.0']},minmax=minmaxpassed,iadd=iadd)
     print 'Created tables:',tables.keys()
                 

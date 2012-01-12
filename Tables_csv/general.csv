@@ -6,10 +6,10 @@ General information,,,
 1. Sea ice fields and ocean biogeochemistry fields will be archived on the same grid as ocean fields.,,,
 ,,,
 2. Land fields (including ice and snow on land) and land biogeochemistry fields will be archived on the same grid as the atmosphere.,,,
-,,,modifed between 8 November 2010 and 4 January 2011
 ,,,modified between 4 January 2011 and 28 March 2011.
-The following rules and recommendations for how to  calculate quantities should be followed unless a different method is explicitly indicated in the notes that appear in the following tables.,,,modified between 28 March 2011 and 10 June 2011.
-,,,modified after 10 June 2011.
+,,,modified between 28 March 2011 and 10 June 2011.
+The following rules and recommendations for how to  calculate quantities should be followed unless a different method is explicitly indicated in the notes that appear in the following tables.,,,modified between 10 June 2011 and 27 July 2011
+,,,modifed after 27 July 2011
 "1. It is recommended that ocean and sea-ice output (including Oclim, Oyr, Omon, and OImon)  be reported on the ocean's native grid.  Unless noted otherwise in the tables, all other output should be reported on the atmospheric grid.",,,
 ,,,
 "2. Unless otherwise specified, the ocean and sea-ice output (including Oclim, Oyr, Omon, and OImon) represents a mean over only the sea portion of each grid cell (i.e., it is interpreted as ""where ocean over ocean""), and a value of 0.0 should be reported where the sea fraction is 0.",,,
