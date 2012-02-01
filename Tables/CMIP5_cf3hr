@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 January 2012 ! date this table was constructed
+table_date:   01 February 2012 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -2259,7 +2259,7 @@ long_name:         Stratiform Graupel Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude alevel time1
+dimensions:        longitude latitude alevhalf time1
 out_name:          grpllsprof
 type:              real
 !----------------------------------
@@ -2280,7 +2280,7 @@ long_name:         Convective Rainfall Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude alevel time1
+dimensions:        longitude latitude alevhalf time1
 out_name:          prcprof
 type:              real
 !----------------------------------
@@ -2301,7 +2301,7 @@ long_name:         Stratiform Rainfall Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude alevel time1
+dimensions:        longitude latitude alevhalf time1
 out_name:          prlsprof
 type:              real
 !----------------------------------
@@ -2322,7 +2322,7 @@ long_name:         Convective Snowfall Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude alevel time1
+dimensions:        longitude latitude alevhalf time1
 out_name:          prsnc
 type:              real
 !----------------------------------
@@ -2343,7 +2343,7 @@ long_name:         Stratiform Snowfall Flux
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        longitude latitude alevel time1
+dimensions:        longitude latitude alevhalf time1
 out_name:          prlsns
 type:              real
 !----------------------------------

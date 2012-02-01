@@ -11,7 +11,7 @@ frequency: subhr
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   12 January 2012 ! date this table was constructed
+table_date:   01 February 2012 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -1682,7 +1682,7 @@ long_name:         Upwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rlu
 type:              real
 positive:          up
@@ -1703,7 +1703,7 @@ long_name:         Upwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rsu
 type:              real
 positive:          up
@@ -1724,7 +1724,7 @@ long_name:         Downwelling Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rld
 type:              real
 positive:          down
@@ -1745,7 +1745,7 @@ long_name:         Downwelling Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rsd
 type:              real
 positive:          down
@@ -1766,7 +1766,7 @@ long_name:         Upwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rlucs
 type:              real
 positive:          up
@@ -1787,7 +1787,7 @@ long_name:         Upwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rsucs
 type:              real
 positive:          up
@@ -1808,7 +1808,7 @@ long_name:         Downwelling Clear-Sky Longwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rldcs
 type:              real
 positive:          down
@@ -1829,7 +1829,7 @@ long_name:         Downwelling Clear-Sky Shortwave Radiation
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          rsdcs
 type:              real
 positive:          down
@@ -2150,7 +2150,7 @@ long_name:         Pressure on Model Half-Levels
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
-dimensions:        alevel site time1
+dimensions:        alevhalf site time1
 out_name:          phalf
 type:              real
 !----------------------------------

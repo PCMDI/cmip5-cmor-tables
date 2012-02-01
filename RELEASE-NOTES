@@ -1,3 +1,8 @@
+2012-01-26 : The vertical dimension for the following variables has been changed to "alevhalf", to be consistent with instructions to "report on model-half levels" (Note that this change does not affect the model output in any way, but should help avoid confusion concerning which levels these fields should be reported on.)
+		1) cf3hr: grpllsprof, prcprof, prlsprof, prsnc, prlsns
+		2) cfSites: rlu, rsu, rld, rsd, rlucs, rsucs, rsdcs, rldcs
+		3) cfSites: phalf
+		The long name for dpocdtcalc in table Oyr has been corrected
 2012-01-12 : 1.  The long names were corrected for variables o2 in tables Oyr and Omon, and dpocdtpico in table Oyr
 2012-01-12 : 2.  The priorities for output from the decadal runs were modified.
 2012-01-12 : 3.  The valid_min value for "basin" in the fx table was changed from 1 to 0.
