@@ -1,6 +1,6 @@
 CMOR Table cfMon: CFMIP Monthly-Mean Cloud Diagnostic Fields,,,,,cfMon,mon,,,,,,,,,,,,,,,,
 (All Saved on the Atmospheric Grid),,,,,,,,,,,,,,,,,,,,,,
-"For further guidance, please see http://www.cfmip.net",,,,,,,,,,,,,,,,,,,,,,
+"For further guidance, please see  see http://cfmip.metoffice.com",,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
@@ -116,8 +116,8 @@ priority,long name,units ,comment ,questions & notes,output variable name ,stand
 "In CMOR Table cfMon: ""CFMIP monthly inline"" -- monthly mean in line ISCCP and CALIPSO/PARASOL simulator output ",,,,,,,,,,,,,,,,,,,,,,
 priority,long name,units ,comment ,questions & notes,output variable name ,standard name,unconfirmed or proposed standard name,unformatted units,cell_methods,valid min,valid max,mean absolute min,mean absolute max,positive,type,CMOR dimensions,CMOR variable name,realm,frequency,cell_measures,flag_values,flag_meanings
 1.0,ISCCP Total Cloud Fraction,%,,,cltisccp,cloud_area_fraction,,%,time: mean,,,,,,real,longitude latitude time,cltisccp,atmos,,area: areacella,,
-1.0,ISCCP Mean Cloud Albedo,1.0,time-means weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README,,albisccp,cloud_albedo,,1.0,time: mean,,,,,,real,longitude latitude time,albisccp,atmos,,area: areacella,,
-1.0,ISCCP Mean Cloud Top Pressure,Pa ,time-means weighted by the ISCCP Total Cloud Fraction - see  http://www.cfmip.net/README,,pctisccp,air_pressure_at_cloud_top,,Pa ,time: mean,,,,,,real,longitude latitude time,pctisccp,atmos,,area: areacella,,
+1.0,ISCCP Mean Cloud Albedo,1.0,time-means weighted by the ISCCP Total Cloud Fraction - see http://cfmip.metoffice.com/COSP.html,,albisccp,cloud_albedo,,1.0,time: mean,,,,,,real,longitude latitude time,albisccp,atmos,,area: areacella,,
+1.0,ISCCP Mean Cloud Top Pressure,Pa ,time-means weighted by the ISCCP Total Cloud Fraction - see http://cfmip.metoffice.com/COSP.html,,pctisccp,air_pressure_at_cloud_top,,Pa ,time: mean,,,,,,real,longitude latitude time,pctisccp,atmos,,area: areacella,,
 1.0,ISCCP Cloud Area Fraction,%,, 7 levels x 7 tau,clisccp,isccp_cloud_area_fraction,,%,time: mean,,,,,,real,longitude latitude plev7 tau time,clisccp,atmos,,area: areacella,,
 ,,,,,,,,,,,,,,,,,,,,area: areacella,,
 1.0,CALIPSO Total Cloud Fraction,%,,,cltcalipso,cloud_area_fraction,,%,time: mean,,,,,,real,longitude latitude time,cltcalipso,atmos,,area: areacella,,
