@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   22 March 2012 ! date this table was constructed
+table_date:   17 July 2013 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -3839,7 +3839,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where ice_free_sea over sea
 cell_measures:     area: areacello
 long_name:         Snowfall Flux where Ice Free Ocean over Sea
-comment:           computed as the total mass of ice directly falling as snow into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.
+comment:           computed as the total mass per unit time of solid-phase precipitation falling into the ice-free portion of the ocean divided by the area of the ocean portion of the grid cell.   (Snowfall flux includes all types of solid-phase precipitation.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

@@ -1,3 +1,4 @@
+2013-07-16 : To correct the standard name for rldscs in the 3hr table, "surface_" was added to "downwelling_longwave_flux_in_air_assuming_clear_sky".   In addition the long names and explanatory comments for snow_flux (prsn) were made consistent across all tables, which required modifications to OImon, day, 3hr, and cf3hr.  Also, the long names for tas and ps in the 3hr table were changed to make them consistent with the long names appearing in other tables."
 2012-01-26 : The vertical dimension for the following variables has been changed to "alevhalf", to be consistent with instructions to "report on model-half levels" (Note that this change does not affect the model output in any way, but should help avoid confusion concerning which levels these fields should be reported on.)
 		1) cf3hr: grpllsprof, prcprof, prlsprof, prsnc, prlsns
 		2) cfSites: rlu, rsu, rld, rsd, rlucs, rsucs, rsdcs, rldcs

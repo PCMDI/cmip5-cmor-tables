@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   22 March 2012 ! date this table was constructed
+table_date:   17 July 2013 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -391,7 +391,7 @@ units:             kg m-2 s-1
 cell_methods:      time: mean area: mean where sea_ice over sea
 cell_measures:     area: areacello
 long_name:         Surface Snowfall Rate into the Sea Ice Portion of the Grid Cell
-comment:           where sea ice over sea: this is computed as the the water mass per unit time falling as snow onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice.
+comment:           where sea ice over sea: this is computed as the total mass per unit time of solid-phase precipitation falling onto the sea ice portion of a grid cell divided by the area of the ocean portion of the grid cell (including both ice-free and sea-ice covered fractions).  Reported as 0. in regions free of sea ice. (Snowfall flux includes all types of solid-phase precipitation.)
 !----------------------------------
 ! Additional variable information:
 !----------------------------------

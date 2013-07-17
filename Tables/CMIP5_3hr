@@ -6,7 +6,7 @@ frequency: 3hr
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   22 March 2012 ! date this table was constructed
+table_date:   17 July 2013 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -258,7 +258,7 @@ standard_name:     air_temperature
 units:             K
 cell_methods:      time: point
 cell_measures:     area: areacella
-long_name:         Air Temperature
+long_name:         Near-Surface Air Temperature
 comment:           This is sampled synoptically.
 !----------------------------------
 ! Additional variable information:
@@ -571,7 +571,7 @@ units:             kg m-2 s-1
 cell_methods:      time:mean
 cell_measures:     area: areacella
 long_name:         Snowfall Flux
-comment:           at surface.  Includes all forms of precipitating solid phase of water.  This is the 3-hour mean snowfall flux.
+comment:           at surface.  Includes precipitation of all forms water in the solid phase.  This is the 3-hour mean snowfall flux.
 !----------------------------------
 ! Additional variable information:
 !----------------------------------
@@ -610,7 +610,7 @@ modeling_realm:    atmos
 !----------------------------------
 ! Variable attributes:
 !----------------------------------
-standard_name:     downwelling_longwave_flux_in_air_assuming_clear_sky
+standard_name:     surface_downwelling_longwave_flux_in_air_assuming_clear_sky
 units:             W m-2
 cell_methods:      time: mean
 cell_measures:     area: areacella
@@ -683,7 +683,7 @@ standard_name:     surface_air_pressure
 units:             Pa
 cell_methods:      time: point
 cell_measures:     area: areacella
-long_name:         Surface Pressure
+long_name:         Surface Air Pressure
 comment:           sampled synoptically to diagnose atmospheric tides, this is better than mean sea level pressure.
 !----------------------------------
 ! Additional variable information:

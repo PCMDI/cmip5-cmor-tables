@@ -3,3 +3,7 @@
 Makefile
 config.log
 autom4te.cache
+*output_*.xls*
+*pyc
+*.txt
+xlrd-*
