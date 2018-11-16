@@ -6,7 +6,7 @@ frequency: mon
 cmor_version: 2.6 ! minimum version of CMOR that can read this table
 cf_version:   1.4         ! version of CF that output conforms to
 project_id:   CMIP5  ! project id
-table_date:   17 July 2013 ! date this table was constructed
+table_date:   15 November 2018 ! date this table was constructed
 
 missing_value: 1.e20      ! value used to indicate a missing value
                           !   in arrays output by netCDF as 32-bit IEEE 
@@ -184,7 +184,7 @@ long_name:        ocean passage
 !----------------------------------
 ! Additional axis information:
 !----------------------------------
-out_name:         line
+out_name:         passage
 type:             character
 requested:        barents_opening bering_strait canadian_archipelago denmark_strait drake_passage english_channel pacific_equatorial_undercurrent faroe_scotland_channel florida_bahamas_strait fram_strait iceland_faroe_channel indonesian_throughflow mozambique_channel taiwan_luzon_straits windward_passage        ! space-separated list of requested coordinates 
 must_have_bounds: no
